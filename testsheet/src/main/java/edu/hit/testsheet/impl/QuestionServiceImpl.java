@@ -7,6 +7,9 @@ import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.repository.QuestionRepository;
 import edu.hit.testsheet.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +23,21 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
+    }
+
+    @Override
+    public List<Question> getQuestionsByPage(int pageIndex, int pageSize) {
+        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+        Page<Question> questionPage = questionRepository.findAll(pageable);
+        List<Question> questions = questionPage.getContent();
+
+        // 增加日志输出
+        System.out.println("Page Index: " + pageIndex);
+        System.out.println("Page Size: " + pageSize);
+        System.out.println("Total Elements: " + questionPage.getTotalElements());
+        System.out.println("Total Pages: " + questionPage.getTotalPages());
+        System.out.println("Current Page Elements: " + questions.size());
+        return questions;
     }
 
     @Override
@@ -50,5 +68,10 @@ public class QuestionServiceImpl implements QuestionService {
         question.setType(updateRequest.getType());
         question.setAnswer(updateRequest.getAnswer());
         return questionRepository.save(question);
+    }
+
+    @Override
+    public List<Question> selectQuestion(String keywords, String type, String difficultLevel,int pageIndex,int pageSize) {
+        return questionRepository.searchQuestions(keywords, type, difficultLevel,pageIndex,pageSize);
     }
 }

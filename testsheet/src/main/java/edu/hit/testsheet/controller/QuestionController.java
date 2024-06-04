@@ -1,10 +1,8 @@
 package edu.hit.testsheet.controller;
 
 import edu.hit.testsheet.Dto.QuestionUpdateDto;
-import edu.hit.testsheet.Exception.QuestionNotFoundException;
 import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.service.QuestionService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +15,13 @@ public class QuestionController {
     @Autowired
     private QuestionService questionService;
 
-    // 获取所有问题
     @GetMapping
-    public List<Question> getAllQuestions() {
-        return questionService.getAllQuestions();
+    public List<Question> getAllQuestions(@RequestParam(required = false, defaultValue = "1") String pageNum) {
+        int pageSize = 10; // 每页显示的数据条数
+        int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
+        System.out.println("Request Page Num: " + pageNum);
+        System.out.println("Calculated Page Index: " + pageIndex);
+        return questionService.getQuestionsByPage(pageIndex, pageSize);
     }
 
     // 添加问题
@@ -48,6 +49,18 @@ public class QuestionController {
         return questionService.updateQuestion(id, updateRequest);
     }
 
+    // 搜索问题
+    @GetMapping("/search")
+    public List<Question> searchQuestions(@RequestParam(required = false) String keywords,
+                                          @RequestParam(required = false) String type,
+                                          @RequestParam(required = false) String difficultLevel,
+                                          @RequestParam(required = false, defaultValue = "1") String pageNum) {
+        int pageSize = 10; // 每页显示的数据条数
+        int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
+        System.out.println("Request Page Num: " + pageNum);
+        System.out.println("Calculated Page Index: " + pageIndex);
+        return questionService.selectQuestion(keywords, type, difficultLevel,pageIndex,pageSize);
+    }
 //    // 异常处理
 //    @ExceptionHandler(QuestionNotFoundException.class)
 //    public String handleQuestionNotFoundException(QuestionNotFoundException ex) {
