@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
+    public User userLogin(String username, String password) {
+        return userRepository.findByUsernameAndPassword(username, password).orElse(null);
+    }
+
+    @Override
     public List<User> getAllUser() {
         return userRepository.findAll();
     }

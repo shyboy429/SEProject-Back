@@ -1,6 +1,5 @@
 package edu.hit.testsheet.service;
 
-import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.bean.User;
 
 import java.util.List;
@@ -14,6 +13,8 @@ import java.util.List;
  * @author:shyboy
  */
 public interface UserService {
+
+    User userLogin(String username,String password);
     List<User> getAllUser();
 
     User addUser(User user);

@@ -54,9 +54,9 @@ public class PaperController {
         return paperService.updatePaper(id, paperUpdateDTO);
     }
 
-    // 异常处理
-    @ExceptionHandler(PaperNotFoundException.class)
-    public String handlePaperNotFoundException(PaperNotFoundException ex) {
-        return ex.getMessage();
-    }
+//    // 异常处理
+//    @ExceptionHandler(PaperNotFoundException.class)
+//    public String handlePaperNotFoundException(PaperNotFoundException ex) {
+//        return ex.getMessage();
+//    }
 }

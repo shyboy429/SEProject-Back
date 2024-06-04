@@ -2,8 +2,6 @@ package edu.hit.testsheet.bean;
 
 import jakarta.persistence.*;
 
-import java.util.HashMap;
-
 @Entity
 @Table(name = "questions")
 public class Question {

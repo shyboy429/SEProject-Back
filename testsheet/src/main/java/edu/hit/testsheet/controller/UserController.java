@@ -1,6 +1,7 @@
 package edu.hit.testsheet.controller;
 
-import edu.hit.testsheet.Exception.UserNotFoundException;
+import edu.hit.testsheet.Dto.LoginDto;
+import edu.hit.testsheet.Exception.UserLoginFailedException;
 import edu.hit.testsheet.bean.User;
 import edu.hit.testsheet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,16 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    // 用户登录
+    @PostMapping("/login")
+    public User userLogin(@RequestBody LoginDto loginDto) {
+        User user = userService.userLogin(loginDto.getUsername(), loginDto.getPassword());
+        if (user == null) {
+            throw new UserLoginFailedException("Invalid username or password");
+        }
+        return user;
+    }
 
     // 获取所有用户
     @GetMapping
