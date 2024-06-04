@@ -1,6 +1,9 @@
 package edu.hit.testsheet.bean;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.util.Date;
 
 /**
  * ClassName:Paper
@@ -17,22 +20,23 @@ public class Paper {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "created_by", nullable = false)
-    private String createdBy;
+    @Column(name = "introduction")
+    private String introduction;
 
-    @Column(name = "q1")
-    private Long q1;
-    @Column(name = "q2")
-    private Long q2;
-    @Column(name = "q3")
-    private Long q3;
-    @Column(name = "q4")
-    private Long q4;
-    @Column(name = "q5")
-    private Long q5;
+    @Column(name = "create_time")
+    private String createTime;
+
+    @Column(name = "update_time")
+    private String updateTime;
+
+    @Column(name = "content")
+    private String content;
+
+    @Column(name = "created_by")
+    private String createdBy;
 
     public Long getId() {
         return id;
@@ -50,51 +54,43 @@ public class Paper {
         this.title = title;
     }
 
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public String getCreatedBy() {
         return createdBy;
     }
 
     public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
-    }
-
-    public Long getQ1() {
-        return q1;
-    }
-
-    public void setQ1(Long q1) {
-        this.q1 = q1;
-    }
-
-    public Long getQ2() {
-        return q2;
-    }
-
-    public void setQ2(Long q2) {
-        this.q2 = q2;
-    }
-
-    public Long getQ3() {
-        return q3;
-    }
-
-    public void setQ3(Long q3) {
-        this.q3 = q3;
-    }
-
-    public Long getQ4() {
-        return q4;
-    }
-
-    public void setQ4(Long q4) {
-        this.q4 = q4;
-    }
-
-    public Long getQ5() {
-        return q5;
-    }
-
-    public void setQ5(Long q5) {
-        this.q5 = q5;
     }
 }

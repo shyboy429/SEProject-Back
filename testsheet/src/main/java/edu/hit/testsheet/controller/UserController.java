@@ -1,17 +1,12 @@
 package edu.hit.testsheet.controller;
 
 import edu.hit.testsheet.Dto.LoginDto;
-import edu.hit.testsheet.Exception.UserAlreadyExistsException;
 import edu.hit.testsheet.Exception.UserLoginFailedException;
 import edu.hit.testsheet.bean.User;
 import edu.hit.testsheet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * ClassName:UserController

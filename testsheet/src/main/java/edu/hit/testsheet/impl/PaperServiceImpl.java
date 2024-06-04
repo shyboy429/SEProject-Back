@@ -5,9 +5,12 @@ import edu.hit.testsheet.Exception.PaperNotFoundException;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.repository.PaperRepository;
 import edu.hit.testsheet.service.PaperService;
+import edu.hit.testsheet.util.DateFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -32,6 +35,8 @@ public class PaperServiceImpl implements PaperService {
 
     @Override
     public Paper addPaper(Paper paper) {
+        paper.setCreateTime(DateFormatter.formatDate(LocalDateTime.now()));
+        paper.setUpdateTime(paper.getCreateTime());
         return paperRepository.save(paper);
     }
 
@@ -51,15 +56,13 @@ public class PaperServiceImpl implements PaperService {
     }
 
     @Override
-    public Paper updatePaper(Long id, PaperUpdateDto paperUpdateDTO) {
+    public Paper updatePaper(Long id, PaperUpdateDto paperUpdateDto) {
         Paper paper = paperRepository.findById(id)
                 .orElseThrow(() -> new PaperNotFoundException(id));
-        paper.setTitle(paperUpdateDTO.getTitle());
-        paper.setQ1(paperUpdateDTO.getQ1());
-        paper.setQ2(paperUpdateDTO.getQ2());
-        paper.setQ3(paperUpdateDTO.getQ3());
-        paper.setQ4(paperUpdateDTO.getQ4());
-        paper.setQ5(paperUpdateDTO.getQ5());
+        paper.setTitle(paperUpdateDto.getTitle());
+        paper.setContent(paperUpdateDto.getContent());
+        paper.setIntroduction(paperUpdateDto.getIntroduction());
+        paper.setUpdateTime(DateFormatter.formatDate(LocalDateTime.now()));
         return paperRepository.save(paper);
     }
 }
