@@ -13,7 +13,29 @@ public class QuestionUpdateDto {
     private String type;
     private String answer;
 
+    private String tag;
+
+    private String analysis;
+
+
     // Getters and setters
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getAnalysis() {
+        return analysis;
+    }
+
+    public void setAnalysis(String analysis) {
+        this.analysis = analysis;
+    }
+
+
     public String getDescription() {
         return description;
     }

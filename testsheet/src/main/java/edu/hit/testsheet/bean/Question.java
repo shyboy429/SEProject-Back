@@ -8,18 +8,38 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "tag", nullable = false)
+    private String tag;
     @Column(name = "description", nullable = false)
     private String description;
     @Column(name = "type", nullable = false)
     private String type;
     @Column(name = "answer")
     private String answer;
-
     @Column(name = "difficult_level")
     private String difficultLevel;
-
+    @Column(name = "analysis", nullable = false)
+    private String analysis;
     @Column(name = "created_by", nullable = false)
     private String createdBy;
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getAnalysis() {
+        return analysis;
+    }
+
+    public void setAnalysis(String analysis) {
+        this.analysis = analysis;
+    }
+
 
     // Getters and Setters
     public Long getId() {

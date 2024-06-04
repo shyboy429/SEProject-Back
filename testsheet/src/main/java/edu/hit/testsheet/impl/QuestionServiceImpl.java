@@ -67,6 +67,8 @@ public class QuestionServiceImpl implements QuestionService {
         question.setDescription(updateRequest.getDescription());
         question.setType(updateRequest.getType());
         question.setAnswer(updateRequest.getAnswer());
+        question.setAnalysis(updateRequest.getAnalysis());
+        question.setTag(updateRequest.getTag());
         return questionRepository.save(question);
     }
 
