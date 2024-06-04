@@ -19,7 +19,7 @@ public class Question {
     private String difficultLevel;
 
     @Column(name = "created_by", nullable = false)
-    private Long createdBy;
+    private String createdBy;
 
     // Getters and Setters
     public Long getId() {
@@ -62,11 +62,11 @@ public class Question {
         this.difficultLevel = difficultLevel;
     }
 
-    public Long getCreatedBy() {
+    public String getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(Long createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 }

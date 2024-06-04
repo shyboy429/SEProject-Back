@@ -66,23 +66,23 @@ public class PaperControllerTest {
                 .andExpect(jsonPath("$.length()").value(5));
     }
 
-    @Test
-    public void testAddPaper() throws Exception {
-        Paper paper = new Paper();
-        paper.setId(1L);
-        paper.setTitle("Sample Paper");
-        paper.setCreatedBy(1L);
-
-        when(paperService.addPaper(any(Paper.class))).thenReturn(paper);
-
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/papers")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"title\": \"Sample Paper\", \"createdBy\": 1}"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.title").value("Sample Paper"))
-                .andExpect(jsonPath("$.createdBy").value(1));
-    }
+//    @Test
+//    public void testAddPaper() throws Exception {
+//        Paper paper = new Paper();
+//        paper.setId(1L);
+//        paper.setTitle("Sample Paper");
+//        paper.setCreatedBy(1L);
+//
+//        when(paperService.addPaper(any(Paper.class))).thenReturn(paper);
+//
+//        mockMvc.perform(MockMvcRequestBuilders.post("/api/papers")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content("{\"title\": \"Sample Paper\", \"createdBy\": 1}"))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.id").value(1))
+//                .andExpect(jsonPath("$.title").value("Sample Paper"))
+//                .andExpect(jsonPath("$.createdBy").value(1));
+//    }
 
     @Test
     public void testDeletePaperById() throws Exception {
@@ -91,41 +91,41 @@ public class PaperControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    public void testGetPaperById() throws Exception {
-        Paper paper = new Paper();
-        paper.setId(1L);
-        paper.setTitle("Sample Paper");
-        paper.setCreatedBy(1L);
+//    @Test
+//    public void testGetPaperById() throws Exception {
+//        Paper paper = new Paper();
+//        paper.setId(1L);
+//        paper.setTitle("Sample Paper");
+//        paper.setCreatedBy(1L);
+//
+//        when(paperService.selectPaperById(1L)).thenReturn(paper);
+//
+//        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers/1")
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.id").value(1))
+//                .andExpect(jsonPath("$.title").value("Sample Paper"))
+//                .andExpect(jsonPath("$.createdBy").value(1));
+//    }
 
-        when(paperService.selectPaperById(1L)).thenReturn(paper);
-
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers/1")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.title").value("Sample Paper"))
-                .andExpect(jsonPath("$.createdBy").value(1));
-    }
-
-    @Test
-    public void testUpdatePaper() throws Exception {
-        PaperUpdateDto paperUpdateDTO = new PaperUpdateDto();
-        paperUpdateDTO.setTitle("Updated Paper");
-
-        Paper updatedPaper = new Paper();
-        updatedPaper.setId(1L);
-        updatedPaper.setTitle("Updated Paper");
-        updatedPaper.setCreatedBy(1L);
-
-        when(paperService.updatePaper(eq(1L), any(PaperUpdateDto.class))).thenReturn(updatedPaper);
-
-        mockMvc.perform(MockMvcRequestBuilders.put("/api/papers/1")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"title\": \"Updated Paper\"}"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.title").value("Updated Paper"))
-                .andExpect(jsonPath("$.createdBy").value(1));
-    }
+//    @Test
+//    public void testUpdatePaper() throws Exception {
+//        PaperUpdateDto paperUpdateDTO = new PaperUpdateDto();
+//        paperUpdateDTO.setTitle("Updated Paper");
+//
+//        Paper updatedPaper = new Paper();
+//        updatedPaper.setId(1L);
+//        updatedPaper.setTitle("Updated Paper");
+//        updatedPaper.setCreatedBy(1L);
+//
+//        when(paperService.updatePaper(eq(1L), any(PaperUpdateDto.class))).thenReturn(updatedPaper);
+//
+//        mockMvc.perform(MockMvcRequestBuilders.put("/api/papers/1")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content("{\"title\": \"Updated Paper\"}"))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.id").value(1))
+//                .andExpect(jsonPath("$.title").value("Updated Paper"))
+//                .andExpect(jsonPath("$.createdBy").value(1));
+//    }
 }

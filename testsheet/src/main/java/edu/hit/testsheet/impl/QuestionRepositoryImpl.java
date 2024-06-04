@@ -72,10 +72,6 @@ public class QuestionRepositoryImpl implements QuestionRepositoryCustom {
         List<Question> results = query.getResultList();
         System.out.println("Results: " + results); // 添加日志信息
         return results;
-//        // 执行查询并返回结果
-//        List<Question> results = entityManager.createQuery(cq).getResultList();
-//        System.out.println("Results: " + results); // 添加日志信息
-//        return results;
     }
 }
 

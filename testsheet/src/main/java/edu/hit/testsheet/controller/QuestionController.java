@@ -17,7 +17,7 @@ public class QuestionController {
 
     @GetMapping
     public List<Question> getAllQuestions(@RequestParam(required = false, defaultValue = "1") String pageNum) {
-        int pageSize = 10; // 每页显示的数据条数
+        int pageSize = 6; // 每页显示的数据条数
         int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
         System.out.println("Request Page Num: " + pageNum);
         System.out.println("Calculated Page Index: " + pageIndex);
@@ -55,7 +55,7 @@ public class QuestionController {
                                           @RequestParam(required = false) String type,
                                           @RequestParam(required = false) String difficultLevel,
                                           @RequestParam(required = false, defaultValue = "1") String pageNum) {
-        int pageSize = 10; // 每页显示的数据条数
+        int pageSize = 6; // 每页显示的数据条数
         int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
         System.out.println("Request Page Num: " + pageNum);
         System.out.println("Calculated Page Index: " + pageIndex);
