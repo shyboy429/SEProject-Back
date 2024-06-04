@@ -1,12 +1,17 @@
 package edu.hit.testsheet.controller;
 
 import edu.hit.testsheet.Dto.LoginDto;
+import edu.hit.testsheet.Exception.UserAlreadyExistsException;
 import edu.hit.testsheet.Exception.UserLoginFailedException;
 import edu.hit.testsheet.bean.User;
 import edu.hit.testsheet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * ClassName:UserController
@@ -30,6 +35,12 @@ public class UserController {
             throw new UserLoginFailedException("Invalid username or password");
         }
         return user;
+    }
+
+    // 用户注册
+    @PostMapping("/register")
+    public User registerUser(@RequestBody User user) {
+        return userService.registerUser(user);
     }
 
     // 获取所有用户
@@ -75,10 +86,4 @@ public class UserController {
                            @RequestParam(required = false) String password) {
         return userService.updateUser(id, username, password);
     }
-//
-//    // 异常处理
-//    @ExceptionHandler(UserNotFoundException.class)
-//    public String handleUserNotFoundException(UserNotFoundException ex) {
-//        return ex.getMessage();
-//    }
 }

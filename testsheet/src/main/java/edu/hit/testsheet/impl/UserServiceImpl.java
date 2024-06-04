@@ -1,5 +1,6 @@
 package edu.hit.testsheet.impl;
 
+import edu.hit.testsheet.Exception.UserAlreadyExistsException;
 import edu.hit.testsheet.Exception.UserNotFoundException;
 import edu.hit.testsheet.bean.User;
 import edu.hit.testsheet.repository.UserRepository;
@@ -27,6 +28,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public User userLogin(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password).orElse(null);
+    }
+
+    @Override
+    public User registerUser(User user) {
+        // 检查用户名是否已存在
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            throw new UserAlreadyExistsException("Username already exists: " + user.getUsername());
+        }
+        // 保存新用户
+        return userRepository.save(user);
     }
 
     @Override

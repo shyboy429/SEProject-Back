@@ -53,10 +53,4 @@ public class PaperController {
     public Paper updatePaper(@PathVariable Long id, @RequestBody PaperUpdateDto paperUpdateDTO) {
         return paperService.updatePaper(id, paperUpdateDTO);
     }
-
-//    // 异常处理
-//    @ExceptionHandler(PaperNotFoundException.class)
-//    public String handlePaperNotFoundException(PaperNotFoundException ex) {
-//        return ex.getMessage();
-//    }
 }

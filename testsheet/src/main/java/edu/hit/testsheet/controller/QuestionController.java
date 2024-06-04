@@ -59,11 +59,6 @@ public class QuestionController {
         int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
         System.out.println("Request Page Num: " + pageNum);
         System.out.println("Calculated Page Index: " + pageIndex);
-        return questionService.selectQuestion(keywords, type, difficultLevel,pageIndex,pageSize);
+        return questionService.selectQuestion(keywords, type, difficultLevel, pageIndex, pageSize);
     }
-//    // 异常处理
-//    @ExceptionHandler(QuestionNotFoundException.class)
-//    public String handleQuestionNotFoundException(QuestionNotFoundException ex) {
-//        return ex.getMessage();
-//    }
 }

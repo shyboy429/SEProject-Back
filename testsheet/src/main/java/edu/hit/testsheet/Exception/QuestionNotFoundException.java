@@ -8,7 +8,8 @@ package edu.hit.testsheet.Exception;
  * @date:2024/6/3 11:25
  * @author:shyboy
  */
-public class QuestionNotFoundException extends RuntimeException{
+
+public class QuestionNotFoundException extends RuntimeException {
     public QuestionNotFoundException(Long id) {
         super("Question not found with id: " + id);
     }
