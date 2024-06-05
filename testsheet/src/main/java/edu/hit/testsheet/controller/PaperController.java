@@ -1,7 +1,7 @@
 package edu.hit.testsheet.controller;
 
+import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
-import edu.hit.testsheet.Exception.PaperNotFoundException;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.service.PaperService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class PaperController {
 
     // 获取所有试卷
     @GetMapping
-    public List<Paper> getAllPapers() {
+    public List<PaperReturnDto> getAllPapers() {
         return paperService.getAllPapers();
     }
 
@@ -44,7 +44,7 @@ public class PaperController {
 
     // 根据ID获取试卷
     @GetMapping("/{id}")
-    public Paper getPaperById(@PathVariable Long id) {
+    public PaperReturnDto getPaperById(@PathVariable Long id) {
         return paperService.selectPaperById(id);
     }
 

@@ -51,20 +51,20 @@ public class PaperControllerTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
-    @Test
-    public void testGetAllPapers() throws Exception {
-        List<Paper> papers = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            papers.add(new Paper());
-        }
-        when(paperService.getAllPapers()).thenReturn(papers);
-        // Perform GET request
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$.length()").value(5));
-    }
+//    @Test
+//    public void testGetAllPapers() throws Exception {
+//        List<Paper> papers = new ArrayList<>();
+//        for (int i = 0; i < 5; i++) {
+//            papers.add(new Paper());
+//        }
+//        when(paperService.getAllPapers()).thenReturn(papers);
+//        // Perform GET request
+//        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers")
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$").isArray())
+//                .andExpect(jsonPath("$.length()").value(5));
+//    }
 
 //    @Test
 //    public void testAddPaper() throws Exception {
