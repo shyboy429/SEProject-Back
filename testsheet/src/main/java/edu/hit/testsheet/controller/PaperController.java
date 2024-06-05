@@ -3,6 +3,7 @@ package edu.hit.testsheet.controller;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.bean.Paper;
+import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.service.PaperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -52,5 +53,11 @@ public class PaperController {
     @PutMapping("/{id}")
     public Paper updatePaper(@PathVariable Long id, @RequestBody PaperUpdateDto paperUpdateDto) {
         return paperService.updatePaper(id, paperUpdateDto);
+    }
+
+    // admin根据ID获取试卷
+    @GetMapping("/admin/{id}")
+    public List<Question> getPaperByIdForAdmin(@PathVariable Long id) {
+        return paperService.selectPaperByIdForAdmin(id);
     }
 }

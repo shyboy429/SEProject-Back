@@ -3,6 +3,7 @@ package edu.hit.testsheet.service;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.bean.Paper;
+import edu.hit.testsheet.bean.Question;
 
 import java.util.List;
 
@@ -24,4 +25,6 @@ public interface PaperService {
     PaperReturnDto selectPaperById(Long id);
 
     Paper updatePaper(Long id, PaperUpdateDto paperUpdateDto);
+
+    List<Question> selectPaperByIdForAdmin(Long id);
 }

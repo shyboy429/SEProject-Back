@@ -3,8 +3,11 @@ package edu.hit.testsheet.impl;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.Exception.PaperNotFoundException;
+import edu.hit.testsheet.Exception.QuestionNotFoundException;
 import edu.hit.testsheet.bean.Paper;
+import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.repository.PaperRepository;
+import edu.hit.testsheet.repository.QuestionRepository;
 import edu.hit.testsheet.service.PaperService;
 import edu.hit.testsheet.util.DateFormatterUtil;
 import edu.hit.testsheet.util.PaperToDtoUtil;
@@ -31,6 +34,8 @@ public class PaperServiceImpl implements PaperService {
     private PaperRepository paperRepository;
     @Autowired
     private PaperToDtoUtil paperToDtoUtil;
+    @Autowired
+    private QuestionRepository questionRepository;
 
     @Override
     public List<PaperReturnDto> getAllPapers() {
@@ -75,6 +80,23 @@ public class PaperServiceImpl implements PaperService {
         paper.setIntroduction(paperUpdateDto.getIntroduction());
         paper.setUpdateTime(DateFormatterUtil.formatDate(LocalDateTime.now()));
         return paperRepository.save(paper);
+    }
+
+    @Override
+    public List<Question> selectPaperByIdForAdmin(Long id) {
+        List<Question> ret = new ArrayList<>();
+        Paper paper = paperRepository.findById(id).orElseThrow(() -> new PaperNotFoundException(id));
+        String content = paper.getContent();
+        if("".equals(content)){
+            throw new QuestionNotFoundException(-1L);
+        }
+        String[] questionIds = content.split(" ");
+        for (String qid : questionIds) {
+            long lqid = Long.parseLong(qid);
+            Question question = questionRepository.findById(lqid).orElseThrow(() -> new QuestionNotFoundException(lqid));
+            ret.add(question);
+        }
+        return ret;
     }
 }
 
