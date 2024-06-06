@@ -47,7 +47,7 @@ public class QuestionController {
         return questionService.selectTeachersQuestion(username);
     }
     // 更新问题
-    @PutMapping("/{id}")
+    @PostMapping("/{id}")
     public Question updateQuestion(@PathVariable Long id,
                                    @RequestBody QuestionUpdateDto updateRequest) {
         return questionService.updateQuestion(id, updateRequest);
