@@ -19,7 +19,7 @@ public class QuestionRepositoryImpl implements QuestionRepositoryCustom {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Question> searchQuestions(String keywords, String type, String difficultLevel,int pageIndex,int pageSize) {
+    public List<Question> searchQuestions(String keywords, String type, String difficultLevel,String username, int pageIndex,int pageSize) {
         // 获取CriteriaBuilder实例，用于构建Criteria查询
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 
@@ -52,6 +52,11 @@ public class QuestionRepositoryImpl implements QuestionRepositoryCustom {
         if (difficultLevel != null && !difficultLevel.isEmpty()) {
             predicates.add(cb.equal(question.get("difficultLevel"), difficultLevel));
             System.out.println("Difficult Level Predicate: " + difficultLevel); // 添加日志信息
+        }
+
+        if(username != null && !username.isEmpty()){
+            predicates.add(cb.equal(question.get("createdBy"), username));
+            System.out.println("Created By Predicate: " + username); // 添加日志信息
         }
 
         // 将所有条件合并到CriteriaQuery中

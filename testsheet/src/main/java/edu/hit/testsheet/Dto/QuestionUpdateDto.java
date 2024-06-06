@@ -12,9 +12,7 @@ public class QuestionUpdateDto {
     private String description;
     private String type;
     private String answer;
-
     private String tag;
-
     private String analysis;
 
 

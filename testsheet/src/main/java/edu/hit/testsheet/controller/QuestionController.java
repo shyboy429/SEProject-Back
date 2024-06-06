@@ -17,7 +17,7 @@ public class QuestionController {
 
     @GetMapping
     public List<Question> getAllQuestions(@RequestParam(required = false, defaultValue = "1") String pageNum) {
-        int pageSize = 6; // 每页显示的数据条数
+        int pageSize = 10; // 每页显示的数据条数
         int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
         System.out.println("Request Page Num: " + pageNum);
         System.out.println("Calculated Page Index: " + pageIndex);
@@ -42,6 +42,10 @@ public class QuestionController {
         return questionService.selectQuestionById(id);
     }
 
+    @GetMapping("/teacher/{username}")
+    public List<Question> getOneselfQuestionsByTeacherId(@PathVariable String username){
+        return questionService.selectTeachersQuestion(username);
+    }
     // 更新问题
     @PutMapping("/{id}")
     public Question updateQuestion(@PathVariable Long id,
@@ -54,11 +58,12 @@ public class QuestionController {
     public List<Question> searchQuestions(@RequestParam(required = false) String keywords,
                                           @RequestParam(required = false) String type,
                                           @RequestParam(required = false) String difficultLevel,
+                                          @RequestParam(required = false) String username,
                                           @RequestParam(required = false, defaultValue = "1") String pageNum) {
-        int pageSize = 6; // 每页显示的数据条数
+        int pageSize = 10; // 每页显示的数据条数
         int pageIndex = Integer.parseInt(pageNum) - 1; // 计算页码
         System.out.println("Request Page Num: " + pageNum);
         System.out.println("Calculated Page Index: " + pageIndex);
-        return questionService.selectQuestion(keywords, type, difficultLevel, pageIndex, pageSize);
+        return questionService.selectQuestion(keywords, type, difficultLevel,username, pageIndex, pageSize);
     }
 }

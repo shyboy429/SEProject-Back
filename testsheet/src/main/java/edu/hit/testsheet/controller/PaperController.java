@@ -50,7 +50,7 @@ public class PaperController {
     }
 
     // 更新试卷
-    @PutMapping("/{id}")
+    @PostMapping("/{id}")
     public Paper updatePaper(@PathVariable Long id, @RequestBody PaperUpdateDto paperUpdateDto) {
         return paperService.updatePaper(id, paperUpdateDto);
     }

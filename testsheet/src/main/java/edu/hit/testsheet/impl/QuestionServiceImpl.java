@@ -73,7 +73,13 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Question> selectQuestion(String keywords, String type, String difficultLevel,int pageIndex,int pageSize) {
-        return questionRepository.searchQuestions(keywords, type, difficultLevel,pageIndex,pageSize);
+    public List<Question> selectQuestion(String keywords, String type, String difficultLevel, String username,
+                                         int pageIndex, int pageSize) {
+        return questionRepository.searchQuestions(keywords, type, difficultLevel, username, pageIndex, pageSize);
+    }
+
+    @Override
+    public List<Question> selectTeachersQuestion(String username) {
+        return questionRepository.findByCreatedBy(username);
     }
 }
