@@ -15,6 +15,15 @@ public class QuestionUpdateDto {
     private String tag;
     private String analysis;
 
+    private String difficultLevel;
+
+    public String getDifficultLevel() {
+        return difficultLevel;
+    }
+
+    public void setDifficultLevel(String difficultLevel) {
+        this.difficultLevel = difficultLevel;
+    }
 
     // Getters and setters
     public String getTag() {
