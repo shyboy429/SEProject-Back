@@ -27,4 +27,6 @@ public interface PaperService {
     Paper updatePaper(Long id, PaperUpdateDto paperUpdateDto);
 
     List<Question> selectPaperByIdForAdmin(Long id);
+
+    List<Question> deleteQuestionInPaper(Long id, Long dqId);
 }

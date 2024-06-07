@@ -55,6 +55,12 @@ public class PaperController {
         return paperService.updatePaper(id, paperUpdateDto);
     }
 
+    // 删除试卷中的某道题
+    @PostMapping("/{id}/question/{dqId}")
+    public List<Question> deleteQuestionInPaper(@PathVariable Long id, @PathVariable Long dqId) {
+        return paperService.deleteQuestionInPaper(id, dqId);
+    }
+
     // admin根据ID获取试卷题目详细具体内容
     @GetMapping("/admin/{id}")
     public List<Question> getPaperByIdForAdmin(@PathVariable Long id) {

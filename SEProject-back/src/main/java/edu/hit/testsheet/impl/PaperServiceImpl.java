@@ -100,5 +100,30 @@ public class PaperServiceImpl implements PaperService {
         }
         return ret;
     }
+
+    @Override
+    public List<Question> deleteQuestionInPaper(Long id, Long dqId) {
+        Paper paper = paperRepository.findById(id).orElseThrow(() -> new PaperNotFoundException(id));
+        String content = paper.getContent();
+
+        // 拆分字符串并找到等于 dqId 的元素
+        String[] questionIds = content.split(" ");
+        StringBuilder updatedContent = new StringBuilder();
+
+        for (String questionId : questionIds) {
+            if (!questionId.equals(dqId.toString())) {
+                if (updatedContent.length() > 0) {
+                    updatedContent.append(" ");
+                }
+                updatedContent.append(questionId);
+            }
+        }
+        // 更新 oldPaper 的 content
+        paper.setContent(updatedContent.toString());
+        paper.setUpdateTime(DateFormatterUtil.formatDate(LocalDateTime.now()));
+        paperRepository.save(paper);
+        return selectPaperByIdForAdmin(id);
+    }
+
 }
 
