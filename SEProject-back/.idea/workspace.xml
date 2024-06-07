@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.7-v1.7.2 删除题目后，若某试卷含有该题目，则不显示该题目，其他题目可以正常显示。" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\86139\.m2\repository" />
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="C:\Users\86139\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2hLnXEHouTe2CBYqD0idRgDl18k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/86139/Desktop/code/simt/simt_back&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15402842&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c3e860e227377f2f9c35fe38c011da6b&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Spring Boot.TestsheetApplication (1)">
+    <configuration name="PaperControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testsheet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.PaperControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuestionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testsheet" />
+      <extension name="coverage" sample_coverage="false">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.QuestionControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testsheet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testDeleteUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testsheet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.UserControllerTest" />
+      <option name="METHOD_NAME" value="testDeleteUserById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testHandleUserNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testsheet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.UserControllerTest" />
+      <option name="METHOD_NAME" value="testHandleUserNotFoundException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestsheetApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="testsheet" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.hit.testsheet.TestsheetApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestsheetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="testsheet" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="main.java.edu.hit.testsheet.TestsheetApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.PaperControllerTest" />
+      <item itemvalue="JUnit.UserControllerTest" />
+      <item itemvalue="JUnit.UserControllerTest.testDeleteUserById" />
+      <item itemvalue="JUnit.UserControllerTest.testHandleUserNotFoundException" />
+      <item itemvalue="JUnit.QuestionControllerTest" />
+      <item itemvalue="Spring Boot.TestsheetApplication" />
+      <item itemvalue="Spring Boot.TestsheetApplication (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PaperControllerTest" />
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserControllerTest.testHandleUserNotFoundException" />
+        <item itemvalue="JUnit.UserControllerTest.testDeleteUserById" />
+        <item itemvalue="JUnit.QuestionControllerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="" />
+      <created>1717382263618</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717382263618</updated>
+      <workItem from="1717382265111" duration="25496000" />
+      <workItem from="1717465837312" duration="7066000" />
+      <workItem from="1717488752819" duration="16118000" />
+      <workItem from="1717585977520" duration="11291000" />
+      <workItem from="1717671614358" duration="7744000" />
+      <workItem from="1717683550569" duration="1932000" />
+      <workItem from="1717734445407" duration="3753000" />
+      <workItem from="1717738431479" duration="191000" />
+    </task>
+    <task id="LOCAL-00001" summary="6.3-v1.0">
+      <created>1717416792580</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717416792581</updated>
+    </task>
+    <task id="LOCAL-00002" summary="6.4-v1.1">
+      <created>1717467644108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717467644108</updated>
+    </task>
+    <task id="LOCAL-00003" summary="6.4-v1.1">
+      <created>1717467658748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717467658748</updated>
+    </task>
+    <task id="LOCAL-00004" summary="6.4-v1.2  实现题目展示、题目查询及其翻页">
+      <created>1717490320694</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717490320694</updated>
+    </task>
+    <task id="LOCAL-00005" summary="6.4-v1.2  对异常进行全局处理">
+      <created>1717491747056</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717491747056</updated>
+    </task>
+    <task id="LOCAL-00006" summary="6.4-v1.3  修补">
+      <created>1717509078310</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717509078310</updated>
+    </task>
+    <task id="LOCAL-00007" summary="6.4-v1.4  增加question的analysis和tag属性">
+      <created>1717509782015</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717509782015</updated>
+    </task>
+    <task id="LOCAL-00008" summary="6.4-v1.5 实现组卷、卷子修改功能">
+      <created>1717515732506</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717515732506</updated>
+    </task>
+    <task id="LOCAL-00009" summary="6.5-v1.6 实现全部试卷查询（显示具体题目）和根据id查询试卷（显示具体题目）">
+      <created>1717587846881</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717587846881</updated>
+    </task>
+    <task id="LOCAL-00010" summary="6.5-v1.6 实现全部试卷查询（显示具体题目）和根据id查询试卷（显示具体题目）">
+      <created>1717587852556</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717587852556</updated>
+    </task>
+    <task id="LOCAL-00011" summary="6.5-v1.6.1  增加PaperToDtoUtil">
+      <created>1717590994070</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717590994070</updated>
+    </task>
+    <task id="LOCAL-00012" summary="6.5-v1.6.2  管理员查看卷子（返回Question列表）收尾">
+      <created>1717604147303</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717604147303</updated>
+    </task>
+    <task id="LOCAL-00013" summary="6.6-v1.7 查询题目功能完善，老师可以筛选自己出的题">
+      <created>1717676575022</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717676575022</updated>
+    </task>
+    <task id="LOCAL-00014" summary="6.6-v1.7 查询题目功能完善，老师可以筛选自己出的题">
+      <created>1717676581182</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717676581182</updated>
+    </task>
+    <task id="LOCAL-00015" summary="6.6-v1.7 查询题目功能完善，老师可以筛选自己出的题">
+      <created>1717676586498</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1717676586498</updated>
+    </task>
+    <task id="LOCAL-00016" summary="6.6-v1.7 查询题目功能完善，老师可以筛选自己出的题">
+      <created>1717677239039</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1717677239039</updated>
+    </task>
+    <task id="LOCAL-00017" summary="6.6-v1.7 查询题目功能完善，老师可以筛选自己出的题">
+      <created>1717677453319</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717677453319</updated>
+    </task>
+    <task id="LOCAL-00018" summary="6.7-v1.7.1 增加题目难度等级更新">
+      <created>1717734853666</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717734853666</updated>
+    </task>
+    <task id="LOCAL-00019" summary="6.7-v1.7.2 删除题目后，若某试卷含有该题目，则不显示该题目，其他题目可以正常显示。">
+      <created>1717737825784</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1717737825784</updated>
+    </task>
+    <task id="LOCAL-00020" summary="6.7-v1.7.2 删除题目后，若某试卷含有该题目，则不显示该题目，其他题目可以正常显示。">
+      <created>1717737832857</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717737832857</updated>
+    </task>
+    <task id="LOCAL-00021" summary="6.7-v1.7.2 删除题目后，若某试卷含有该题目，则不显示该题目，其他题目可以正常显示。">
+      <created>1717738270675</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717738270675</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="6.3-v1.0" />
+    <MESSAGE value="6.4-v1.1" />
+    <MESSAGE value="6.4-v1.2  实现题目展示、题目查询及其翻页" />
+    <MESSAGE value="6.4-v1.2  对异常进行全局处理" />
+    <MESSAGE value="6.4-v1.3  修补" />
+    <MESSAGE value="6.4-v1.4  增加question的analysis和tag属性" />
+    <MESSAGE value="6.4-v1.5 实现组卷、卷子修改功能" />
+    <MESSAGE value="6.5-v1.6 实现全部试卷查询（显示具体题目）和根据id查询试卷（显示具体题目）" />
+    <MESSAGE value="6.5-v1.6.1  增加PaperToDtoUtil" />
+    <MESSAGE value="6.5-v1.6.2  管理员查看卷子（返回Question列表）收尾" />
+    <MESSAGE value="6.6-v1.7 查询题目功能完善，老师可以筛选自己出的题" />
+    <MESSAGE value="6.7-v1.7.1 增加题目难度等级更新" />
+    <MESSAGE value="6.7-v1.7.2 删除题目后，若某试卷含有该题目，则不显示该题目，其他题目可以正常显示。" />
+    <option name="LAST_COMMIT_MESSAGE" value="6.7-v1.7.2 删除题目后，若某试卷含有该题目，则不显示该题目，其他题目可以正常显示。" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/testsheet$PaperControllerTest.ic" NAME="PaperControllerTest Coverage Results" MODIFIED="1717419353023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$QuestionControllerTest.ic" NAME="QuestionControllerTest Coverage Results" MODIFIED="1717407782920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest_testHandleUserNotFoundException.ic" NAME="UserControllerTest.testHandleUserNotFoundException Coverage Results" MODIFIED="1717408577292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest_testDeleteUserById.ic" NAME="UserControllerTest.testDeleteUserById Coverage Results" MODIFIED="1717408234783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1717408777127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+  </component>
+</project>
