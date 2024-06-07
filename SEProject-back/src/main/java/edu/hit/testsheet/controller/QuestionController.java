@@ -83,4 +83,14 @@ public class QuestionController {
                                           @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return questionService.selectQuestion(keywords, type, difficultLevel,username, Integer.parseInt(pageNum) - 1, 10);
     }
+
+    /**
+     * 获取当前问题共有多少页（默认每页10条记录)。
+     * @return
+     */
+    @GetMapping("/pageNum")
+    public int getQuestionsTotalPagesNum(){
+        long totalQuestions = questionService.getQuestionsCount();
+        return (int) Math.ceil((double) totalQuestions / 10);
+    }
 }

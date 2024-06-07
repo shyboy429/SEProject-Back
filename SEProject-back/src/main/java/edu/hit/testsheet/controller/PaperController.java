@@ -94,4 +94,14 @@ public class PaperController {
     public List<Question> getPaperByIdForAdmin(@PathVariable Long id) {
         return paperService.selectPaperByIdForAdmin(id);
     }
+
+    /**
+     * 获取当前问题共有多少页（默认每页10条记录)。
+     * @return
+     */
+    @GetMapping("/pageNum")
+    public int getQuestionsTotalPagesNum(){
+        long totalPapers = paperService.getPapersCount();
+        return (int) Math.ceil((double) totalPapers / 10);
+    }
 }

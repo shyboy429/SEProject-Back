@@ -130,5 +130,10 @@ public class PaperServiceImpl implements PaperService {
         return selectPaperByIdForAdmin(id);
     }
 
+    @Override
+    public long getPapersCount() {
+        return questionRepository.count();
+    }
+
 }
 

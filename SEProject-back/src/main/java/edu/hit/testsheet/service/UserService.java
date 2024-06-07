@@ -20,15 +20,9 @@ public interface UserService {
 
     List<User> getAllUser();
 
-    User addUser(User user);
-
     void deleteUserById(Long id);
 
-    void deleteUserByUsername(String username);
-
     User selectUserById(Long id);
-
-    User selectUserByUsername(String username);
 
     User updateUser(Long id, String username, String password);
 }

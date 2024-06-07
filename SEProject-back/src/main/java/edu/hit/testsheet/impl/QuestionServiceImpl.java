@@ -80,4 +80,9 @@ public class QuestionServiceImpl implements QuestionService {
                                          int pageIndex, int pageSize) {
         return questionRepository.searchQuestions(keywords, type, difficultLevel, username, pageIndex, pageSize);
     }
+
+    @Override
+    public long getQuestionsCount() {
+        return questionRepository.count();
+    }
 }

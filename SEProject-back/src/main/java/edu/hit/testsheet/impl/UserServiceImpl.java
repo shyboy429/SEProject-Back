@@ -46,11 +46,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User addUser(User user) {
-        return userRepository.save(user);
-    }
-
-    @Override
     public void deleteUserById(Long id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
@@ -60,25 +55,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUserByUsername(String username) {
-        Optional<User> userOptional = userRepository.findByUsername(username);
-        if (userOptional.isPresent()) {
-            userRepository.delete(userOptional.get());
-        } else {
-            throw new UserNotFoundException(username);
-        }
-    }
-
-    @Override
     public User selectUserById(Long id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
-    }
-
-    @Override
-    public User selectUserByUsername(String username) {
-        return userRepository.findByUsername(username)
-                .orElseThrow(() -> new UserNotFoundException(username));
     }
 
     @Override

@@ -65,31 +65,22 @@ public class UserController {
         return userService.selectUserById(id);
     }
 
-    // 根据用户名获取用户
-    @GetMapping("/username/{username}")
-    public User getUserByUsername(@PathVariable String username) {
-        return userService.selectUserByUsername(username);
-    }
-
-    // 添加用户
-    @PostMapping
-    public User addUser(@RequestBody User user) {
-        return userService.addUser(user);
-    }
-
-    // 根据ID删除用户
+    /**
+     * 根据 id删除用户
+     * @param id
+     */
     @DeleteMapping("/{id}")
     public void deleteUserById(@PathVariable Long id) {
         userService.deleteUserById(id);
     }
 
-    // 根据用户名删除用户
-    @DeleteMapping("/username/{username}")
-    public void deleteUserByUsername(@PathVariable String username) {
-        userService.deleteUserByUsername(username);
-    }
-
-    // 更新用户
+    /**
+     * 根据 id更新用户信息
+     * @param id
+     * @param username
+     * @param password
+     * @return 更新后的用户信息
+     */
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id,
                            @RequestParam(required = false) String username,

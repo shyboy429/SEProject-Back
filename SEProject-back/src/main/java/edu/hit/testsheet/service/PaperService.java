@@ -29,4 +29,6 @@ public interface PaperService {
     List<Question> selectPaperByIdForAdmin(Long id);
 
     List<Question> deleteQuestionInPaper(Long id, Long dqId);
+
+    long getPapersCount();
 }

@@ -1,9 +1,6 @@
 package edu.hit.testsheet.bean;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.util.Date;
 
 /**
  * ClassName:Paper
