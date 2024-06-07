@@ -25,7 +25,7 @@ public class PaperController {
     @Autowired
     private PaperService paperService;
 
-    // 获取所有试卷
+    // 查看所有试卷
     @GetMapping
     public List<PaperReturnDto> getAllPapers() {
         return paperService.getAllPapers();
@@ -55,7 +55,7 @@ public class PaperController {
         return paperService.updatePaper(id, paperUpdateDto);
     }
 
-    // admin根据ID获取试卷
+    // admin根据ID获取试卷题目详细具体内容
     @GetMapping("/admin/{id}")
     public List<Question> getPaperByIdForAdmin(@PathVariable Long id) {
         return paperService.selectPaperByIdForAdmin(id);
