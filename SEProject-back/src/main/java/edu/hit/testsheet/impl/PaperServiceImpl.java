@@ -12,6 +12,9 @@ import edu.hit.testsheet.service.PaperService;
 import edu.hit.testsheet.util.DateFormatterUtil;
 import edu.hit.testsheet.util.PaperToDtoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -38,8 +41,10 @@ public class PaperServiceImpl implements PaperService {
     private QuestionRepository questionRepository;
 
     @Override
-    public List<PaperReturnDto> getAllPapers() {
-        List<Paper> allPapers = paperRepository.findAll();
+    public List<PaperReturnDto> getAllPapers(int pageIndex, int pageSize) {
+        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+        Page<Paper> paperPage = paperRepository.findAll(pageable);
+        List<Paper> allPapers = paperPage.getContent();
         List<PaperReturnDto> ret = new ArrayList<>();
         for (Paper p : allPapers) {
             PaperReturnDto pret = paperToDtoUtil.convertPaperToDto(p);

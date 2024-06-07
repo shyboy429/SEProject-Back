@@ -25,43 +25,71 @@ public class PaperController {
     @Autowired
     private PaperService paperService;
 
-    // 查看所有试卷
+    /**
+     * 查看所有试卷
+     * @return List<PaperReturnDto> 所有试卷信息
+     */
     @GetMapping
-    public List<PaperReturnDto> getAllPapers() {
-        return paperService.getAllPapers();
+    public List<PaperReturnDto> getAllPapers(@RequestParam(required = false, defaultValue = "1") String pageNum) {
+        return paperService.getAllPapers(Integer.parseInt(pageNum) - 1, 10);
     }
 
-    // 添加试卷
+    /**
+     * 添加试卷
+     * @param paper
+     * @return Paper 添加的试卷信息
+     */
     @PostMapping
     public Paper addPaper(@RequestBody Paper paper) {
         return paperService.addPaper(paper);
     }
 
-    // 根据ID删除试卷
+    /**
+     * 根据试卷删除id
+     * @param id
+     */
     @DeleteMapping("/{id}")
     public void deletePaperById(@PathVariable Long id) {
         paperService.deletePaperById(id);
     }
 
-    // 根据ID获取试卷
+    /**
+     * 根据id获取试卷，并将试卷的题目从题号转化为具体的 description 内容
+     * @param id
+     * @return PaperReturnDto 返回的 Paper类型，包含具体的题目 description 信息。
+     */
     @GetMapping("/{id}")
     public PaperReturnDto getPaperById(@PathVariable Long id) {
         return paperService.selectPaperById(id);
     }
 
-    // 更新试卷
+    /**
+     * 根据id更新试卷的 title content和 introduction
+     * @param id
+     * @param paperUpdateDto
+     * @return Paper 更新后的 paper
+     */
     @PostMapping("/{id}")
     public Paper updatePaper(@PathVariable Long id, @RequestBody PaperUpdateDto paperUpdateDto) {
         return paperService.updatePaper(id, paperUpdateDto);
     }
 
-    // 删除试卷中的某道题
+    /**
+     * 删除id对应的 paper中的id为 dpId的题目
+     * @param id
+     * @param dqId
+     * @return 更新后的题目详细信息
+     */
     @PostMapping("/{id}/question/{dqId}")
     public List<Question> deleteQuestionInPaper(@PathVariable Long id, @PathVariable Long dqId) {
         return paperService.deleteQuestionInPaper(id, dqId);
     }
 
-    // admin根据ID获取试卷题目详细具体内容
+    /**
+     * 管理员编辑试卷时获取的试卷的题目详细信息
+     * @param id
+     * @return 题目详细信息
+     */
     @GetMapping("/admin/{id}")
     public List<Question> getPaperByIdForAdmin(@PathVariable Long id) {
         return paperService.selectPaperByIdForAdmin(id);

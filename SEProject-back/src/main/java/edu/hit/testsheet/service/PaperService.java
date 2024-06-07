@@ -16,7 +16,7 @@ import java.util.List;
  * @author:shyboy
  */
 public interface PaperService {
-    List<PaperReturnDto> getAllPapers();
+    List<PaperReturnDto> getAllPapers(int offset, int pageSize);
 
     Paper addPaper(Paper paper);
 

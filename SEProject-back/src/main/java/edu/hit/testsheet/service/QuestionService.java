@@ -21,5 +21,4 @@ public interface QuestionService {
 
     List<Question> selectQuestion(String keywords, String type, String difficultLevel,String username, int pageIndex,int pageSize);
 
-    List<Question> selectTeachersQuestion(String username);
 }

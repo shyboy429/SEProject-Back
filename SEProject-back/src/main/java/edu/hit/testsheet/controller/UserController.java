@@ -22,7 +22,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // 用户登录
+    /**
+     * 用户登录
+     * @param loginDto
+     * @return 登录用户的详细信息
+     */
     @PostMapping("/login")
     public User userLogin(@RequestBody LoginDto loginDto) {
         User user = userService.userLogin(loginDto.getUsername(), loginDto.getPassword());
@@ -32,19 +36,30 @@ public class UserController {
         return user;
     }
 
-    // 用户注册
+    /**
+     * 用户注册
+     * @param user
+     * @return 用户注册的详细信息
+     */
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
         return userService.registerUser(user);
     }
 
-    // 获取所有用户
+    /**
+     * 获取所有用户
+     * @return 所有用户详细信息
+     */
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUser();
     }
 
-    // 根据ID获取用户
+    /**
+     * 根据 id获取用户
+     * @param id
+     * @return 对应用户的详细信息
+     */
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Long id) {
         return userService.selectUserById(id);
