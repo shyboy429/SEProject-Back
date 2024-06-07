@@ -93,8 +93,10 @@ public class PaperServiceImpl implements PaperService {
         String[] questionIds = content.split(" ");
         for (String qid : questionIds) {
             long lqid = Long.parseLong(qid);
-            Question question = questionRepository.findById(lqid).orElseThrow(() -> new QuestionNotFoundException(lqid));
-            ret.add(question);
+            Question question = questionRepository.findById(lqid).orElse(null);
+            if(question != null){
+                ret.add(question);
+            }
         }
         return ret;
     }

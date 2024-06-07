@@ -35,16 +35,20 @@ public class PaperToDtoUtil {
         String content = paper.getContent();
         String[] questionIds = content.split(" ");
         StringBuilder specificContent = new StringBuilder();
-        for (int i = 0; i < questionIds.length; i++) {
-            String idStr = questionIds[i];
+        int questionNumber = 1;
+
+        for (String idStr : questionIds) {
             try {
                 Long questionId = Long.parseLong(idStr);
-                Question question = questionService.selectQuestionById(questionId);
-                specificContent.append("第").append(i + 1).append("题: ").append(question.getDescription()).append("\n");
+                Question question = questionService.selectQuestionByIdInPaper(questionId);
+                if (question != null) {
+                    specificContent.append("第").append(questionNumber).append("题: ").append(question.getDescription()).append("\n");
+                    questionNumber++;
+                } else {
+                    System.err.println("Question not found for ID: " + idStr);
+                }
             } catch (NumberFormatException e) {
                 System.err.println("Invalid question ID format: " + idStr);
-            } catch (QuestionNotFoundException e) {
-                System.err.println("Question not found for ID: " + idStr);
             }
         }
         pret.setSpecificContent(specificContent.toString().trim());

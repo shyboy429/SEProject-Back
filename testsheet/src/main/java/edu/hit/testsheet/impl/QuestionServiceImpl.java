@@ -59,7 +59,10 @@ public class QuestionServiceImpl implements QuestionService {
         return questionRepository.findById(id)
                 .orElseThrow(() -> new QuestionNotFoundException(id));
     }
-
+    @Override
+    public Question selectQuestionByIdInPaper(Long id){
+        return questionRepository.findById(id).orElse(null);
+    }
     @Override
     public Question updateQuestion(Long id, QuestionUpdateDto updateRequest) {
         Question question = questionRepository.findById(id)

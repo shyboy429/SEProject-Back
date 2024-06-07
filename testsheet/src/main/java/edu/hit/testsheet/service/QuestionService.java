@@ -15,6 +15,8 @@ public interface QuestionService {
 
     Question selectQuestionById(Long id);
 
+    Question selectQuestionByIdInPaper(Long id);
+
     Question updateQuestion(Long id, QuestionUpdateDto questionUpdateDto);
 
     List<Question> selectQuestion(String keywords, String type, String difficultLevel,String username, int pageIndex,int pageSize);
