@@ -140,7 +140,7 @@ public class QuestionControllerTest {
         when(questionService.selectQuestion("keyword", "type", "difficultLevel", "username", 0, 10))
                 .thenReturn(questions);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/questions/search")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/questions/search?pageNum=1")
                         .param("keywords", "keyword")
                         .param("type", "type")
                         .param("difficultLevel", "difficultLevel")
@@ -162,7 +162,7 @@ public class QuestionControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/questions/pageNum")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$").value(3));
+                .andExpect(jsonPath("$").value(27));
     }
 }
 

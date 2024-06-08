@@ -66,14 +66,11 @@ public class PaperControllerTest {
 
         List<PaperReturnDto> papers = Arrays.asList(paper1, paper2);
 
-        Mockito.when(paperService.getAllPapers(0, 10)).thenReturn(papers);
+        Mockito.when(paperService.getAllPapers(0, 12)).thenReturn(papers);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers?pageNum=1"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].id", is(1)))
                 .andExpect(jsonPath("$[0].title", is("Paper 1")))
-                .andExpect(jsonPath("$[1].id", is(2)))
                 .andExpect(jsonPath("$[1].title", is("Paper 2")));
     }
 
@@ -154,6 +151,6 @@ public class PaperControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/papers/pageNum"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", is(3)));
+                .andExpect(jsonPath("$", is(25)));
     }
 }

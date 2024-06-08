@@ -31,7 +31,7 @@ public class PaperController {
      */
     @GetMapping
     public List<PaperReturnDto> getAllPapers(@RequestParam(required = false, defaultValue = "1") String pageNum) {
-        return paperService.getAllPapers(Integer.parseInt(pageNum) - 1, 15);
+        return paperService.getAllPapers(Integer.parseInt(pageNum) - 1, 12);
     }
 
     /**
