@@ -132,7 +132,7 @@ public class PaperServiceImpl implements PaperService {
 
     @Override
     public long getPapersCount() {
-        return questionRepository.count();
+        return paperRepository.count();
     }
 
 }
