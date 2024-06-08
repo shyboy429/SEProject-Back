@@ -89,8 +89,7 @@ public class QuestionController {
      * @return
      */
     @GetMapping("/pageNum")
-    public int getQuestionsTotalPagesNum(){
-        long totalQuestions = questionService.getQuestionsCount();
-        return (int) Math.ceil((double) totalQuestions / 10);
+    public long getQuestionsTotalPagesNum(){
+        return questionService.getQuestionsCount();
     }
 }

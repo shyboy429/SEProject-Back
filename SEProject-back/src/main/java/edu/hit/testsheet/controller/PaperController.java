@@ -100,8 +100,7 @@ public class PaperController {
      * @return
      */
     @GetMapping("/pageNum")
-    public int getQuestionsTotalPagesNum(){
-        long totalPapers = paperService.getPapersCount();
-        return (int) Math.ceil((double) totalPapers / 15);
+    public long getQuestionsTotalPagesNum(){
+        return paperService.getPapersCount();
     }
 }
