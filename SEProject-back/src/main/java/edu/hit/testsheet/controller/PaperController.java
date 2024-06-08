@@ -96,11 +96,11 @@ public class PaperController {
     }
 
     /**
-     * 获取当前问题共有多少页（默认每页10条记录)。
+     * 获取试卷共有多少记录。
      * @return
      */
     @GetMapping("/pageNum")
-    public long getQuestionsTotalPagesNum(){
+    public long getPapersTotalPagesNum(){
         return paperService.getPapersCount();
     }
 }

@@ -85,7 +85,7 @@ public class QuestionController {
     }
 
     /**
-     * 获取当前问题共有多少页（默认每页10条记录)。
+     * 获取当前问题共有多少条。
      * @return
      */
     @GetMapping("/pageNum")

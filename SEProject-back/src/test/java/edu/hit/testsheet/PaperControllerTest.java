@@ -149,7 +149,7 @@ public class PaperControllerTest {
     }
 
     @Test
-    public void testGetQuestionsTotalPagesNum() throws Exception {
+    public void testGetPapersTotalPagesNum() throws Exception {
         Mockito.when(paperService.getPapersCount()).thenReturn(25L);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/papers/pageNum"))
