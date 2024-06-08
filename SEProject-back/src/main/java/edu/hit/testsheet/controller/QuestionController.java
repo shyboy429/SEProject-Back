@@ -80,7 +80,7 @@ public class QuestionController {
                                           @RequestParam(required = false) String type,
                                           @RequestParam(required = false) String difficultLevel,
                                           @RequestParam(required = false) String username,
-                                          @RequestParam(required = false, defaultValue = "1") String pageNum) {
+                                          @RequestParam(required = false, defaultValue = "0") String pageNum) {
         return questionService.selectQuestion(keywords, type, difficultLevel,username, Integer.parseInt(pageNum) - 1, 10);
     }
 

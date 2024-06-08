@@ -68,7 +68,11 @@ public class QuestionRepositoryImpl implements QuestionRepositoryCustom {
 
         // 创建查询对象
         TypedQuery<Question> query = entityManager.createQuery(cq);
-
+        if(pageIndex == -1){
+            List<Question> results = query.getResultList();
+            System.out.println("Results: " + results); // 添加日志信息
+            return results;
+        }
         // 设置分页参数
         query.setFirstResult(pageIndex * pageSize); // 设置起始位置
         query.setMaxResults(pageSize); // 设置每页的大小
