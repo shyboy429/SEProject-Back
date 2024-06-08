@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.7.7  题目筛选后分页的debug">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/QuestionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -362,7 +362,21 @@
       <option name="project" value="LOCAL" />
       <updated>1717836885390</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="6.8-v1.7.7  题目筛选后分页的debug">
+      <created>1717837214493</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1717837214493</updated>
+    </task>
+    <task id="LOCAL-00026" summary="6.8-v1.7.7  题目筛选后分页的debug">
+      <created>1717837388488</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717837388488</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
