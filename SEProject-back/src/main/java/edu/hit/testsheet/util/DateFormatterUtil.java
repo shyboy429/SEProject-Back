@@ -1,5 +1,7 @@
 package edu.hit.testsheet.util;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -11,6 +13,7 @@ import java.time.format.DateTimeFormatter;
  * @date:2024/6/4 23:22
  * @author:shyboy
  */
+@Component
 public class DateFormatterUtil {
     public static String formatDate(LocalDateTime dateTime) {
         // 创建DateTimeFormatter对象并设置自定义的日期时间格式

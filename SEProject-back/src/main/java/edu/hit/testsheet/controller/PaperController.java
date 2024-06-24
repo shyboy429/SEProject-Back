@@ -45,7 +45,7 @@ public class PaperController {
     }
 
     /**
-     * 根据试卷删除id
+     * 根据id删除试卷
      * @param id
      */
     @DeleteMapping("/{id}")

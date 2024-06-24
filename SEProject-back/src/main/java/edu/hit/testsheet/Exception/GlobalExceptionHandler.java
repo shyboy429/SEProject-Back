@@ -49,6 +49,18 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
+    @ExceptionHandler(ExamNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> handleExamNotFoundException(ExamNotFoundException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
+    @ExceptionHandler(AnswerRecordNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> handleAnswerRecordNotFoundException(AnswerRecordNotFoundException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", message);
