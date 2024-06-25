@@ -155,6 +155,8 @@ public class PaperServiceImpl implements PaperService {
         for (Question question : sortedQuestions) {
             ExamPaperDto dto = new ExamPaperDto();
             dto.setSpecificContent(question.getDescription());
+            dto.setQuestionId(question.getId());
+            dto.setQuestionType(question.getType());
             ret.add(dto);
         }
         return ret;
