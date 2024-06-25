@@ -1,5 +1,6 @@
 package edu.hit.testsheet.service;
 
+import edu.hit.testsheet.Dto.ExamReturnDto;
 import edu.hit.testsheet.bean.Exam;
 
 import java.util.List;
@@ -13,10 +14,12 @@ import java.util.List;
  * @author:shyboy
  */
 public interface ExamService {
-    List<Exam> getAllExams();
+    List<ExamReturnDto> getAllExams(int pageIndex, int pageSize);
     Exam getExamById(Long id);
     Exam getExamByName(String name);
     Exam createExam(Exam exam);
-    Exam updateExam(Long id, Exam examDetails);
     void deleteExam(Long id);
+    List<ExamReturnDto> getNotStartedExam(int pageIndex, int pageSize);
+    List<ExamReturnDto> getInProgressExam(int pageIndex, int pageSize);
+    List<ExamReturnDto> getFinishedExam(int pageIndex, int pageSize);
 }

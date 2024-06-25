@@ -104,5 +104,13 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
         answerRecordRepository.delete(answerRecord);
         return answerRecord;
     }
+
+    @Override
+    public List<AnswerRecord> submitAnswer(List<AnswerRecord> answerRecords) {
+        for(AnswerRecord a : answerRecords){
+            answerRecordRepository.save(a);
+        }
+        return answerRecords;
+    }
 }
 

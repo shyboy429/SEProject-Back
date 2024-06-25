@@ -1,5 +1,6 @@
 package edu.hit.testsheet.controller;
 
+import edu.hit.testsheet.Dto.ExamReturnDto;
 import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,23 @@ public class ExamController {
     private ExamService examService;
 
     @GetMapping
-    public List<Exam> getAllExams() {
-        return examService.getAllExams();
+    public List<ExamReturnDto> getAllExams(@RequestParam int pageIndex) {
+        return examService.getAllExams(pageIndex,10);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/not-started")
+    public List<ExamReturnDto> getNotStartedExam(@RequestParam int pageIndex){
+        return examService.getNotStartedExam(pageIndex,10);
+    }
+    @GetMapping("/in-progress")
+    public List<ExamReturnDto> getInProgressExam(@RequestParam int pageIndex){
+        return examService.getInProgressExam(pageIndex,10);
+    }
+    @GetMapping("/finished")
+    public List<ExamReturnDto> getFinishedExam(@RequestParam int pageIndex){
+        return examService.getFinishedExam(pageIndex,10);
+    }
+    @GetMapping("/id/{id}")
     public Exam getExamById(@PathVariable Long id) {
         return examService.getExamById(id);
     }
@@ -38,11 +51,6 @@ public class ExamController {
     @PostMapping
     public Exam createExam(@RequestBody Exam exam) {
         return examService.createExam(exam);
-    }
-
-    @PutMapping("/{id}")
-    public Exam updateExam(@PathVariable Long id, @RequestBody Exam examDetails) {
-        return examService.updateExam(id, examDetails);
     }
 
     @DeleteMapping("/{id}")

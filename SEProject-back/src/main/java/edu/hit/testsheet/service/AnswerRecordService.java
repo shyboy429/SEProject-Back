@@ -29,5 +29,6 @@ public interface AnswerRecordService {
     AnswerRecord updateGrade(String studentName, Long examId, Long questionId, String grade);
 
     AnswerRecord deleteAnswerRecord(Long id);
+    List<AnswerRecord> submitAnswer(List<AnswerRecord> answerRecords);
 }
 

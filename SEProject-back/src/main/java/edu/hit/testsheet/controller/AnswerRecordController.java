@@ -54,6 +54,11 @@ public class AnswerRecordController {
     AnswerRecord createAnswerRecord(@RequestBody AnswerRecord answerRecord){
         return answerRecordService.createAnswerRecord(answerRecord);
     }
+    
+    @PostMapping("/submit-answer")
+    List<AnswerRecord> submitAnswer(@RequestBody List<AnswerRecord> answerRecords){
+        return answerRecordService.submitAnswer(answerRecords);
+    }
 
     @PutMapping("/grade")
     public AnswerRecord updateGrade(

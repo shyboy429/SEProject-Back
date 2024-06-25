@@ -1,5 +1,6 @@
 package edu.hit.testsheet.controller;
 
+import edu.hit.testsheet.Dto.ExamPaperDto;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.bean.Paper;
@@ -34,6 +35,7 @@ public class PaperController {
         return paperService.getAllPapers(Integer.parseInt(pageNum) - 1, 12);
     }
 
+    
     /**
      * 添加试卷
      * @param paper
@@ -63,6 +65,8 @@ public class PaperController {
         return paperService.selectPaperById(id);
     }
 
+//    @GetMapping("/exam-paper/{id}")
+//    public List<ExamPaperDto> getExamPaper(@RequestParam())
     /**
      * 根据id更新试卷的 title content和 introduction
      * @param id

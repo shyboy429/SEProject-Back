@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -61,9 +63,15 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
+    @ExceptionHandler(InvalidExamStartTimeException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleInvalidExamTimeException(InvalidExamStartTimeException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
     private Map<String, String> createErrorResponse(String message) {
-        Map<String, String> errorResponse = new HashMap<>();
-        errorResponse.put("error", message);
-        return errorResponse;
+        Map<String, String> errorMap = new HashMap<>();
+        errorMap.put("success", "error");
+        errorMap.put("error", message);
+        return errorMap;
     }
 }
