@@ -1,5 +1,7 @@
 package edu.hit.testsheet.impl;
 
+import edu.hit.testsheet.Dto.ExamPaperDto;
+import edu.hit.testsheet.Dto.ExamReturnDto;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.Exception.PaperNotFoundException;
@@ -19,7 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * ClassName:PaperServiceImpl
@@ -135,5 +139,25 @@ public class PaperServiceImpl implements PaperService {
         return paperRepository.count();
     }
 
+    @Override
+    public List<ExamPaperDto> getExamPaper(Long id) {
+        List<Question> questions = selectPaperByIdForAdmin(id);
+        List<ExamPaperDto> ret = new ArrayList<>();
+        // 排序顺序：选择题 -> 判断题 -> 填空题 -> 问答题
+        List<Question> sortedQuestions = questions.stream()
+                .sorted(Comparator.comparingInt(q -> switch (q.getType()) {
+                    case "选择题" -> 1;
+                    case "判断题" -> 2;
+                    case "填空题" -> 3;
+                    case "问答题" -> 4;
+                    default -> 5;
+                })).toList();
+        for (Question question : sortedQuestions) {
+            ExamPaperDto dto = new ExamPaperDto();
+            dto.setSpecificContent(question.getDescription());
+            ret.add(dto);
+        }
+        return ret;
+    }
 }
 

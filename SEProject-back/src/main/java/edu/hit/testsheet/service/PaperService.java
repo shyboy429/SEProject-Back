@@ -1,5 +1,6 @@
 package edu.hit.testsheet.service;
 
+import edu.hit.testsheet.Dto.ExamPaperDto;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.bean.Paper;
@@ -31,4 +32,5 @@ public interface PaperService {
     List<Question> deleteQuestionInPaper(Long id, Long dqId);
 
     long getPapersCount();
+    List<ExamPaperDto> getExamPaper(Long id);
 }

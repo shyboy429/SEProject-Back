@@ -22,22 +22,23 @@ public class ExamController {
     private ExamService examService;
 
     @GetMapping
-    public List<ExamReturnDto> getAllExams(@RequestParam int pageIndex) {
-        return examService.getAllExams(pageIndex,10);
+    public List<ExamReturnDto> getAllExams(@RequestParam(required = false, defaultValue = "1") String pageNum) {
+        return examService.getAllExams(Integer.parseInt(pageNum) - 1,10);
     }
 
     @GetMapping("/not-started")
-    public List<ExamReturnDto> getNotStartedExam(@RequestParam int pageIndex){
-        return examService.getNotStartedExam(pageIndex,10);
+    public List<ExamReturnDto> getNotStartedExam(@RequestParam(required = false, defaultValue = "1") String pageNum){
+        return examService.getNotStartedExam(Integer.parseInt(pageNum) - 1,10);
     }
     @GetMapping("/in-progress")
-    public List<ExamReturnDto> getInProgressExam(@RequestParam int pageIndex){
-        return examService.getInProgressExam(pageIndex,10);
+    public List<ExamReturnDto> getInProgressExam(@RequestParam(required = false, defaultValue = "1") String pageNum){
+        return examService.getInProgressExam(Integer.parseInt(pageNum) - 1,10);
     }
     @GetMapping("/finished")
-    public List<ExamReturnDto> getFinishedExam(@RequestParam int pageIndex){
-        return examService.getFinishedExam(pageIndex,10);
+    public List<ExamReturnDto> getFinishedExam(@RequestParam(required = false, defaultValue = "1") String pageNum){
+        return examService.getFinishedExam(Integer.parseInt(pageNum) - 1,10);
     }
+    
     @GetMapping("/id/{id}")
     public Exam getExamById(@PathVariable Long id) {
         return examService.getExamById(id);

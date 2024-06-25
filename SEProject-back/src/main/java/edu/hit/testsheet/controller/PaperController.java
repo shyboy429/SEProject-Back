@@ -65,8 +65,10 @@ public class PaperController {
         return paperService.selectPaperById(id);
     }
 
-//    @GetMapping("/exam-paper/{id}")
-//    public List<ExamPaperDto> getExamPaper(@RequestParam())
+    @GetMapping("/exam-paper/{id}")
+    public List<ExamPaperDto> getExamPaper(@PathVariable Long id){
+        return paperService.getExamPaper(id);
+    }
     /**
      * 根据id更新试卷的 title content和 introduction
      * @param id
