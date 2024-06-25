@@ -50,7 +50,7 @@ public class ExamServiceImpl implements ExamService {
     public Exam updateExam(Long id, Exam examDetails) {
         Exam exam = getExamById(id);
         exam.setName(examDetails.getName());
-        exam.setPaperTitle(examDetails.getPaperTitle());
+        exam.setPaperId(examDetails.getPaperId());
         exam.setPublisher(examDetails.getPublisher());
         exam.setStartTime(examDetails.getStartTime());
         exam.setEndTime(examDetails.getEndTime());

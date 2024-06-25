@@ -52,11 +52,11 @@ public class Exam {
         this.name = name;
     }
 
-    public Long getPaperTitle() {
+    public Long getPaperId() {
         return paperId;
     }
 
-    public void setPaperTitle(Long paperId) {
+    public void setPaperId(Long paperId) {
         this.paperId = paperId;
     }
 

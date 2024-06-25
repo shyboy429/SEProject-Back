@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成" />
+    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/bean/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/bean/Exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +72,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserControllerTest">
+  <component name="RunManager" selected="Spring Boot.TestsheetApplication (2)">
     <configuration name="PaperControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
@@ -81,22 +84,6 @@
       <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
       <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.PaperControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaperControllerTest.testGetAllPapers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SEProject-back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.PaperControllerTest" />
-      <option name="METHOD_NAME" value="testGetAllPapers" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,6 +141,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestsheetApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="SEProject-back" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.hit.testsheet.TestsheetApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestsheetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="testsheet" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="main.java.edu.hit.testsheet.TestsheetApplication" />
@@ -163,20 +163,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PaperControllerTest (1)" />
-      <item itemvalue="JUnit.PaperControllerTest.testGetAllPapers" />
       <item itemvalue="JUnit.QuestionControllerTest.testSearchQuestions" />
       <item itemvalue="JUnit.UserControllerTest" />
       <item itemvalue="JUnit.QuestionControllerTest" />
       <item itemvalue="Spring Boot.TestsheetApplication" />
       <item itemvalue="Spring Boot.TestsheetApplication (1)" />
+      <item itemvalue="Spring Boot.TestsheetApplication (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.TestsheetApplication (2)" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.QuestionControllerTest" />
         <item itemvalue="JUnit.QuestionControllerTest.testSearchQuestions" />
         <item itemvalue="JUnit.PaperControllerTest (1)" />
-        <item itemvalue="JUnit.PaperControllerTest.testGetAllPapers" />
       </list>
     </recent_temporary>
   </component>
@@ -208,6 +208,7 @@
       <workItem from="1719154762610" duration="2255000" />
       <workItem from="1719198894576" duration="4042000" />
       <workItem from="1719235100988" duration="4887000" />
+      <workItem from="1719313351192" duration="2104000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>
