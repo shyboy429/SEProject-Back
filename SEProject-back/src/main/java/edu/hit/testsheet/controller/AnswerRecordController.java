@@ -39,17 +39,6 @@ public class AnswerRecordController {
         return answerRecordService.getAnswerRecordByStudentNameAndExamIdAndQuestionId(studentName, examId, questionId);
     }
     
-    @GetMapping("/automatic-marking")
-    public List<AnswerRecord> automaticMarking(@RequestParam String studentName, @RequestParam Long examId) {
-        return answerRecordService.automaticMarking(studentName, examId);
-    }
-    
-    @GetMapping("/obj-sub-grades")
-    public long[] getObjAndSubGrade(@RequestParam String studentName,@RequestParam Long examId){
-        return answerRecordService.calculateObjAndSubGrades(studentName, examId);
-    }
-
-
     @PostMapping()
     AnswerRecord createAnswerRecord(@RequestBody AnswerRecord answerRecord){
         return answerRecordService.createAnswerRecord(answerRecord);
@@ -57,7 +46,8 @@ public class AnswerRecordController {
     
     @PostMapping("/submit-answer")
     List<AnswerRecord> submitAnswer(@RequestBody List<AnswerRecord> answerRecords){
-        return answerRecordService.submitAnswer(answerRecords);
+        answerRecordService.submitAnswer(answerRecords);
+        return answerRecordService.automaticMarking(answerRecords.get(0).getStudentName(),answerRecords.get(0).getExamId());
     }
 
     @PutMapping("/grade")

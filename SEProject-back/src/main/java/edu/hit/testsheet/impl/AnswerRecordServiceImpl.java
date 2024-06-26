@@ -78,7 +78,7 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
 
     @Override
     public long[] calculateObjAndSubGrades(String studentName, Long examId) {
-        List<AnswerRecord> answerRecords = automaticMarking(studentName,examId);
+        List<AnswerRecord> answerRecords = getAnswerRecordByStudentNameAndExamId(studentName,examId);
         return calculateQuestionsScoreUtil.calculateScore(answerRecords);
     }
 
@@ -107,9 +107,7 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
 
     @Override
     public List<AnswerRecord> submitAnswer(List<AnswerRecord> answerRecords) {
-        for(AnswerRecord a : answerRecords){
-            answerRecordRepository.save(a);
-        }
+        answerRecordRepository.saveAll(answerRecords);
         return answerRecords;
     }
     

@@ -19,6 +19,15 @@ public class ExamReturnDto {
     private String durationTime;
     private String status;
     private String answerStatus = "未完成";
+    private long[] objAndSubGrade;
+
+    public long[] getObjAndSubGrade() {
+        return objAndSubGrade;
+    }
+
+    public void setObjAndSubGrade(long[] objAndSubGrade) {
+        this.objAndSubGrade = objAndSubGrade;
+    }
 
     public String getAnswerStatus() {
         return answerStatus;

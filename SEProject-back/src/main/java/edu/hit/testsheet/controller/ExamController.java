@@ -29,8 +29,8 @@ public class ExamController {
      * @param pageNum
      * @return
      */
-    @GetMapping("/student-name/{student-name}")
-    public List<ExamReturnDto> getAllExams(@PathVariable String studentName,
+    @GetMapping("/student-name")
+    public List<ExamReturnDto> getAllExams(@RequestParam(required = false) String studentName,
                                            @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getAllExams(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
@@ -41,8 +41,8 @@ public class ExamController {
      * @param pageNum
      * @return
      */
-    @GetMapping("/student-name/{student-name}/not-started")
-    public List<ExamReturnDto> getNotStartedExam(@PathVariable String studentName,
+    @GetMapping("/student-name/not-started")
+    public List<ExamReturnDto> getNotStartedExam(@RequestParam(required = false) String studentName,
                                                  @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getNotStartedExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
@@ -53,8 +53,8 @@ public class ExamController {
      * @param pageNum
      * @return
      */
-    @GetMapping("/student-name/{student-name}/in-progress")
-    public List<ExamReturnDto> getInProgressExam(@PathVariable String studentName,
+    @GetMapping("/student-name/in-progress")
+    public List<ExamReturnDto> getInProgressExam(@RequestParam(required = false) String studentName,
                                                  @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getInProgressExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
@@ -65,8 +65,8 @@ public class ExamController {
      * @param pageNum
      * @return
      */
-    @GetMapping("/student-name/{student-name}/finished")
-    public List<ExamReturnDto> getFinishedExam(@PathVariable String studentName,
+    @GetMapping("/student-name/finished")
+    public List<ExamReturnDto> getFinishedExam(@RequestParam(required = false) String studentName,
                                                @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getFinishedExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
@@ -96,21 +96,37 @@ public class ExamController {
         examService.deleteExam(id);
     }
 
+    /**
+     * 获取所有考试记录条数
+     * @return
+     */
     @GetMapping("/page-num")
     public long getAllExamsPagesNum() {
         return examService.getAllExamsPagesNum();
     }
 
+    /**
+     * 获取未开始考试记录条数
+     * @return
+     */
     @GetMapping("/not-started/page-num")
     public long getNotStartedPagesNum() {
         return examService.getNotStartedPagesNum();
     }
 
+    /**
+     * 获取进行中考试记录条数
+     * @return
+     */
     @GetMapping("/in-progress/page-num")
     public long getInProgressPagesNum() {
         return examService.getInProgressPagesNum();
     }
 
+    /**
+     * 获取已结束考试记录条数
+     * @return
+     */
     @GetMapping("/finished/page-num")
     public long getFinishedPagesNum() {
         return examService.getFinishedPagesNum();

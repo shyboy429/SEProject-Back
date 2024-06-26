@@ -1,6 +1,7 @@
 package edu.hit.testsheet.util;
 
 import edu.hit.testsheet.Dto.ExamReturnDto;
+import edu.hit.testsheet.bean.AnswerRecord;
 import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.service.AnswerRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ public class ExamListToDtoListUtil {
             e.setStartTime(exam.getStartTime());
             e.setEndTime(exam.getEndTime());
             e.setDurationTime(exam.getDurationTime());
+            long[] objAndSubGrades = answerRecordService.calculateObjAndSubGrades(studentName, exam.getId());
+            e.setObjAndSubGrade(objAndSubGrades);
             if (status == null) {
                 if (DateFormatterUtil.isBeforeCurrentTime(exam.getEndTime())) {
                     e.setStatus("已结束");
@@ -48,6 +51,8 @@ public class ExamListToDtoListUtil {
                 if (answerRecordService.existsByStudentName(studentName)) {
                     e.setAnswerStatus("已完成");
                 }
+            }else{
+                e.setAnswerStatus("当前为管理员或老师");
             }
             ret.add(e);
         }
