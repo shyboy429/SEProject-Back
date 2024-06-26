@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/ExamReturnDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/ExamReturnDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/ExamPaperDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/ExamPaperDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/AnswerRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/AnswerRecordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/AnswerRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/AnswerRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/ExamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/ExamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/PaperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/PaperServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/PaperRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/PaperRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/PaperControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/PaperControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.TestsheetApplication (2)">
+  <component name="RunManager" selected="JUnit.PaperControllerTest.testGetExamPaper">
     <configuration name="edu.hit.testsheet.util.DateFormatterUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.util.DateFormatterUtil" />
       <module name="SEProject-back" />
@@ -88,6 +87,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaperControllerTest.testGetExamPaper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SEProject-back" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.PaperControllerTest" />
+      <option name="METHOD_NAME" value="testGetExamPaper" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,22 +118,6 @@
       <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
       <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.QuestionControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuestionControllerTest.testSearchQuestions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SEProject-back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.QuestionControllerTest" />
-      <option name="METHOD_NAME" value="testSearchQuestions" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,7 +166,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.edu.hit.testsheet.util.DateFormatterUtil" />
-      <item itemvalue="JUnit.QuestionControllerTest.testSearchQuestions" />
+      <item itemvalue="JUnit.PaperControllerTest.testGetExamPaper" />
       <item itemvalue="JUnit.UserControllerTest" />
       <item itemvalue="JUnit.QuestionControllerTest" />
       <item itemvalue="Spring Boot.TestsheetApplication" />
@@ -176,11 +175,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaperControllerTest.testGetExamPaper" />
         <item itemvalue="Spring Boot.TestsheetApplication (2)" />
         <item itemvalue="Application.edu.hit.testsheet.util.DateFormatterUtil" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.QuestionControllerTest" />
-        <item itemvalue="JUnit.QuestionControllerTest.testSearchQuestions" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +212,7 @@
       <workItem from="1719198894576" duration="4042000" />
       <workItem from="1719235100988" duration="4887000" />
       <workItem from="1719313351192" duration="15411000" />
-      <workItem from="1719401907229" duration="5467000" />
+      <workItem from="1719401907229" duration="8690000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>
@@ -464,6 +463,9 @@
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testSearchQuestions.ic" NAME="QuestionControllerTest.testSearchQuestions Coverage Results" MODIFIED="1717844847575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$PaperControllerTest_testGetExamPaper.ic" NAME="PaperControllerTest.testGetExamPaper Coverage Results" MODIFIED="1719411092915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/testsheet$QuestionControllerTest.ic" NAME="QuestionControllerTest Coverage Results" MODIFIED="1717407782920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">

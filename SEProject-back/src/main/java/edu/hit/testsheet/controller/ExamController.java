@@ -22,24 +22,49 @@ public class ExamController {
     @Autowired
     private ExamService examService;
 
+
+    /**
+     * 获取该学生所有考试的信息
+     * @param studentName
+     * @param pageNum
+     * @return
+     */
     @GetMapping("/student-name/{student-name}")
     public List<ExamReturnDto> getAllExams(@PathVariable String studentName,
                                            @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getAllExams(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
 
+    /**
+     * 获取该学生未开始考试的信息
+     * @param studentName
+     * @param pageNum
+     * @return
+     */
     @GetMapping("/student-name/{student-name}/not-started")
     public List<ExamReturnDto> getNotStartedExam(@PathVariable String studentName,
                                                  @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getNotStartedExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
 
+    /**
+     * 获取该学生进行中考试的信息
+     * @param studentName
+     * @param pageNum
+     * @return
+     */
     @GetMapping("/student-name/{student-name}/in-progress")
     public List<ExamReturnDto> getInProgressExam(@PathVariable String studentName,
                                                  @RequestParam(required = false, defaultValue = "1") String pageNum) {
         return examService.getInProgressExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
 
+    /**
+     * 获取该学生已结束考试的信息
+     * @param studentName
+     * @param pageNum
+     * @return
+     */
     @GetMapping("/student-name/{student-name}/finished")
     public List<ExamReturnDto> getFinishedExam(@PathVariable String studentName,
                                                @RequestParam(required = false, defaultValue = "1") String pageNum) {
@@ -56,11 +81,16 @@ public class ExamController {
         return examService.getExamByName(name);
     }
 
+    /**
+     * 管理员发布一场新的考试
+     * @param exam
+     * @return
+     */
     @PostMapping
     public Exam createExam(@RequestBody Exam exam) {
         return examService.createExam(exam);
     }
-
+    
     @DeleteMapping("/{id}")
     public void deleteExam(@PathVariable Long id) {
         examService.deleteExam(id);

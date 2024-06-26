@@ -1,5 +1,6 @@
 package edu.hit.testsheet;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.hit.testsheet.Dto.ExamPaperDto;
 import edu.hit.testsheet.bean.Question;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -153,4 +155,30 @@ public class PaperControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", is(25)));
     }
+
+    @Test
+    public void testGetExamPaper() throws Exception {
+        // 创建一个ExamPaperDto对象作为模拟数据
+        ExamPaperDto examPaperDto1 = new ExamPaperDto();
+        examPaperDto1.setId(1L);
+        examPaperDto1.setDescription("1 + 1 = ");
+        examPaperDto1.setType("填空题");
+
+        // 创建一个ExamPaperDto对象列表
+        List<ExamPaperDto> examPaperDtos = new ArrayList<>();
+        examPaperDtos.add(examPaperDto1);
+
+        // 模拟PaperService的getExamPaper方法的行为
+        Mockito.when(paperService.getExamPaper(3L)).thenReturn(examPaperDtos);
+
+        // 发送GET请求，并期望返回状态码为200
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/papers/exam-paper/3"))
+                .andExpect(status().isOk())
+                // 验证响应的JSON主体是否与预期一致
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].id", is(1)))
+                .andExpect(jsonPath("$[0].description", is("1 + 1 = ")))
+                .andExpect(jsonPath("$[0].type", is("填空题")));
+    }
+
 }

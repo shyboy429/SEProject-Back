@@ -47,8 +47,6 @@ public class ExamListToDtoListUtil {
             if (studentName != null) {
                 if (answerRecordService.existsByStudentName(studentName)) {
                     e.setAnswerStatus("已完成");
-                } else {
-                    e.setAnswerStatus("未完成");
                 }
             }
             ret.add(e);

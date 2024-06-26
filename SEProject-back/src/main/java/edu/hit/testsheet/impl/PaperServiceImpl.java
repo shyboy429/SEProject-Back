@@ -1,7 +1,6 @@
 package edu.hit.testsheet.impl;
 
 import edu.hit.testsheet.Dto.ExamPaperDto;
-import edu.hit.testsheet.Dto.ExamReturnDto;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
 import edu.hit.testsheet.Exception.PaperNotFoundException;
@@ -154,9 +153,9 @@ public class PaperServiceImpl implements PaperService {
                 })).toList();
         for (Question question : sortedQuestions) {
             ExamPaperDto dto = new ExamPaperDto();
-            dto.setSpecificContent(question.getDescription());
-            dto.setQuestionId(question.getId());
-            dto.setQuestionType(question.getType());
+            dto.setDescription(question.getDescription());
+            dto.setId(question.getId());
+            dto.setType(question.getType());
             ret.add(dto);
         }
         return ret;

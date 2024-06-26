@@ -65,6 +65,11 @@ public class PaperController {
         return paperService.selectPaperById(id);
     }
 
+    /**
+     * 根据id获取考试试卷，其中各类型题目顺序排列，且不返回答案信息，使得学生无法在控制台根据响应JSON串查看到答案。
+     * @param id
+     * @return List<ExamPaperDto> 考试试卷中的题目信息列表。
+     */
     @GetMapping("/exam-paper/{id}")
     public List<ExamPaperDto> getExamPaper(@PathVariable Long id){
         return paperService.getExamPaper(id);

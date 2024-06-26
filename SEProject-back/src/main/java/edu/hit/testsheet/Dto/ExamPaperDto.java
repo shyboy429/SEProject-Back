@@ -9,32 +9,32 @@ package edu.hit.testsheet.Dto;
  * @author:shyboy
  */
 public class ExamPaperDto {
-    private Long questionId;
-    private String specificContent;
+    private Long id;
+    private String description;
     
-    private String questionType;
+    private String type;
 
-    public Long getQuestionId() {
-        return questionId;
+    public Long getId() {
+        return id;
     }
 
-    public void setQuestionId(Long questionId) {
-        this.questionId = questionId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getQuestionType() {
-        return questionType;
+    public String getType() {
+        return type;
     }
 
-    public void setQuestionType(String questionType) {
-        this.questionType = questionType;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getSpecificContent() {
-        return specificContent;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSpecificContent(String specificContent) {
-        this.specificContent = specificContent;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
