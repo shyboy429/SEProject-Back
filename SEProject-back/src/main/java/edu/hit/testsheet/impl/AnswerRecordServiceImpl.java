@@ -112,5 +112,10 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
         }
         return answerRecords;
     }
+    
+    @Override
+    public boolean existsByStudentName(String studentName) {
+        return answerRecordRepository.existsByStudentName(studentName);
+    }
 }
 

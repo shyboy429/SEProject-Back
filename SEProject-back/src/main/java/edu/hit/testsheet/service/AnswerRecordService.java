@@ -30,5 +30,7 @@ public interface AnswerRecordService {
 
     AnswerRecord deleteAnswerRecord(Long id);
     List<AnswerRecord> submitAnswer(List<AnswerRecord> answerRecords);
+
+    boolean existsByStudentName(String studentName);
 }
 

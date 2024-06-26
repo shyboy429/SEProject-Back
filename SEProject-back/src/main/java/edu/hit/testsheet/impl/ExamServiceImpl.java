@@ -32,59 +32,83 @@ public class ExamServiceImpl implements ExamService {
 
     @Autowired
     private ExamRepository examRepository;
+    @Autowired
+    private ExamListToDtoListUtil examListToDtoListUtil;
     
-
     @Override
-    public List<ExamReturnDto> getAllExams(int pageIndex, int pageSize) {
+    public List<ExamReturnDto> getAllExams(String studentName,int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         Page<Exam> paperPage = examRepository.findAll(pageable);
         List<Exam> allExams = paperPage.getContent();
-        List<ExamReturnDto> ret = new ArrayList<>();
-        for(Exam exam : allExams){
-            ExamReturnDto e = new ExamReturnDto();
-            e.setId(exam.getId());
-            e.setName(exam.getName());
-            e.setPaperId(exam.getPaperId());
-            e.setPublisher(exam.getPublisher());
-            e.setStartTime(exam.getStartTime());
-            e.setEndTime(exam.getEndTime());
-            e.setDurationTime(exam.getDurationTime());
-            if(DateFormatterUtil.isBeforeCurrentTime(exam.getEndTime())){
-                e.setStatus("已结束");
-            }else if(DateFormatterUtil.isBeforeCurrentTime(exam.getStartTime())){
-                e.setStatus("进行中");
-            }else{
-                e.setStatus("未开始");
+        return examListToDtoListUtil.convertExamListToDtoList(studentName,allExams,null);
+    }
+
+    @Override
+    public List<ExamReturnDto> getNotStartedExam(String studentName,int pageIndex, int pageSize) {
+        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+        String currentTime = DateFormatterUtil.getCurrentTimeString();
+        Page<Exam> paperPage = examRepository.findNotStartedExams(currentTime, pageable);
+        return examListToDtoListUtil.convertExamListToDtoList(studentName,paperPage.getContent(),"未开始");
+    }
+
+    @Override
+    public List<ExamReturnDto> getInProgressExam(String studentName,int pageIndex, int pageSize) {
+        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+        String currentTime = DateFormatterUtil.getCurrentTimeString();
+        Page<Exam> paperPage = examRepository.findInProgressExams(currentTime, pageable);
+        return examListToDtoListUtil.convertExamListToDtoList(studentName,paperPage.getContent(),"进行中");
+    }
+
+    @Override
+    public List<ExamReturnDto> getFinishedExam(String studentName,int pageIndex, int pageSize) {
+        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+        String currentTime = DateFormatterUtil.getCurrentTimeString();
+        Page<Exam> paperPage = examRepository.findFinishedExams(currentTime, pageable);
+        return examListToDtoListUtil.convertExamListToDtoList(studentName,paperPage.getContent(),"已结束");
+    }
+
+    @Override
+    public long getAllExamsPagesNum() {
+        List<ExamReturnDto> allExams = getAllExamsDto();
+        return allExams.size();
+    }
+
+    @Override
+    public long getNotStartedPagesNum() {
+        List<ExamReturnDto> allExams = getAllExamsDto();
+        long ret = 0;
+        for(ExamReturnDto e : allExams){
+            if(e.getStatus().equals("未开始")){
+                ret++;
             }
-            ret.add(e);
         }
         return ret;
     }
 
     @Override
-    public List<ExamReturnDto> getNotStartedExam(int pageIndex, int pageSize) {
-        Pageable pageable = PageRequest.of(pageIndex, pageSize);
-        String currentTime = DateFormatterUtil.getCurrentTimeString();
-        Page<Exam> paperPage = examRepository.findNotStartedExams(currentTime, pageable);
-        return ExamListToDtoListUtil.convertExamListToDtoList(paperPage.getContent(), "未开始");
+    public long getInProgressPagesNum() {
+        List<ExamReturnDto> allExams = getAllExamsDto();
+        long ret = 0;
+        for(ExamReturnDto e : allExams){
+            if(e.getStatus().equals("进行中")){
+                ret++;
+            }
+        }
+        return ret;
     }
 
     @Override
-    public List<ExamReturnDto> getInProgressExam(int pageIndex, int pageSize) {
-        Pageable pageable = PageRequest.of(pageIndex, pageSize);
-        String currentTime = DateFormatterUtil.getCurrentTimeString();
-        Page<Exam> paperPage = examRepository.findInProgressExams(currentTime, pageable);
-        return ExamListToDtoListUtil.convertExamListToDtoList(paperPage.getContent(), "进行中");
+    public long getFinishedPagesNum() {
+        List<ExamReturnDto> allExams = getAllExamsDto();
+        long ret = 0;
+        for(ExamReturnDto e : allExams){
+            if(e.getStatus().equals("已结束")){
+                ret++;
+            }
+        }
+        return ret;
     }
 
-    @Override
-    public List<ExamReturnDto> getFinishedExam(int pageIndex, int pageSize) {
-        Pageable pageable = PageRequest.of(pageIndex, pageSize);
-        String currentTime = DateFormatterUtil.getCurrentTimeString();
-        Page<Exam> paperPage = examRepository.findFinishedExams(currentTime, pageable);
-        return ExamListToDtoListUtil.convertExamListToDtoList(paperPage.getContent(), "已结束");
-    }
-    
     @Override
     public Exam getExamById(Long id) {
         Optional<Exam> exam = examRepository.findById(id);
@@ -111,5 +135,10 @@ public class ExamServiceImpl implements ExamService {
     public void deleteExam(Long id) {
         Exam exam = getExamById(id);
         examRepository.delete(exam);
+    }
+
+    private List<ExamReturnDto> getAllExamsDto(){
+        List<Exam> allExams = examRepository.findAll();
+        return examListToDtoListUtil.convertExamListToDtoList(null,allExams,null);
     }
 }

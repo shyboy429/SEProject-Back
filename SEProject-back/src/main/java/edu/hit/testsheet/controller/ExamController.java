@@ -5,6 +5,7 @@ import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -21,24 +22,30 @@ public class ExamController {
     @Autowired
     private ExamService examService;
 
-    @GetMapping
-    public List<ExamReturnDto> getAllExams(@RequestParam(required = false, defaultValue = "1") String pageNum) {
-        return examService.getAllExams(Integer.parseInt(pageNum) - 1,10);
+    @GetMapping("/student-name/{student-name}")
+    public List<ExamReturnDto> getAllExams(@PathVariable String studentName,
+                                           @RequestParam(required = false, defaultValue = "1") String pageNum) {
+        return examService.getAllExams(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
 
-    @GetMapping("/not-started")
-    public List<ExamReturnDto> getNotStartedExam(@RequestParam(required = false, defaultValue = "1") String pageNum){
-        return examService.getNotStartedExam(Integer.parseInt(pageNum) - 1,10);
+    @GetMapping("/student-name/{student-name}/not-started")
+    public List<ExamReturnDto> getNotStartedExam(@PathVariable String studentName,
+                                                 @RequestParam(required = false, defaultValue = "1") String pageNum) {
+        return examService.getNotStartedExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
-    @GetMapping("/in-progress")
-    public List<ExamReturnDto> getInProgressExam(@RequestParam(required = false, defaultValue = "1") String pageNum){
-        return examService.getInProgressExam(Integer.parseInt(pageNum) - 1,10);
+
+    @GetMapping("/student-name/{student-name}/in-progress")
+    public List<ExamReturnDto> getInProgressExam(@PathVariable String studentName,
+                                                 @RequestParam(required = false, defaultValue = "1") String pageNum) {
+        return examService.getInProgressExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
-    @GetMapping("/finished")
-    public List<ExamReturnDto> getFinishedExam(@RequestParam(required = false, defaultValue = "1") String pageNum){
-        return examService.getFinishedExam(Integer.parseInt(pageNum) - 1,10);
+
+    @GetMapping("/student-name/{student-name}/finished")
+    public List<ExamReturnDto> getFinishedExam(@PathVariable String studentName,
+                                               @RequestParam(required = false, defaultValue = "1") String pageNum) {
+        return examService.getFinishedExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
-    
+
     @GetMapping("/id/{id}")
     public Exam getExamById(@PathVariable Long id) {
         return examService.getExamById(id);
@@ -57,6 +64,26 @@ public class ExamController {
     @DeleteMapping("/{id}")
     public void deleteExam(@PathVariable Long id) {
         examService.deleteExam(id);
+    }
+
+    @GetMapping("/page-num")
+    public long getAllExamsPagesNum() {
+        return examService.getAllExamsPagesNum();
+    }
+
+    @GetMapping("/not-started/page-num")
+    public long getNotStartedPagesNum() {
+        return examService.getNotStartedPagesNum();
+    }
+
+    @GetMapping("/in-progress/page-num")
+    public long getInProgressPagesNum() {
+        return examService.getInProgressPagesNum();
+    }
+
+    @GetMapping("/finished/page-num")
+    public long getFinishedPagesNum() {
+        return examService.getFinishedPagesNum();
     }
 }
 

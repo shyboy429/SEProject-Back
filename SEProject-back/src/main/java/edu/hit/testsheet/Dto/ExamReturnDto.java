@@ -18,6 +18,15 @@ public class ExamReturnDto {
     private String endTime;
     private String durationTime;
     private String status;
+    private String answerStatus = "未完成";
+
+    public String getAnswerStatus() {
+        return answerStatus;
+    }
+
+    public void setAnswerStatus(String answerStatus) {
+        this.answerStatus = answerStatus;
+    }
 
     public Long getId() {
         return id;
