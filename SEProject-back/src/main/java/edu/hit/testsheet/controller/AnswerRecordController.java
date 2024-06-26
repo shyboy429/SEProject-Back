@@ -21,18 +21,18 @@ public class AnswerRecordController {
     @Autowired
     private AnswerRecordService answerRecordService;
     
-    @GetMapping("/student-name/{student-name}")
+    @GetMapping("/student-name/{studentName}")
     public List<List<AnswerRecord>> getAnswerRecordByStudentName(@PathVariable String studentName){
         return answerRecordService.getAnswerRecordByStudentName(studentName);
     }
 
-    @GetMapping("/student-name/{student-name}/exam-id/{exam-id}")
+    @GetMapping("/student-name/{studentName}/exam-id/{examId}")
     public List<AnswerRecord> getAnswerRecordByStudentNameAndExamId(@PathVariable String studentName,
                                                                     @PathVariable Long examId) {
         return answerRecordService.getAnswerRecordByStudentNameAndExamId(studentName, examId);
     }
 
-    @GetMapping("/student-name/{student-name}/exam-id/{exam-id}/question-id/{question-id}")
+    @GetMapping("/student-name/{studentName}/exam-id/{examId}/question-id/{questionId}")
     AnswerRecord getAnswerRecordByStudentNameAndExamIdAndQuestionId(@PathVariable String studentName,
                                                                     @PathVariable Long examId,
                                                                     @PathVariable Long questionId) {
