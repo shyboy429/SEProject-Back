@@ -2,97 +2,8 @@
 <dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
     <root id="1">
-      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||root|localhost|ALTER|G
-|root||root|localhost|ALTER ROUTINE|G
-|root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
-|root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
-|root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
-|root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
-|root||root|localhost|AUDIT_ABORT_EXEMPT|G
-|root||root|localhost|AUDIT_ADMIN|G
-|root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
-|root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
-|root||mysql.session|localhost|BACKUP_ADMIN|G
-|root||root|localhost|BACKUP_ADMIN|G
-|root||root|localhost|BINLOG_ADMIN|G
-|root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
-|root||mysql.session|localhost|CLONE_ADMIN|G
-|root||root|localhost|CLONE_ADMIN|G
-|root||mysql.session|localhost|CONNECTION_ADMIN|G
-|root||root|localhost|CONNECTION_ADMIN|G
-|root||root|localhost|CREATE|G
-|root||root|localhost|CREATE ROLE|G
-|root||root|localhost|CREATE ROUTINE|G
-|root||root|localhost|CREATE TABLESPACE|G
-|root||root|localhost|CREATE TEMPORARY TABLES|G
-|root||root|localhost|CREATE USER|G
-|root||root|localhost|CREATE VIEW|G
-|root||root|localhost|DELETE|G
-|root||root|localhost|DROP|G
-|root||root|localhost|DROP ROLE|G
-|root||root|localhost|ENCRYPTION_KEY_ADMIN|G
-|root||root|localhost|EVENT|G
-|root||root|localhost|EXECUTE|G
-|root||root|localhost|FILE|G
-|root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
-|root||mysql.session|localhost|FIREWALL_EXEMPT|G
-|root||mysql.sys|localhost|FIREWALL_EXEMPT|G
-|root||root|localhost|FIREWALL_EXEMPT|G
-|root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
-|root||root|localhost|FLUSH_STATUS|G
-|root||root|localhost|FLUSH_TABLES|G
-|root||root|localhost|FLUSH_USER_RESOURCES|G
-|root||root|localhost|GROUP_REPLICATION_ADMIN|G
-|root||root|localhost|GROUP_REPLICATION_STREAM|G
-|root||root|localhost|INDEX|G
-|root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
-|root||root|localhost|INNODB_REDO_LOG_ENABLE|G
-|root||root|localhost|INSERT|G
-|root||root|localhost|LOCK TABLES|G
-|root||root|localhost|PASSWORDLESS_USER_ADMIN|G
-|root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
-|root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
-|root||root|localhost|PROCESS|G
-|root||root|localhost|REFERENCES|G
-|root||root|localhost|RELOAD|G
-|root||root|localhost|REPLICATION CLIENT|G
-|root||root|localhost|REPLICATION SLAVE|G
-|root||root|localhost|REPLICATION_APPLIER|G
-|root||root|localhost|REPLICATION_SLAVE_ADMIN|G
-|root||root|localhost|RESOURCE_GROUP_ADMIN|G
-|root||root|localhost|RESOURCE_GROUP_USER|G
-|root||root|localhost|ROLE_ADMIN|G
-|root||mysql.infoschema|localhost|SELECT|G
-|root||root|localhost|SELECT|G
-|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
-|root||root|localhost|SERVICE_CONNECTION_ADMIN|G
-|root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SET_USER_ID|G
-|root||root|localhost|SHOW DATABASES|G
-|root||root|localhost|SHOW VIEW|G
-|root||root|localhost|SHOW_ROUTINE|G
-|root||mysql.session|localhost|SHUTDOWN|G
-|root||root|localhost|SHUTDOWN|G
-|root||mysql.session|localhost|SUPER|G
-|root||root|localhost|SUPER|G
-|root||mysql.infoschema|localhost|SYSTEM_USER|G
-|root||mysql.session|localhost|SYSTEM_USER|G
-|root||mysql.sys|localhost|SYSTEM_USER|G
-|root||root|localhost|SYSTEM_USER|G
-|root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
-|root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
-|root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
-|root||root|localhost|TELEMETRY_LOG_ADMIN|G
-|root||root|localhost|TRIGGER|G
-|root||root|localhost|UPDATE|G
-|root||root|localhost|XA_RECOVER_ADMIN|G
-|root||root|localhost|grant option|G
-performance_schema|schema||mysql.session|localhost|SELECT|G
-sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <ServerVersion>8.0.34</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
@@ -1038,188 +949,268 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="300" parent="292" name="papers">
+    <table id="300" parent="292" name="answer_records">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="292" name="questions">
+    <table id="301" parent="292" name="exams">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="292" name="users">
+    <table id="302" parent="292" name="papers">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="303" parent="300" name="id">
-      <AutoIncrement>4</AutoIncrement>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="304" parent="300" name="title">
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="305" parent="300" name="created_by">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="306" parent="300" name="q1">
-      <DataType>bigint|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="307" parent="300" name="q2">
-      <DataType>bigint|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="308" parent="300" name="q3">
-      <DataType>bigint|0s</DataType>
-      <Position>6</Position>
-    </column>
-    <column id="309" parent="300" name="q4">
-      <DataType>bigint|0s</DataType>
-      <Position>7</Position>
-    </column>
-    <column id="310" parent="300" name="q5">
-      <DataType>bigint|0s</DataType>
-      <Position>8</Position>
-    </column>
-    <foreign-key id="311" parent="300" name="fk_created_by">
-      <ColNames>created_by</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <foreign-key id="312" parent="300" name="fk_q1">
-      <ColNames>q1</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>questions</RefTableName>
-    </foreign-key>
-    <foreign-key id="313" parent="300" name="fk_q2">
-      <ColNames>q2</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>questions</RefTableName>
-    </foreign-key>
-    <foreign-key id="314" parent="300" name="fk_q3">
-      <ColNames>q3</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>questions</RefTableName>
-    </foreign-key>
-    <foreign-key id="315" parent="300" name="fk_q4">
-      <ColNames>q4</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>questions</RefTableName>
-    </foreign-key>
-    <foreign-key id="316" parent="300" name="fk_q5">
-      <ColNames>q5</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>questions</RefTableName>
-    </foreign-key>
-    <index id="317" parent="300" name="fk_paper_created_by">
-      <ColNames>created_by</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="318" parent="300" name="fk_q1">
-      <ColNames>q1</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="319" parent="300" name="fk_q2">
-      <ColNames>q2</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="320" parent="300" name="fk_q3">
-      <ColNames>q3</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="321" parent="300" name="fk_q4">
-      <ColNames>q4</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="322" parent="300" name="fk_q5">
-      <ColNames>q5</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="323" parent="300" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="324" parent="301" name="id">
-      <AutoIncrement>4</AutoIncrement>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="325" parent="301" name="description">
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="326" parent="301" name="type">
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="327" parent="301" name="answer">
-      <DataType>text|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="328" parent="301" name="difficult_level">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="329" parent="301" name="created_by">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <foreign-key id="330" parent="301" name="fk_question_created_by">
-      <ColNames>created_by</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <index id="331" parent="301" name="fk_question_created_by">
-      <ColNames>created_by</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="332" parent="301" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="333" parent="302" name="id">
+    <table id="303" parent="292" name="questions">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="304" parent="292" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="305" parent="300" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="334" parent="302" name="username">
+    <column id="306" parent="300" name="student_name">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="335" parent="302" name="password">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="307" parent="300" name="exam_id">
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="336" parent="302" name="role">
-      <DataType>enum(&apos;STUDENT&apos;, &apos;TEACHER&apos;, &apos;ADMIN&apos;)|0e</DataType>
+    <column id="308" parent="300" name="question_id">
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="337" parent="302" name="username">
-      <ColNames>username</ColNames>
+    <column id="309" parent="300" name="student_answer">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="310" parent="300" name="grade">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="311" parent="300" name="fk_user">
+      <ColNames>student_name</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="312" parent="300" name="fk_exam">
+      <ColNames>exam_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>exams</RefTableName>
+    </foreign-key>
+    <foreign-key id="313" parent="300" name="fk_question">
+      <ColNames>question_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>questions</RefTableName>
+    </foreign-key>
+    <index id="314" parent="300" name="fk_user">
+      <ColNames>student_name</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <key id="338" parent="302" name="PRIMARY">
+    <index id="315" parent="300" name="fk_exam">
+      <ColNames>exam_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="316" parent="300" name="fk_question">
+      <ColNames>question_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="317" parent="300" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="339" parent="302" name="username">
+    <column id="318" parent="301" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="319" parent="301" name="name">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="320" parent="301" name="paper_id">
+      <DataType>bigint|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="321" parent="301" name="publisher">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="322" parent="301" name="start_time">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="323" parent="301" name="end_time">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="324" parent="301" name="duration_time">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <foreign-key id="325" parent="301" name="fk_papers">
+      <ColNames>paper_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>papers</RefTableName>
+    </foreign-key>
+    <foreign-key id="326" parent="301" name="fk_users">
+      <ColNames>publisher</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="327" parent="301" name="fk_papers">
+      <ColNames>paper_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="328" parent="301" name="fk_users">
+      <ColNames>publisher</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="329" parent="301" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="330" parent="302" name="id">
+      <AutoIncrement>16</AutoIncrement>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="331" parent="302" name="title">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="332" parent="302" name="created_by">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="333" parent="302" name="introduction">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="334" parent="302" name="create_time">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="335" parent="302" name="update_time">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="336" parent="302" name="content">
+      <DataType>text|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <foreign-key id="337" parent="302" name="fk_created_by">
+      <ColNames>created_by</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="338" parent="302" name="fk_paper_created_by">
+      <ColNames>created_by</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="339" parent="302" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="340" parent="303" name="id">
+      <AutoIncrement>59</AutoIncrement>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="341" parent="303" name="description">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="342" parent="303" name="type">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="343" parent="303" name="answer">
+      <DataType>text|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="344" parent="303" name="difficult_level">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="345" parent="303" name="created_by">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="346" parent="303" name="tag">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="347" parent="303" name="analysis">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="348" parent="303" name="fk_question_created_by">
+      <ColNames>created_by</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="349" parent="303" name="fk_question_created_by">
+      <ColNames>created_by</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="350" parent="303" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="351" parent="304" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="352" parent="304" name="username">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="353" parent="304" name="password">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="354" parent="304" name="role">
+      <DataType>enum(&apos;STUDENT&apos;, &apos;TEACHER&apos;, &apos;ADMIN&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <index id="355" parent="304" name="username">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="356" parent="304" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="357" parent="304" name="username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>

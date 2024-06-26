@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/AnswerRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/AnswerRecordController.java" afterDir="false" />
-    </list>
+    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +204,7 @@
       <workItem from="1719198894576" duration="4042000" />
       <workItem from="1719235100988" duration="4887000" />
       <workItem from="1719313351192" duration="15411000" />
-      <workItem from="1719401907229" duration="11156000" />
+      <workItem from="1719401907229" duration="11687000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>

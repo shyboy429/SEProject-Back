@@ -19,7 +19,7 @@ public class ExamReturnDto {
     private String durationTime;
     private String status;
     private String answerStatus = "未完成";
-    private long[] objAndSubGrade;
+    private long[] objAndSubGrade = {0, 0};
 
     public long[] getObjAndSubGrade() {
         return objAndSubGrade;
