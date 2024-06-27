@@ -17,10 +17,10 @@ public class Paper {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "introduction")
+    @Column(name = "introduction", nullable = false)
     private String introduction;
 
     @Column(name = "create_time")

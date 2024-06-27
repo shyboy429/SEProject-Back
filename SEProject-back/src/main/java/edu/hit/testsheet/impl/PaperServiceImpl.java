@@ -3,6 +3,8 @@ package edu.hit.testsheet.impl;
 import edu.hit.testsheet.Dto.ExamPaperDto;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
+import edu.hit.testsheet.Exception.InvalidPaperException;
+import edu.hit.testsheet.Exception.InvalidQuestionException;
 import edu.hit.testsheet.Exception.PaperNotFoundException;
 import edu.hit.testsheet.Exception.QuestionNotFoundException;
 import edu.hit.testsheet.bean.Paper;
@@ -58,6 +60,12 @@ public class PaperServiceImpl implements PaperService {
 
     @Override
     public Paper addPaper(Paper paper) {
+        if (paper.getContent() == null || paper.getContent().isEmpty()) {
+            throw new InvalidPaperException("试题篮中没有题目！");
+        }
+        if (paper.getTitle() == null || paper.getTitle().isEmpty()) {
+            throw new InvalidPaperException("试卷名称不可为空！");
+        }
         paper.setCreateTime(DateFormatterUtil.formatDate(LocalDateTime.now()));
         paper.setUpdateTime(paper.getCreateTime());
         return paperRepository.save(paper);
@@ -95,14 +103,14 @@ public class PaperServiceImpl implements PaperService {
         List<Question> ret = new ArrayList<>();
         Paper paper = paperRepository.findById(id).orElseThrow(() -> new PaperNotFoundException(id));
         String content = paper.getContent();
-        if("".equals(content)){
+        if ("".equals(content)) {
             throw new QuestionNotFoundException(-1L);
         }
         String[] questionIds = content.split(" ");
         for (String qid : questionIds) {
             long lqid = Long.parseLong(qid);
             Question question = questionRepository.findById(lqid).orElse(null);
-            if(question != null){
+            if (question != null) {
                 ret.add(question);
             }
         }

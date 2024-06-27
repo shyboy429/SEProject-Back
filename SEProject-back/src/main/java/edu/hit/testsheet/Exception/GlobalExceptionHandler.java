@@ -80,7 +80,13 @@ public class GlobalExceptionHandler {
     public Map<String, String> handleInvalidQuestionException(InvalidQuestionException ex) {
         return createErrorResponse(ex.getMessage());
     }
-    
+
+    @ExceptionHandler(InvalidPaperException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleInvalidPaperException(InvalidPaperException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();
         errorMap.put("success", "error");
