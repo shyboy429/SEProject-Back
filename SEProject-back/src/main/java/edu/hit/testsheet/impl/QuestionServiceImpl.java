@@ -2,7 +2,7 @@ package edu.hit.testsheet.impl;
 
 
 import edu.hit.testsheet.Dto.QuestionUpdateDto;
-import edu.hit.testsheet.Exception.QuestionCanNotBeDeleteException;
+import edu.hit.testsheet.Exception.QuestionCanNotBeDeletedException;
 import edu.hit.testsheet.Exception.QuestionNotFoundException;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.bean.Question;
@@ -60,7 +60,7 @@ public class QuestionServiceImpl implements QuestionService {
                 String[] questionIds = content.split(" ");
                 for(String qid : questionIds){
                     if(id == Long.parseLong(qid)){
-                        throw new QuestionCanNotBeDeleteException(id,p.getTitle());
+                        throw new QuestionCanNotBeDeletedException(id,p.getTitle());
                     }
                 }
             }

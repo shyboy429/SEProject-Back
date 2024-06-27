@@ -69,11 +69,12 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
-    @ExceptionHandler(QuestionCanNotBeDeleteException.class)
+    @ExceptionHandler(QuestionCanNotBeDeletedException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> handleQuestionCanNotBeDeleteException(QuestionCanNotBeDeleteException ex) {
+    public Map<String, String> handleQuestionCanNotBeDeletedException(QuestionCanNotBeDeletedException ex) {
         return createErrorResponse(ex.getMessage());
     }
+
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();
         errorMap.put("success", "error");
