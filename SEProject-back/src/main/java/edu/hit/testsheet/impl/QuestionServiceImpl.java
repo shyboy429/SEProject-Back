@@ -2,6 +2,7 @@ package edu.hit.testsheet.impl;
 
 
 import edu.hit.testsheet.Dto.QuestionUpdateDto;
+import edu.hit.testsheet.Exception.InvalidQuestionException;
 import edu.hit.testsheet.Exception.QuestionCanNotBeDeletedException;
 import edu.hit.testsheet.Exception.QuestionNotFoundException;
 import edu.hit.testsheet.bean.Paper;
@@ -22,7 +23,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
     private QuestionRepository questionRepository;
-    
+
     @Autowired
     private PaperRepository paperRepository;
 
@@ -48,19 +49,44 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question addQuestion(Question question) {
+        if (question.getType() == null || question.getType().isEmpty()) {
+            throw new InvalidQuestionException("类型不可为空！");
+        }
+        if (question.getTag() == null || question.getTag().isEmpty()) {
+            throw new InvalidQuestionException("标签不可为空！");
+        }
+        if (question.getDifficultLevel() == null || question.getDifficultLevel().isEmpty()) {
+            throw new InvalidQuestionException("难度等级不可为空！");
+        }
+        if (question.getAnswer() == null || question.getAnswer().isEmpty()) {
+            if (question.getType().equals("选择题") || question.getType().equals("判断题")) {
+                throw new InvalidQuestionException("正确选项不可为空！");
+            }
+            throw new InvalidQuestionException("答案不可为空！");
+        }
+        if (question.getDescription() == null || question.getDescription().isEmpty()) {
+            if (question.getType().equals("选择题")) {
+                throw new InvalidQuestionException("题目或选项不可有空！");
+            }
+            throw new InvalidQuestionException("题目不可为空！");
+        }
+        if (question.getCreatedBy() == null || question.getCreatedBy().isEmpty()) {
+            throw new InvalidQuestionException("创建人不可为空！");
+        }
         return questionRepository.save(question);
     }
+
 
     @Override
     public void deleteQuestionById(Long id) {
         if (questionRepository.existsById(id)) {
             List<Paper> allPapers = paperRepository.findAll();
-            for(Paper p : allPapers){
+            for (Paper p : allPapers) {
                 String content = p.getContent();
                 String[] questionIds = content.split(" ");
-                for(String qid : questionIds){
-                    if(id == Long.parseLong(qid)){
-                        throw new QuestionCanNotBeDeletedException(id,p.getTitle());
+                for (String qid : questionIds) {
+                    if (id == Long.parseLong(qid)) {
+                        throw new QuestionCanNotBeDeletedException(id, p.getTitle());
                     }
                 }
             }
@@ -75,10 +101,12 @@ public class QuestionServiceImpl implements QuestionService {
         return questionRepository.findById(id)
                 .orElseThrow(() -> new QuestionNotFoundException(id));
     }
+
     @Override
-    public Question selectQuestionByIdInPaper(Long id){
+    public Question selectQuestionByIdInPaper(Long id) {
         return questionRepository.findById(id).orElse(null);
     }
+
     @Override
     public Question updateQuestion(Long id, QuestionUpdateDto updateRequest) {
         Question question = questionRepository.findById(id)
@@ -91,6 +119,7 @@ public class QuestionServiceImpl implements QuestionService {
         question.setDifficultLevel(updateRequest.getDifficultLevel());
         return questionRepository.save(question);
     }
+
     @Override
     public List<Question> selectQuestion(String keywords, String type, String difficultLevel, String username,
                                          int pageIndex, int pageSize) {

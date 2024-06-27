@@ -15,11 +15,11 @@ public class Question {
     private String description;
     @Column(name = "type", nullable = false)
     private String type;
-    @Column(name = "answer")
+    @Column(name = "answer", nullable = false)
     private String answer;
-    @Column(name = "difficult_level")
+    @Column(name = "difficult_level", nullable = false)
     private String difficultLevel;
-    @Column(name = "analysis", nullable = false)
+    @Column(name = "analysis")
     private String analysis;
     @Column(name = "created_by", nullable = false)
     private String createdBy;
