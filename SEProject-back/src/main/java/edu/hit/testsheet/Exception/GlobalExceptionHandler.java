@@ -68,6 +68,12 @@ public class GlobalExceptionHandler {
     public Map<String, String> handleInvalidExamTimeException(InvalidExamStartTimeException ex) {
         return createErrorResponse(ex.getMessage());
     }
+
+    @ExceptionHandler(QuestionCanNotBeDeleteException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> handleQuestionCanNotBeDeleteException(QuestionCanNotBeDeleteException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();
         errorMap.put("success", "error");

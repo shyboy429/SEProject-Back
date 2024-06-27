@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成">
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/ExamControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/AnswerRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/AnswerRecordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/AnswerRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/AnswerRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/CalculateQuestionsScoreUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/CalculateQuestionsScoreUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/DateFormatterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/DateFormatterUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamReturnDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamReturnDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/AnswerRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/AnswerRecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/ExamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/PaperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/PaperController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/AnswerRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/AnswerRecordServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/PaperServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/PaperServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/DateFormatterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/DateFormatterUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/ExamListToDtoListUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/ExamListToDtoListUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/QuestionCanNotBeDeleteException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/QuestionServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

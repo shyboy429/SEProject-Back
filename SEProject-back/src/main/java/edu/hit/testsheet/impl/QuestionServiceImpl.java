@@ -2,8 +2,11 @@ package edu.hit.testsheet.impl;
 
 
 import edu.hit.testsheet.Dto.QuestionUpdateDto;
+import edu.hit.testsheet.Exception.QuestionCanNotBeDeleteException;
 import edu.hit.testsheet.Exception.QuestionNotFoundException;
+import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.bean.Question;
+import edu.hit.testsheet.repository.PaperRepository;
 import edu.hit.testsheet.repository.QuestionRepository;
 import edu.hit.testsheet.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,9 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
     private QuestionRepository questionRepository;
+    
+    @Autowired
+    private PaperRepository paperRepository;
 
     @Override
     public List<Question> getAllQuestions() {
@@ -48,6 +54,16 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public void deleteQuestionById(Long id) {
         if (questionRepository.existsById(id)) {
+            List<Paper> allPapers = paperRepository.findAll();
+            for(Paper p : allPapers){
+                String content = p.getContent();
+                String[] questionIds = content.split(" ");
+                for(String qid : questionIds){
+                    if(id == Long.parseLong(qid)){
+                        throw new QuestionCanNotBeDeleteException(id,p.getTitle());
+                    }
+                }
+            }
             questionRepository.deleteById(id);
         } else {
             throw new QuestionNotFoundException(id);
