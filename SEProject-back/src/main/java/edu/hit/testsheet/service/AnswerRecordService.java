@@ -31,6 +31,6 @@ public interface AnswerRecordService {
     AnswerRecord deleteAnswerRecord(Long id);
     List<AnswerRecord> submitAnswer(List<AnswerRecord> answerRecords);
 
-    boolean existsByStudentName(String studentName);
+    boolean existsByStudentNameAndExamId(String studentName,Long examId);
 }
 

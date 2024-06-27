@@ -123,11 +123,11 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public Exam createExam(Exam exam) {
+        exam.setStartTime(DateFormatterUtil.frontFormatDate(exam.getStartTime()));
+        exam.setEndTime(DateFormatterUtil.frontFormatDate(exam.getEndTime()));
         if(DateFormatterUtil.isBeforeCurrentTime(exam.getStartTime())){
             throw new InvalidExamStartTimeException("Exam start time cannot be before the current time.");
         }
-        exam.setStartTime(DateFormatterUtil.frontFormatDate(exam.getStartTime()));
-        exam.setEndTime(DateFormatterUtil.frontFormatDate(exam.getEndTime()));
         return examRepository.save(exam);
     }
 

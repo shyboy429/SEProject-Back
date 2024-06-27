@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="" />
+    <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/ExamControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/AnswerRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/repository/AnswerRecordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/AnswerRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/AnswerRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/CalculateQuestionsScoreUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/CalculateQuestionsScoreUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/DateFormatterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/DateFormatterUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamReturnDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamReturnDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/AnswerRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/AnswerRecordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/ExamController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/PaperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/PaperController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/AnswerRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/AnswerRecordServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/PaperServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/PaperServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/DateFormatterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/DateFormatterUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/ExamListToDtoListUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/ExamListToDtoListUtil.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +87,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.PaperControllerTest.testGetExamPaper">
+  <component name="RunManager" selected="Spring Boot.TestsheetApplication (2)">
     <configuration name="edu.hit.testsheet.util.DateFormatterUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.util.DateFormatterUtil" />
       <module name="SEProject-back" />
@@ -167,8 +185,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PaperControllerTest.testGetExamPaper" />
         <item itemvalue="Spring Boot.TestsheetApplication (2)" />
+        <item itemvalue="JUnit.PaperControllerTest.testGetExamPaper" />
         <item itemvalue="Application.edu.hit.testsheet.util.DateFormatterUtil" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.QuestionControllerTest" />
@@ -204,7 +222,8 @@
       <workItem from="1719198894576" duration="4042000" />
       <workItem from="1719235100988" duration="4887000" />
       <workItem from="1719313351192" duration="15411000" />
-      <workItem from="1719401907229" duration="11687000" />
+      <workItem from="1719401907229" duration="17531000" />
+      <workItem from="1719451418633" duration="3492000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>

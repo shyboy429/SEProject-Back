@@ -19,18 +19,19 @@ import java.util.List;
 public class CalculateQuestionsScoreUtil {
     @Autowired
     private QuestionService questionService;
-    
-    public long[] calculateScore(List<AnswerRecord> records){
+
+    public long[] calculateScore(List<AnswerRecord> records) {
         long objectiveScore = 0;
         long subjectiveScore = 0;
-        for(AnswerRecord a : records){
-            if(questionService.selectQuestionById(a.getQuestionId()).getType().equals("选择题")
-            || questionService.selectQuestionById(a.getQuestionId()).getType().equals("填空题")){
+        for (AnswerRecord a : records) {
+            if (questionService.selectQuestionById(a.getQuestionId()).getType().equals("选择题")
+                    || questionService.selectQuestionById(a.getQuestionId()).getType().equals("填空题")
+                    || questionService.selectQuestionById(a.getQuestionId()).getType().equals("判断题")) {
                 objectiveScore += Long.parseLong(a.getGrade());
-            }else{
+            } else {
                 subjectiveScore += Long.parseLong(a.getGrade());
             }
         }
-        return new long[]{objectiveScore,subjectiveScore};
+        return new long[]{objectiveScore, subjectiveScore};
     }
 }

@@ -2,12 +2,12 @@ package edu.hit.testsheet.util;
 
 import org.springframework.stereotype.Component;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Date;
-import java.text.ParseException;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -25,7 +25,7 @@ public class DateFormatterUtil {
     // 定义可能的日期格式
     private static final List<SimpleDateFormat> dateFormats = Arrays.asList(
             new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"),
-            new SimpleDateFormat("yyyy-M-d H:m:s")
+            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     );
 
     static {
@@ -34,6 +34,7 @@ public class DateFormatterUtil {
             format.setTimeZone(TimeZone.getTimeZone("UTC"));
         }
     }
+
     public static String formatDate(LocalDateTime dateTime) {
         // 创建DateTimeFormatter对象并设置自定义的日期时间格式
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 HH:mm");
@@ -45,7 +46,7 @@ public class DateFormatterUtil {
         // 输入格式
         SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         // 输出格式
-        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-M-d H:m:s");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         String formattedDate = "";
         try {
@@ -60,24 +61,21 @@ public class DateFormatterUtil {
     }
 
     public static boolean isBeforeCurrentTime(String dateTime) {
-        for (SimpleDateFormat format : dateFormats) {
-            try {
-                // 尝试解析输入时间字符串
-                Date parsedDate = format.parse(dateTime);
-                // 获取当前时间
-                Date currentDate = new Date();
-                // 比较两个日期
-                return parsedDate.before(currentDate);
-            } catch (ParseException e) {
-                // 忽略异常并尝试下一个格式
-            }
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            // 尝试解析输入时间字符串
+            Date parsedDate = format.parse(dateTime);
+            // 获取当前时间
+            Date currentDate = new Date();
+            // 比较两个日期
+            return parsedDate.before(currentDate);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException("Invalid date format: " + dateTime);
         }
-        // 如果所有格式都无法解析，抛出异常或返回默认值
-        throw new IllegalArgumentException("Invalid date format: " + dateTime);
     }
 
     public static String getCurrentTimeString() {
-        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-M-d H:m:s");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         outputFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         return outputFormat.format(new Date());
     }
