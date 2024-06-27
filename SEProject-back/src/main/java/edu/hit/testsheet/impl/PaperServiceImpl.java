@@ -50,10 +50,19 @@ public class PaperServiceImpl implements PaperService {
 
     @Override
     public List<PaperReturnDto> getAllPapers(int pageIndex, int pageSize) {
+        List<PaperReturnDto> ret = new ArrayList<>();
+        if(pageIndex == -2){
+            List<Paper> allPapers = paperRepository.findAll();
+            for (Paper p : allPapers) {
+                PaperReturnDto pret = paperToDtoUtil.convertPaperToDto(p);
+                ret.add(pret);
+            }
+            return ret;
+        }
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         Page<Paper> paperPage = paperRepository.findAll(pageable);
         List<Paper> allPapers = paperPage.getContent();
-        List<PaperReturnDto> ret = new ArrayList<>();
+        
         for (Paper p : allPapers) {
             PaperReturnDto pret = paperToDtoUtil.convertPaperToDto(p);
             ret.add(pret);

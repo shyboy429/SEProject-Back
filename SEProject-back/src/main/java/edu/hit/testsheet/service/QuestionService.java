@@ -6,7 +6,7 @@ import edu.hit.testsheet.bean.Question;
 import java.util.List;
 
 public interface QuestionService {
-    List<Question> getAllQuestions();
+
     List<Question> getQuestionsByPage(int offset, int pageSize);
 
     Question addQuestion(Question question);

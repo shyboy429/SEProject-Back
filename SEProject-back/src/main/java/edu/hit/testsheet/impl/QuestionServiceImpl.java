@@ -28,11 +28,6 @@ public class QuestionServiceImpl implements QuestionService {
     private PaperRepository paperRepository;
 
     @Override
-    public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
-    }
-
-    @Override
     public List<Question> getQuestionsByPage(int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         Page<Question> questionPage = questionRepository.findAll(pageable);
