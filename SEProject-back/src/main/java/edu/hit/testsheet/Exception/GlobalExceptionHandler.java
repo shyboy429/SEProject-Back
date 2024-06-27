@@ -75,6 +75,18 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
+    @ExceptionHandler(ExamCanNotBeDeletedException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> handleExamCanNotBeDeletedException(ExamCanNotBeDeletedException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
+    @ExceptionHandler(PaperCanNotBeDeletedException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> handlePaperCanNotBeDeletedException(PaperCanNotBeDeletedException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+    
     @ExceptionHandler(InvalidQuestionException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleInvalidQuestionException(InvalidQuestionException ex) {
@@ -87,11 +99,12 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
-    @ExceptionHandler(ExamCanNotBeDeletedException.class)
+    @ExceptionHandler(InvalidExamException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> handleExamCanNotBeDeletedException(ExamCanNotBeDeletedException ex) {
+    public Map<String, String> handleInvalidExamException(InvalidExamException ex) {
         return createErrorResponse(ex.getMessage());
     }
+    
 
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();

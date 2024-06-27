@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -22,6 +23,7 @@ import java.util.Optional;
 @Repository
 public interface ExamRepository extends JpaRepository<Exam, Long> {
     Optional<Exam> findByName(String name);
+
     @Query("SELECT e FROM Exam e WHERE e.startTime > :currentTime")
     Page<Exam> findNotStartedExams(@Param("currentTime") String currentTime, Pageable pageable);
 
@@ -30,4 +32,8 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
 
     @Query("SELECT e FROM Exam e WHERE e.endTime <= :currentTime")
     Page<Exam> findFinishedExams(@Param("currentTime") String currentTime, Pageable pageable);
+
+    boolean existsByPaperId(Long id);
+    
+    List<Exam> findByPaperId(Long paperId);
 }

@@ -18,22 +18,22 @@ public class Exam {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     private String name;
 
-    @Column(name = "paper_id")
+    @Column(name = "paper_id",nullable = false)
     private Long paperId;
 
-    @Column(name = "publisher")
+    @Column(name = "publisher",nullable = false)
     private String publisher;
 
-    @Column(name = "start_time")
+    @Column(name = "start_time",nullable = false)
     private String startTime;
 
-    @Column(name = "end_time")
+    @Column(name = "end_time",nullable = false)
     private String endTime;
     
-    @Column(name = "duration_Time")
+    @Column(name = "duration_Time",nullable = false)
     private String durationTime;
 
     public Long getId() {

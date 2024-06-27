@@ -3,14 +3,14 @@ package edu.hit.testsheet.impl;
 import edu.hit.testsheet.Dto.ExamPaperDto;
 import edu.hit.testsheet.Dto.PaperReturnDto;
 import edu.hit.testsheet.Dto.PaperUpdateDto;
-import edu.hit.testsheet.Exception.InvalidPaperException;
-import edu.hit.testsheet.Exception.InvalidQuestionException;
-import edu.hit.testsheet.Exception.PaperNotFoundException;
-import edu.hit.testsheet.Exception.QuestionNotFoundException;
+import edu.hit.testsheet.Exception.*;
+import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.bean.Question;
+import edu.hit.testsheet.repository.ExamRepository;
 import edu.hit.testsheet.repository.PaperRepository;
 import edu.hit.testsheet.repository.QuestionRepository;
+import edu.hit.testsheet.service.ExamService;
 import edu.hit.testsheet.service.PaperService;
 import edu.hit.testsheet.util.DateFormatterUtil;
 import edu.hit.testsheet.util.PaperToDtoUtil;
@@ -44,6 +44,9 @@ public class PaperServiceImpl implements PaperService {
     private PaperToDtoUtil paperToDtoUtil;
     @Autowired
     private QuestionRepository questionRepository;
+    
+    @Autowired 
+    private ExamRepository examRepository;
 
     @Override
     public List<PaperReturnDto> getAllPapers(int pageIndex, int pageSize) {
@@ -74,6 +77,13 @@ public class PaperServiceImpl implements PaperService {
     @Override
     public void deletePaperById(Long id) {
         if (paperRepository.existsById(id)) {
+            if (examRepository.existsByPaperId(id)) {
+                List<Exam> exams = examRepository.findByPaperId(id);
+                String examNames = exams.stream()
+                        .map(Exam::getName)
+                        .collect(Collectors.joining(", "));
+                throw new PaperCanNotBeDeletedException("考试：" + examNames + " 使用当前试卷，不可删除！");
+            }
             paperRepository.deleteById(id);
         } else {
             throw new PaperNotFoundException(id);

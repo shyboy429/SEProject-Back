@@ -1,10 +1,7 @@
 package edu.hit.testsheet.impl;
 
 import edu.hit.testsheet.Dto.ExamReturnDto;
-import edu.hit.testsheet.Exception.AnswerRecordNotFoundException;
-import edu.hit.testsheet.Exception.ExamCanNotBeDeletedException;
-import edu.hit.testsheet.Exception.ExamNotFoundException;
-import edu.hit.testsheet.Exception.InvalidExamStartTimeException;
+import edu.hit.testsheet.Exception.*;
 import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.repository.ExamRepository;
@@ -127,10 +124,28 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public Exam createExam(Exam exam) {
+        if (exam.getName() == null || exam.getName().isEmpty()) {
+            throw new InvalidExamException("考试名称不可为空！");
+        }
+        if (exam.getPaperId() == null) {
+            throw new InvalidExamException("试卷不可为空！");
+        }
+        if (exam.getPublisher() == null || exam.getPublisher().isEmpty()) {
+            throw new InvalidExamException("发布人不可为空！");
+        }
+        if (exam.getStartTime() == null || exam.getStartTime().isEmpty()) {
+            throw new InvalidExamException("开始时间不可为空！");
+        }
+        if (exam.getEndTime() == null || exam.getEndTime().isEmpty()) {
+            throw new InvalidExamException("结束时间不可为空！");
+        }
+        if (exam.getDurationTime() == null || exam.getDurationTime().isEmpty()) {
+            throw new InvalidExamException("考试限时不可为空！");
+        }
         exam.setStartTime(DateFormatterUtil.frontFormatDate(exam.getStartTime()));
         exam.setEndTime(DateFormatterUtil.frontFormatDate(exam.getEndTime()));
         if(DateFormatterUtil.isBeforeCurrentTime(exam.getStartTime())){
-            throw new InvalidExamStartTimeException("Exam start time cannot be before the current time.");
+            throw new InvalidExamStartTimeException("考试开始时间不可早于当前时间!");
         }
         return examRepository.save(exam);
     }

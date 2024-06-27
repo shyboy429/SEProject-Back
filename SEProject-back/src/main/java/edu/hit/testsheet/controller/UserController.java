@@ -29,11 +29,7 @@ public class UserController {
      */
     @PostMapping("/login")
     public User userLogin(@RequestBody LoginDto loginDto) {
-        User user = userService.userLogin(loginDto.getUsername(), loginDto.getPassword());
-        if (user == null) {
-            throw new UserLoginFailedException("Invalid username or password");
-        }
-        return user;
+        return userService.userLogin(loginDto.getUsername(), loginDto.getPassword());
     }
 
     /**
