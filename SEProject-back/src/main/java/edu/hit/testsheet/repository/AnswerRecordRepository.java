@@ -21,5 +21,7 @@ public interface AnswerRecordRepository extends JpaRepository<AnswerRecord, Long
     List<AnswerRecord> findByStudentNameAndExamId(String studentName, Long examId);
     List<List<AnswerRecord>> findByStudentName(String studentName);
     boolean existsByStudentNameAndExamId(String studentName,Long examId);
+    
+    boolean existsByExamId(Long examId);
 }
 

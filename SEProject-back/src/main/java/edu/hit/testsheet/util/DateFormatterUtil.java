@@ -24,14 +24,14 @@ public class DateFormatterUtil {
 
     // 定义可能的日期格式
     private static final List<SimpleDateFormat> dateFormats = Arrays.asList(
-            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"),
+            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"),
             new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     );
 
     static {
-        // 设置所有格式的时区为 UTC
+        // 设置所有格式的时区为 CST
         for (SimpleDateFormat format : dateFormats) {
-            format.setTimeZone(TimeZone.getTimeZone("UTC"));
+            format.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         }
     }
 
@@ -44,9 +44,11 @@ public class DateFormatterUtil {
 
     public static String frontFormatDate(String frontTime) {
         // 输入格式
-        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        inputFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         // 输出格式
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        outputFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
 
         String formattedDate = "";
         try {
@@ -62,6 +64,7 @@ public class DateFormatterUtil {
 
     public static boolean isBeforeCurrentTime(String dateTime) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        format.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         try {
             // 尝试解析输入时间字符串
             Date parsedDate = format.parse(dateTime);
@@ -76,7 +79,7 @@ public class DateFormatterUtil {
 
     public static String getCurrentTimeString() {
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        outputFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        outputFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         return outputFormat.format(new Date());
     }
 }

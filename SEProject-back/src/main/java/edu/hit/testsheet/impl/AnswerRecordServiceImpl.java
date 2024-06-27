@@ -118,5 +118,10 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
     public boolean existsByStudentNameAndExamId(String studentName, Long examId) {
         return answerRecordRepository.existsByStudentNameAndExamId(studentName, examId);
     }
+
+    @Override
+    public boolean existsByExamId(Long examId) {
+        return answerRecordRepository.existsByExamId(examId);
+    }
 }
 

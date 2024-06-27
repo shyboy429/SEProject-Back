@@ -87,6 +87,12 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
+    @ExceptionHandler(ExamCanNotBeDeletedException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleExamCanNotBeDeletedException(ExamCanNotBeDeletedException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();
         errorMap.put("success", "error");

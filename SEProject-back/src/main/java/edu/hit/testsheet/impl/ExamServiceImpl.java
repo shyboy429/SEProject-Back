@@ -1,11 +1,14 @@
 package edu.hit.testsheet.impl;
 
 import edu.hit.testsheet.Dto.ExamReturnDto;
+import edu.hit.testsheet.Exception.AnswerRecordNotFoundException;
+import edu.hit.testsheet.Exception.ExamCanNotBeDeletedException;
 import edu.hit.testsheet.Exception.ExamNotFoundException;
 import edu.hit.testsheet.Exception.InvalidExamStartTimeException;
 import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.repository.ExamRepository;
+import edu.hit.testsheet.service.AnswerRecordService;
 import edu.hit.testsheet.service.ExamService;
 import edu.hit.testsheet.util.DateFormatterUtil;
 import edu.hit.testsheet.util.ExamListToDtoListUtil;
@@ -34,7 +37,8 @@ public class ExamServiceImpl implements ExamService {
     private ExamRepository examRepository;
     @Autowired
     private ExamListToDtoListUtil examListToDtoListUtil;
-    
+    @Autowired
+    private AnswerRecordService answerRecordService;
     @Override
     public List<ExamReturnDto> getAllExams(String studentName,int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
@@ -134,6 +138,9 @@ public class ExamServiceImpl implements ExamService {
     @Override
     public void deleteExam(Long id) {
         Exam exam = getExamById(id);
+        if(answerRecordService.existsByExamId(id)){
+            throw new ExamCanNotBeDeletedException(exam.getName() + "已有考试记录，不可删除");
+        }
         examRepository.delete(exam);
     }
 
