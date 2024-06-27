@@ -79,9 +79,11 @@ public class QuestionServiceImpl implements QuestionService {
             for (Paper p : allPapers) {
                 String content = p.getContent();
                 String[] questionIds = content.split(" ");
-                for (String qid : questionIds) {
-                    if (id == Long.parseLong(qid)) {
-                        throw new QuestionCanNotBeDeletedException(id, p.getTitle());
+                if (questionIds.length != 0) {
+                    for (String qid : questionIds) {
+                        if (id == Long.parseLong(qid)) {
+                            throw new QuestionCanNotBeDeletedException(id, p.getTitle());
+                        }
                     }
                 }
             }
@@ -104,6 +106,21 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question updateQuestion(Long id, QuestionUpdateDto updateRequest) {
+        if (updateRequest.getType() == null || updateRequest.getType().isEmpty()) {
+            throw new InvalidQuestionException("题型不可为空！");
+        }
+        if (updateRequest.getTag() == null || updateRequest.getTag().isEmpty()) {
+            throw new InvalidQuestionException("标签不可为空！");
+        }
+        if (updateRequest.getDifficultLevel() == null || updateRequest.getDifficultLevel().isEmpty()) {
+            throw new InvalidQuestionException("难度不可为空！");
+        }
+        if (updateRequest.getAnswer() == null || updateRequest.getAnswer().isEmpty()) {
+            throw new InvalidQuestionException("答案不可为空！");
+        }
+        if (updateRequest.getDescription() == null || updateRequest.getDescription().isEmpty()) {
+            throw new InvalidQuestionException("问题不可为空！");
+        }
         Question question = questionRepository.findById(id)
                 .orElseThrow(() -> new QuestionNotFoundException(id));
         question.setDescription(updateRequest.getDescription());
