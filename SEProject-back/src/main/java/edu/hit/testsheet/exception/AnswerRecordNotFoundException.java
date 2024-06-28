@@ -9,13 +9,6 @@ package edu.hit.testsheet.exception;
  * @author:shyboy
  */
 public class AnswerRecordNotFoundException extends RuntimeException {
-    public AnswerRecordNotFoundException(Long id) {
-        super("Answer record not found with id: " + id);
-    }
-
-    public AnswerRecordNotFoundException(String studentName) {
-        super("Answer record not found for student: " + studentName);
-    }
     public AnswerRecordNotFoundException(String studentName, Long examId, Long questionId) {
         super("Answer record not found for student: " + studentName + ", examId: " + examId + ", questionId: " + questionId);
     }

@@ -43,9 +43,7 @@ public class PaperToDtoUtil {
                 if (question != null) {
                     specificContent.append("第").append(questionNumber).append("题: ").append(question.getDescription()).append("\n");
                     questionNumber++;
-                } else {
-                    System.err.println("Question not found for ID: " + idStr);
-                }
+                } 
             } catch (NumberFormatException e) {
                 System.err.println("Invalid question ID format: " + idStr);
             }

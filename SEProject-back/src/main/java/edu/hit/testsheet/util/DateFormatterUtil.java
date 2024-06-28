@@ -22,20 +22,6 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class DateFormatterUtil {
-
-    // 定义可能的日期格式
-//    private static final List<SimpleDateFormat> dateFormats = Arrays.asList(
-//            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"),
-//            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-//    );
-//
-//    static {
-//        // 设置所有格式的时区为 CST
-//        for (SimpleDateFormat format : dateFormats) {
-//            format.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
-//        }
-//    }
-
     public static String formatDate(LocalDateTime dateTime) {
         // 创建DateTimeFormatter对象并设置自定义的日期时间格式
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 HH:mm");
@@ -58,7 +44,7 @@ public class DateFormatterUtil {
             // 格式化日期为目标格式
             formattedDate = outputFormat.format(date);
         } catch (ParseException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("Invalid date format: " + frontTime);
         }
         return formattedDate;
     }
@@ -89,9 +75,7 @@ public class DateFormatterUtil {
             long durationInMillis = endDate.getTime() - startDate.getTime();
             return TimeUnit.MILLISECONDS.toMinutes(durationInMillis);
         } catch (ParseException e) {
-            e.printStackTrace();
-            // Handle or throw an exception as needed
-            return -1; // or throw an exception indicating parsing failure
+            throw new IllegalArgumentException("Invalid date format.");
         }
     }
     public static String getCurrentTimeString() {
