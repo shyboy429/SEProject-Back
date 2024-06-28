@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成">
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/util/CalculateQuestionsScoreUtilTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/util/DateFormatterUtilTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/util/ExamListToDtoListUtilTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/util/PaperToDtoUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/TestsheetApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/TestsheetApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/AnswerRecordNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/AnswerRecordNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/DateFormatterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/DateFormatterUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/PaperToDtoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/PaperToDtoUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/AnswerRecordNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/AnswerRecordNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/TestsheetApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/TestsheetApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/DateFormatterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/DateFormatterUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/PaperToDtoUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/PaperToDtoUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/TestsheetApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +16,7 @@
     <option name="myAddOrReplace" value="0" />
   </component>
   <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="C:\Users\86139\Desktop\覆盖率报告\Controller层" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\86139\Desktop\覆盖率报告\" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,32 +52,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindowCoverage.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/86139/Desktop&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15402842&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2feb4a1712ad3713cf8e13f767948eee&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/86139/Desktop",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15402842",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "spring.configuration.checksum": "2feb4a1712ad3713cf8e13f767948eee"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -99,38 +85,7 @@
       <recent name="edu.hit.testsheet.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.edu.hit.testsheet in SEProject-back">
-    <configuration name="ExamListToDtoListUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SEProject-back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.util" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.util.ExamListToDtoListUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExamListToDtoListUtilTest.testConvertExamListToDtoList_WithoutStudentNameAndStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SEProject-back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.util" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.util.ExamListToDtoListUtilTest" />
-      <option name="METHOD_NAME" value="testConvertExamListToDtoList_WithoutStudentNameAndStatus" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestsheetApplicationTest">
     <configuration name="GlobalExceptionHandlerTest.handleUserAlreadyExistsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
@@ -147,47 +102,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestsheetApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SEProject-back" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.TestsheetApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="edu.hit.testsheet in SEProject-back" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.hit.testsheet.*" />
-          <option name="ENABLED" value="false" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.bean.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.dto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -220,6 +154,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestsheetApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="SEProject-back" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.hit.testsheet.TestsheetApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestsheetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="testsheet" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="main.java.edu.hit.testsheet.TestsheetApplication" />
@@ -228,21 +175,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.TestsheetApplicationTest" />
       <item itemvalue="JUnit.GlobalExceptionHandlerTest.handleUserAlreadyExistsException" />
       <item itemvalue="JUnit.edu.hit.testsheet in SEProject-back" />
-      <item itemvalue="JUnit.ExamListToDtoListUtilTest" />
-      <item itemvalue="JUnit.ExamListToDtoListUtilTest.testConvertExamListToDtoList_WithoutStudentNameAndStatus" />
       <item itemvalue="JUnit.edu.hit.testsheet.util in SEProject-back" />
       <item itemvalue="Spring Boot.TestsheetApplication" />
       <item itemvalue="Spring Boot.TestsheetApplication (1)" />
+      <item itemvalue="Spring Boot.TestsheetApplication (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestsheetApplicationTest" />
+        <item itemvalue="Spring Boot.TestsheetApplication (2)" />
         <item itemvalue="JUnit.edu.hit.testsheet in SEProject-back" />
         <item itemvalue="JUnit.GlobalExceptionHandlerTest.handleUserAlreadyExistsException" />
         <item itemvalue="JUnit.edu.hit.testsheet.util in SEProject-back" />
-        <item itemvalue="JUnit.ExamListToDtoListUtilTest" />
-        <item itemvalue="JUnit.ExamListToDtoListUtilTest.testConvertExamListToDtoList_WithoutStudentNameAndStatus" />
       </list>
     </recent_temporary>
   </component>
@@ -285,7 +232,8 @@
       <workItem from="1719563830436" duration="2815000" />
       <workItem from="1719566681215" duration="3391000" />
       <workItem from="1719570114939" duration="154000" />
-      <workItem from="1719570283500" duration="716000" />
+      <workItem from="1719570283500" duration="979000" />
+      <workItem from="1719571283503" duration="1103000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>
@@ -541,6 +489,9 @@
     <SUITE FILE_PATH="coverage/SEProject_back$GlobalExceptionHandlerTest_handleUserAlreadyExistsException.ic" NAME="GlobalExceptionHandlerTest.handleUserAlreadyExistsException Coverage Results" MODIFIED="1719570748527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.exception.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$TestsheetApplicationTest.ic" NAME="TestsheetApplicationTest Coverage Results" MODIFIED="1719572128120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_controller_in_SEProject_back.ic" NAME="edu.hit.testsheet.controller in SEProject-back Coverage Results" MODIFIED="1719556561712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.controller.*</FILTER>
     </SUITE>
@@ -607,7 +558,7 @@
     <SUITE FILE_PATH="coverage/SEProject_back$PaperToDtoUtilTest_testConvertPaperToDto.ic" NAME="PaperToDtoUtilTest.testConvertPaperToDto Coverage Results" MODIFIED="1719566529953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.util.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_in_SEProject_back.ic" NAME="edu.hit.testsheet in SEProject-back Coverage Results" MODIFIED="1719570956896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_in_SEProject_back.ic" NAME="edu.hit.testsheet in SEProject-back Coverage Results" MODIFIED="1719571678084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testSearchQuestions.ic" NAME="QuestionControllerTest.testSearchQuestions Coverage Results" MODIFIED="1717844847575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -646,6 +597,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_impl_in_SEProject_back.ic" NAME="edu.hit.testsheet.impl in SEProject-back Coverage Results" MODIFIED="1719566028014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$TestsheetApplication__2_.ic" NAME="TestsheetApplication (2) Coverage Results" MODIFIED="1719572113375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$ExamListToDtoListUtilTest_testConvertExamListToDtoListWithStatus.ic" NAME="ExamListToDtoListUtilTest.testConvertExamListToDtoListWithStatus Coverage Results" MODIFIED="1719567021252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.util.*</FILTER>
