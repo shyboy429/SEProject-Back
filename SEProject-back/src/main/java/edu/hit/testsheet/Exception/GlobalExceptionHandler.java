@@ -104,7 +104,11 @@ public class GlobalExceptionHandler {
     public Map<String, String> handleInvalidExamException(InvalidExamException ex) {
         return createErrorResponse(ex.getMessage());
     }
-    
+    @ExceptionHandler(ModifyOwnRoleException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public Map<String, String> handleModifyOwnRoleException(ModifyOwnRoleException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
 
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();

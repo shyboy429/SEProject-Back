@@ -1,5 +1,6 @@
 package edu.hit.testsheet.impl;
 
+import edu.hit.testsheet.Exception.ModifyOwnRoleException;
 import edu.hit.testsheet.Exception.UserAlreadyExistsException;
 import edu.hit.testsheet.Exception.UserLoginFailedException;
 import edu.hit.testsheet.Exception.UserNotFoundException;
@@ -65,10 +66,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(Long id, String username, String role) {
-        User user = userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException(id));
-        user.setUsername(username);
+    public User updateUser(String adminName, String username, String role) {
+        if(adminName.equals(username)){
+            throw new ModifyOwnRoleException("不可修改自身权限！");
+        }
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(username));
         try {
             User.Role roleEnum = User.Role.valueOf(role.toUpperCase());
             user.setRole(roleEnum);

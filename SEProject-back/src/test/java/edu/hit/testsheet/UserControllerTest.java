@@ -155,19 +155,20 @@ public class UserControllerTest {
     @Test
     public void testUpdateUser() throws Exception {
         User user = new User();
-        user.setId(1L);
-        user.setUsername("newUsername");
-        user.setPassword("newPassword");
+        user.setUsername("username");
+        user.setPassword("password");
+        user.setRole(User.Role.STUDENT);
 
-        when(userService.updateUser(1L, "newUsername", "newPassword")).thenReturn(user);
+        when(userService.updateUser("admin", "username", "STUDENT")).thenReturn(user);
 
-        mockMvc.perform(MockMvcRequestBuilders.put("/api/users/1")
-                        .param("username", "newUsername")
-                        .param("password", "newPassword"))
+        mockMvc.perform(MockMvcRequestBuilders.put("/api/users")
+                        .param("adminName", "admin")
+                        .param("username", "username")
+                        .param("role", "STUDENT"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1L))
-                .andExpect(jsonPath("$.username").value("newUsername"))
-                .andExpect(jsonPath("$.password").value("newPassword"));
+                .andExpect(jsonPath("$.username").value("username"))
+                .andExpect(jsonPath("$.role").value("STUDENT"));
     }
 }
 

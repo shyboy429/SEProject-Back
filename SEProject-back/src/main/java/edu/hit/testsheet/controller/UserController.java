@@ -71,16 +71,15 @@ public class UserController {
     }
 
     /**
-     * 根据 id更新用户信息
-     * @param id
+     * 管理员根据 id更新用户信息
      * @param username
      * @param role
      * @return 更新后的用户信息
      */
-    @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id,
-                           @RequestParam(required = false) String username,
-                           @RequestParam(required = false) String role) {
-        return userService.updateUser(id, username, role);
+    @PutMapping
+    public User updateUser(@RequestParam String adminName,
+                            @RequestParam String username,
+                           @RequestParam String role) {
+        return userService.updateUser(adminName,username, role);
     }
 }
