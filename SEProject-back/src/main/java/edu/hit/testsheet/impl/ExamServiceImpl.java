@@ -1,9 +1,8 @@
 package edu.hit.testsheet.impl;
 
-import edu.hit.testsheet.Dto.ExamReturnDto;
-import edu.hit.testsheet.Exception.*;
+import edu.hit.testsheet.dto.ExamReturnDto;
+import edu.hit.testsheet.exception.*;
 import edu.hit.testsheet.bean.Exam;
-import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.repository.ExamRepository;
 import edu.hit.testsheet.service.AnswerRecordService;
 import edu.hit.testsheet.service.ExamService;
@@ -15,7 +14,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

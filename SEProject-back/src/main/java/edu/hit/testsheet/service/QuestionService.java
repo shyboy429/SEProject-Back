@@ -1,6 +1,6 @@
 package edu.hit.testsheet.service;
 
-import edu.hit.testsheet.Dto.QuestionUpdateDto;
+import edu.hit.testsheet.dto.QuestionUpdateDto;
 import edu.hit.testsheet.bean.Question;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package edu.hit.testsheet.service;
 
-import edu.hit.testsheet.Dto.ExamReturnDto;
+import edu.hit.testsheet.dto.ExamReturnDto;
 import edu.hit.testsheet.bean.Exam;
 
 import java.util.List;

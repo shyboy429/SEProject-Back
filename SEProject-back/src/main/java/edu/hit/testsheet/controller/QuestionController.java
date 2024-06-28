@@ -1,6 +1,6 @@
 package edu.hit.testsheet.controller;
 
-import edu.hit.testsheet.Dto.QuestionUpdateDto;
+import edu.hit.testsheet.dto.QuestionUpdateDto;
 import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;

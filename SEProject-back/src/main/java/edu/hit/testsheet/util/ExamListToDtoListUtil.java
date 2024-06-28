@@ -1,6 +1,6 @@
 package edu.hit.testsheet.util;
 
-import edu.hit.testsheet.Dto.ExamReturnDto;
+import edu.hit.testsheet.dto.ExamReturnDto;
 import edu.hit.testsheet.bean.Exam;
 import edu.hit.testsheet.service.AnswerRecordService;
 import org.springframework.beans.factory.annotation.Autowired;

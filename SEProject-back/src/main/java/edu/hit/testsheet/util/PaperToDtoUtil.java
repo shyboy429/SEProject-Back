@@ -1,7 +1,6 @@
 package edu.hit.testsheet.util;
 
-import edu.hit.testsheet.Dto.PaperReturnDto;
-import edu.hit.testsheet.Exception.QuestionNotFoundException;
+import edu.hit.testsheet.dto.PaperReturnDto;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.service.QuestionService;

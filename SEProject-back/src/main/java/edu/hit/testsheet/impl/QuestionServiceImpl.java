@@ -1,10 +1,10 @@
 package edu.hit.testsheet.impl;
 
 
-import edu.hit.testsheet.Dto.QuestionUpdateDto;
-import edu.hit.testsheet.Exception.InvalidQuestionException;
-import edu.hit.testsheet.Exception.QuestionCanNotBeDeletedException;
-import edu.hit.testsheet.Exception.QuestionNotFoundException;
+import edu.hit.testsheet.dto.QuestionUpdateDto;
+import edu.hit.testsheet.exception.InvalidQuestionException;
+import edu.hit.testsheet.exception.QuestionCanNotBeDeletedException;
+import edu.hit.testsheet.exception.QuestionNotFoundException;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.repository.PaperRepository;

@@ -1,9 +1,9 @@
 package edu.hit.testsheet.impl;
 
-import edu.hit.testsheet.Exception.ModifyOwnRoleException;
-import edu.hit.testsheet.Exception.UserAlreadyExistsException;
-import edu.hit.testsheet.Exception.UserLoginFailedException;
-import edu.hit.testsheet.Exception.UserNotFoundException;
+import edu.hit.testsheet.exception.ModifyOwnRoleException;
+import edu.hit.testsheet.exception.UserAlreadyExistsException;
+import edu.hit.testsheet.exception.UserLoginFailedException;
+import edu.hit.testsheet.exception.UserNotFoundException;
 import edu.hit.testsheet.bean.User;
 import edu.hit.testsheet.repository.UserRepository;
 import edu.hit.testsheet.service.UserService;

@@ -1,6 +1,6 @@
 package edu.hit.testsheet.impl;
 
-import edu.hit.testsheet.Exception.AnswerRecordNotFoundException;
+import edu.hit.testsheet.exception.AnswerRecordNotFoundException;
 import edu.hit.testsheet.bean.AnswerRecord;
 import edu.hit.testsheet.repository.AnswerRecordRepository;
 import edu.hit.testsheet.service.AnswerRecordService;

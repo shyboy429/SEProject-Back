@@ -1,8 +1,8 @@
 package edu.hit.testsheet.controller;
 
-import edu.hit.testsheet.Dto.ExamPaperDto;
-import edu.hit.testsheet.Dto.PaperReturnDto;
-import edu.hit.testsheet.Dto.PaperUpdateDto;
+import edu.hit.testsheet.dto.ExamPaperDto;
+import edu.hit.testsheet.dto.PaperReturnDto;
+import edu.hit.testsheet.dto.PaperUpdateDto;
 import edu.hit.testsheet.bean.Paper;
 import edu.hit.testsheet.bean.Question;
 import edu.hit.testsheet.service.PaperService;
