@@ -174,11 +174,8 @@ public class PaperServiceImpl implements PaperService {
         // 排序顺序：选择题 -> 判断题 -> 填空题 -> 问答题
         List<Question> sortedQuestions = questions.stream()
                 .sorted(Comparator.comparingInt(q -> switch (q.getType()) {
-                    case "选择题" -> 1;
-                    case "判断题" -> 2;
-                    case "填空题" -> 3;
-                    case "问答题" -> 4;
-                    default -> 5;
+                    case "选择题" -> 1;case "判断题" -> 2;
+                    case "填空题" -> 3;case "问答题" -> 4;default -> 5;
                 })).toList();
         for (Question question : sortedQuestions) {
             ExamPaperDto dto = new ExamPaperDto();
@@ -190,4 +187,3 @@ public class PaperServiceImpl implements PaperService {
         return ret;
     }
 }
-

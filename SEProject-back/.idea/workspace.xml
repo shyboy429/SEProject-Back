@@ -5,94 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成">
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/controller/AnswerRecordControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/controller/ExamControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/controller/PaperControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/controller/QuestionControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/ExamPaperDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/dto/ExamPaperDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/ExamReturnDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/dto/ExamReturnDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/dto/LoginDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/PaperReturnDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/dto/PaperReturnDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/PaperUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/dto/PaperUpdateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Dto/QuestionUpdateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/dto/QuestionUpdateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/AnswerRecordNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/AnswerRecordNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/DeleteLastQuestionInPaperException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/DeleteLastQuestionInPaperException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/DurationExceedsExamTimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/DurationExceedsExamTimeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/ExamCanNotBeDeletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/ExamCanNotBeDeletedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/ExamNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/ExamNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/InvalidDurationTimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/InvalidDurationTimeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/InvalidExamException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/InvalidExamException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/InvalidExamStartTimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/InvalidExamStartTimeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/InvalidPaperException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/InvalidPaperException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/InvalidQuestionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/InvalidQuestionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/ModifyOwnRoleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/ModifyOwnRoleException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/PaperCanNotBeDeletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/PaperCanNotBeDeletedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/PaperNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/PaperNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/QuestionCanNotBeDeletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/QuestionCanNotBeDeletedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/QuestionNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/QuestionNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/UserAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/UserLoginFailedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/UserLoginFailedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/Exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/PaperController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/AnswerRecordServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/ExamServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/PaperServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/QuestionRepositoryImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/QuestionServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/bean/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/bean/Exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/ExamNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/ExamNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/PaperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/PaperServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/QuestionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/ExamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/ExamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/PaperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/PaperService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/service/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/ExamListToDtoListUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/PaperToDtoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/util/PaperToDtoUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/ExamControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/PaperControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/QuestionControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/UserControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamPaperDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamPaperDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamReturnDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/ExamReturnDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/LoginDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/LoginDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/PaperReturnDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/PaperReturnDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/PaperUpdateDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/PaperUpdateDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/QuestionUpdateDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Dto/QuestionUpdateDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/AnswerRecordNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/AnswerRecordNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/DeleteLastQuestionInPaperException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/DeleteLastQuestionInPaperException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/DurationExceedsExamTimeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/DurationExceedsExamTimeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/ExamCanNotBeDeletedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/ExamCanNotBeDeletedException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/ExamNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/ExamNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidDurationTimeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidDurationTimeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidExamException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidExamException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidExamStartTimeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidExamStartTimeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidPaperException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidPaperException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidQuestionException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/InvalidQuestionException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/ModifyOwnRoleException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/ModifyOwnRoleException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/PaperCanNotBeDeletedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/PaperCanNotBeDeletedException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/PaperNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/PaperNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/QuestionCanNotBeDeletedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/QuestionCanNotBeDeletedException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/QuestionNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/QuestionNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserAlreadyExistsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserAlreadyExistsException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserLoginFailedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserLoginFailedException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/Exception/UserNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/ExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/ExamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/PaperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/PaperController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/AnswerRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/AnswerRecordServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/bean/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/bean/Exam.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/ExamServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/ExamServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/PaperServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/PaperServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/QuestionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/QuestionServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/service/ExamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/service/ExamService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/service/PaperService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/service/PaperService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/service/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/service/QuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/ExamListToDtoListUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/ExamListToDtoListUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/PaperToDtoUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/hit/testsheet/util/PaperToDtoUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/hit/testsheet/ExamControllerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +32,9 @@
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\86139\Desktop\覆盖率报告\Controller层" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -144,7 +78,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/86139/Desktop/code/simt/simt_back&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/86139/Desktop&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15402842&quot;,
@@ -158,83 +92,78 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserControllerTest">
-    <configuration name="AnswerRecordControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.QuestionServiceImplTest">
+    <configuration name="AnswerRecordServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
+          <option name="PATTERN" value="edu.hit.testsheet.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.Controller" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.controller.AnswerRecordControllerTest" />
-      <option name="METHOD_NAME" value="" />
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet.impl" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.impl.AnswerRecordServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExamControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnswerRecordServiceImplTest.testAutomaticMarking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
+          <option name="PATTERN" value="edu.hit.testsheet.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.Controller" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.controller.ExamControllerTest" />
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet.impl" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.impl.AnswerRecordServiceImplTest" />
+      <option name="METHOD_NAME" value="testAutomaticMarking" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaperServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SEProject-back" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hit.testsheet.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet.impl" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.impl.PaperServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaperControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuestionServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
+          <option name="PATTERN" value="edu.hit.testsheet.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.Controller" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.controller.PaperControllerTest" />
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet.impl" />
+      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.impl.QuestionServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuestionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="edu.hit.testsheet.impl in SEProject-back" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
+          <option name="PATTERN" value="edu.hit.testsheet.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.controller" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.controller.QuestionControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SEProject-back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.hit.testsheet.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.hit.testsheet.controller" />
-      <option name="MAIN_CLASS_NAME" value="edu.hit.testsheet.controller.UserControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.hit.testsheet.impl" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -254,21 +183,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.QuestionControllerTest" />
-      <item itemvalue="JUnit.UserControllerTest" />
-      <item itemvalue="JUnit.AnswerRecordControllerTest" />
-      <item itemvalue="JUnit.ExamControllerTest" />
-      <item itemvalue="JUnit.PaperControllerTest" />
+      <item itemvalue="JUnit.QuestionServiceImplTest" />
+      <item itemvalue="JUnit.AnswerRecordServiceImplTest" />
+      <item itemvalue="JUnit.AnswerRecordServiceImplTest.testAutomaticMarking" />
+      <item itemvalue="JUnit.PaperServiceImplTest" />
+      <item itemvalue="JUnit.edu.hit.testsheet.impl in SEProject-back" />
       <item itemvalue="Spring Boot.TestsheetApplication" />
       <item itemvalue="Spring Boot.TestsheetApplication (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserControllerTest" />
-        <item itemvalue="JUnit.PaperControllerTest" />
-        <item itemvalue="JUnit.QuestionControllerTest" />
-        <item itemvalue="JUnit.ExamControllerTest" />
-        <item itemvalue="JUnit.AnswerRecordControllerTest" />
+        <item itemvalue="JUnit.QuestionServiceImplTest" />
+        <item itemvalue="JUnit.AnswerRecordServiceImplTest" />
+        <item itemvalue="JUnit.AnswerRecordServiceImplTest.testAutomaticMarking" />
+        <item itemvalue="JUnit.edu.hit.testsheet.impl in SEProject-back" />
+        <item itemvalue="JUnit.PaperServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +234,10 @@
       <workItem from="1719451418633" duration="3492000" />
       <workItem from="1719536534128" duration="13670000" />
       <workItem from="1719553363862" duration="1856000" />
-      <workItem from="1719555247118" duration="310000" />
+      <workItem from="1719555247118" duration="4765000" />
+      <workItem from="1719560105424" duration="1164000" />
+      <workItem from="1719561289795" duration="2507000" />
+      <workItem from="1719563830436" duration="1275000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>
@@ -549,32 +481,22 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SEProject_back$QuestionServiceImplTest.ic" NAME="QuestionServiceImplTest Coverage Results" MODIFIED="1719565071521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest_testUserLogin_UserNotFound.ic" NAME="UserControllerTest.testUserLogin_UserNotFound Coverage Results" MODIFIED="1719545218277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1719553384715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$ExamControllerTest_testGetAllExams.ic" NAME="ExamControllerTest.testGetAllExams Coverage Results" MODIFIED="1719554551655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testSearchQuestions.ic" NAME="QuestionControllerTest.testSearchQuestions Coverage Results" MODIFIED="1717844847575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
+    <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_controller_in_SEProject_back.ic" NAME="edu.hit.testsheet.controller in SEProject-back Coverage Results" MODIFIED="1719556561712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$PaperControllerTest_testGetExamPaper.ic" NAME="PaperControllerTest.testGetExamPaper Coverage Results" MODIFIED="1719411092915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$ExamControllerTest.ic" NAME="ExamControllerTest Coverage Results" MODIFIED="1719555526385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.controller.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/testsheet$QuestionControllerTest.ic" NAME="QuestionControllerTest Coverage Results" MODIFIED="1717407782920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamControllerTest.ic" NAME="ExamControllerTest Coverage Results" MODIFIED="1719556068796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testGetAllQuestions_and_4_more.ic" NAME="QuestionControllerTest,testGetAllQuestions and 4 more Coverage Results" MODIFIED="1717774984101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/SEProject_back$PaperControllerTest.ic" NAME="PaperControllerTest Coverage Results" MODIFIED="1719553432964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest_testHandleUserNotFoundException.ic" NAME="UserControllerTest.testHandleUserNotFoundException Coverage Results" MODIFIED="1717408577292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SEProject_back$PaperControllerTest.ic" NAME="PaperControllerTest Coverage Results" MODIFIED="1719556089464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest_testUpdateUser.ic" NAME="UserControllerTest.testUpdateUser Coverage Results" MODIFIED="1719544915385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -583,8 +505,57 @@
     <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest_testUserLogin.ic" NAME="UserControllerTest.testUserLogin Coverage Results" MODIFIED="1717776082961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest.ic" NAME="QuestionControllerTest Coverage Results" MODIFIED="1719553418800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest__1_.ic" NAME="UserControllerTest (1) Coverage Results" MODIFIED="1717776125402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$QuestionRepositoryImplTest.ic" NAME="QuestionRepositoryImplTest Coverage Results" MODIFIED="1719558927558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$AnswerRecordServiceImplTest_testAutomaticMarking.ic" NAME="AnswerRecordServiceImplTest.testAutomaticMarking Coverage Results" MODIFIED="1719564544991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$PaperControllerTest.ic" NAME="PaperControllerTest Coverage Results" MODIFIED="1717419353023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamServiceImplTest_testDeleteExamHasRecords.ic" NAME="ExamServiceImplTest.testDeleteExamHasRecords Coverage Results" MODIFIED="1719559955126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamServiceImplTest_testCreateExamStartTimeBeforeCurrentTime.ic" NAME="ExamServiceImplTest.testCreateExamStartTimeBeforeCurrentTime Coverage Results" MODIFIED="1719560715533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest_testDeleteUserById.ic" NAME="UserControllerTest.testDeleteUserById Coverage Results" MODIFIED="1717408234783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$AnswerRecordControllerTest.ic" NAME="AnswerRecordControllerTest Coverage Results" MODIFIED="1719556080635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamServiceImplTest_testGetInProgressPagesNumCount.ic" NAME="ExamServiceImplTest.testGetInProgressPagesNumCount Coverage Results" MODIFIED="1719562509622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamServiceImplTest.ic" NAME="ExamServiceImplTest Coverage Results" MODIFIED="1719562573404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1719556108061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamControllerTest_testGetAllExams.ic" NAME="ExamControllerTest.testGetAllExams Coverage Results" MODIFIED="1719554551655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testSearchQuestions.ic" NAME="QuestionControllerTest.testSearchQuestions Coverage Results" MODIFIED="1717844847575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/testsheet$QuestionControllerTest.ic" NAME="QuestionControllerTest Coverage Results" MODIFIED="1717407782920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testGetAllQuestions_and_4_more.ic" NAME="QuestionControllerTest,testGetAllQuestions and 4 more Coverage Results" MODIFIED="1717774984101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest_testHandleUserNotFoundException.ic" NAME="UserControllerTest.testHandleUserNotFoundException Coverage Results" MODIFIED="1717408577292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest.ic" NAME="QuestionControllerTest Coverage Results" MODIFIED="1719556097884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SEProject_back$AnswerRecordServiceImplTest.ic" NAME="AnswerRecordServiceImplTest Coverage Results" MODIFIED="1719564714765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/testsheet$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1717408777127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
@@ -592,18 +563,17 @@
     <SUITE FILE_PATH="coverage/SEProject_back$PaperControllerTest_testGetAllPapers.ic" NAME="PaperControllerTest.testGetAllPapers Coverage Results" MODIFIED="1717844293937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$UserControllerTest__1_.ic" NAME="UserControllerTest (1) Coverage Results" MODIFIED="1717776125402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
+    <SUITE FILE_PATH="coverage/SEProject_back$PaperServiceImplTest.ic" NAME="PaperServiceImplTest Coverage Results" MODIFIED="1719562892022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/testsheet$PaperControllerTest.ic" NAME="PaperControllerTest Coverage Results" MODIFIED="1717419353023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
+    <SUITE FILE_PATH="coverage/SEProject_back$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1719557940116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/testsheet$UserControllerTest_testDeleteUserById.ic" NAME="UserControllerTest.testDeleteUserById Coverage Results" MODIFIED="1717408234783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.*</FILTER>
+    <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_impl_in_SEProject_back.ic" NAME="edu.hit.testsheet.impl in SEProject-back Coverage Results" MODIFIED="1719563853103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$AnswerRecordControllerTest.ic" NAME="AnswerRecordControllerTest Coverage Results" MODIFIED="1719555503985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.hit.testsheet.controller.*</FILTER>
-      <FILTER>edu.hit.testsheet.controller.*</FILTER>
+    <SUITE FILE_PATH="coverage/SEProject_back$ExamServiceImplTest_testDeleteNonExistingExam.ic" NAME="ExamServiceImplTest.testDeleteNonExistingExam Coverage Results" MODIFIED="1719560581414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.hit.testsheet.impl.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$PaperControllerTest__1_.ic" NAME="PaperControllerTest (1) Coverage Results" MODIFIED="1717844761410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>

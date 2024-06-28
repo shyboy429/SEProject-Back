@@ -14,27 +14,35 @@ import jakarta.persistence.*;
 @Table(name = "exams")
 public class Exam {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name",nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "paper_id",nullable = false)
+    @Column(name = "paper_id", nullable = false)
     private Long paperId;
 
-    @Column(name = "publisher",nullable = false)
+    @Column(name = "publisher", nullable = false)
     private String publisher;
 
-    @Column(name = "start_time",nullable = false)
+    @Column(name = "start_time", nullable = false)
     private String startTime;
 
-    @Column(name = "end_time",nullable = false)
+    @Column(name = "end_time", nullable = false)
     private String endTime;
-    
-    @Column(name = "duration_Time",nullable = false)
+
+    @Column(name = "duration_Time", nullable = false)
     private String durationTime;
+
+    public Exam(String name) {
+        this.setName(name);
+    }
+
+    public Exam() {
+    }
 
     public Long getId() {
         return id;

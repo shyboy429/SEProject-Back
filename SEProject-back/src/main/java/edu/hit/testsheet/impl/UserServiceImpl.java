@@ -26,6 +26,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    
     @Override
     public User userLogin(String username, String password) {
         User user = userRepository.findByUsernameAndPassword(username, password).orElse(null);

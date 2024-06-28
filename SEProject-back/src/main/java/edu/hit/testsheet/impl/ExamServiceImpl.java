@@ -69,15 +69,17 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public long getAllExamsPagesNum() {
-        List<ExamReturnDto> allExams = getAllExamsDto();
-        return allExams.size();
+        List<Exam> allExams = examRepository.findAll();
+        List<ExamReturnDto> exams = examListToDtoListUtil.convertExamListToDtoList(null, allExams, null);
+        return exams.size();
     }
 
     @Override
     public long getNotStartedPagesNum() {
-        List<ExamReturnDto> allExams = getAllExamsDto();
+        List<Exam> allExams = examRepository.findAll();
+        List<ExamReturnDto> exams = examListToDtoListUtil.convertExamListToDtoList(null, allExams, null);
         long ret = 0;
-        for (ExamReturnDto e : allExams) {
+        for (ExamReturnDto e : exams) {
             if (e.getStatus().equals("未开始")) {
                 ret++;
             }
@@ -87,9 +89,10 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public long getInProgressPagesNum() {
-        List<ExamReturnDto> allExams = getAllExamsDto();
+        List<Exam> allExams = examRepository.findAll();
+        List<ExamReturnDto> exams = examListToDtoListUtil.convertExamListToDtoList(null, allExams, null);
         long ret = 0;
-        for (ExamReturnDto e : allExams) {
+        for (ExamReturnDto e : exams) {
             if (e.getStatus().equals("进行中")) {
                 ret++;
             }
@@ -99,9 +102,10 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public long getFinishedPagesNum() {
-        List<ExamReturnDto> allExams = getAllExamsDto();
+        List<Exam> allExams = examRepository.findAll();
+        List<ExamReturnDto> exams = examListToDtoListUtil.convertExamListToDtoList(null, allExams, null);
         long ret = 0;
-        for (ExamReturnDto e : allExams) {
+        for (ExamReturnDto e : exams) {
             if (e.getStatus().equals("已结束")) {
                 ret++;
             }
@@ -164,10 +168,5 @@ public class ExamServiceImpl implements ExamService {
             throw new ExamCanNotBeDeletedException(exam.getName() + "已有考试记录，不可删除");
         }
         examRepository.delete(exam);
-    }
-
-    private List<ExamReturnDto> getAllExamsDto() {
-        List<Exam> allExams = examRepository.findAll();
-        return examListToDtoListUtil.convertExamListToDtoList(null, allExams, null);
     }
 }

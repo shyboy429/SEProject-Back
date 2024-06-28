@@ -24,7 +24,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
-
+    
     public enum Role {
         STUDENT, TEACHER, ADMIN
     }

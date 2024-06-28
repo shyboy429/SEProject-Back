@@ -27,6 +27,11 @@ public class QuestionServiceImpl implements QuestionService {
     @Autowired
     private PaperRepository paperRepository;
 
+    public QuestionServiceImpl(QuestionRepository questionRepository, PaperRepository paperRepository) {
+        this.paperRepository = paperRepository;
+        this.questionRepository = questionRepository;
+    }
+
     @Override
     public List<Question> getQuestionsByPage(int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);

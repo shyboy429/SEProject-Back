@@ -10,9 +10,6 @@ package edu.hit.testsheet.exception;
  */
 public class ExamNotFoundException extends RuntimeException{
     public ExamNotFoundException(Long id) {
-        super("Paper not found with id: " + id);
-    }
-    public ExamNotFoundException(String name) {
-        super("Paper not found with name: " + name);
+        super("Exam not found with id: " + id);
     }
 }
