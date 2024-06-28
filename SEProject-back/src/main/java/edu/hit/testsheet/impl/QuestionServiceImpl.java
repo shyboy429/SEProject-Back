@@ -61,7 +61,7 @@ public class QuestionServiceImpl implements QuestionService {
         }
         if (question.getDescription() == null || question.getDescription().isEmpty()) {
             if (question.getType().equals("选择题")) {
-                throw new InvalidQuestionException("题目或选项不可有空！");
+                throw new InvalidQuestionException("题目和选项不可有空！");
             }
             throw new InvalidQuestionException("题目不可为空！");
         }

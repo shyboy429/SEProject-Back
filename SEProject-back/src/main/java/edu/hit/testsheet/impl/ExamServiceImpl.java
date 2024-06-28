@@ -36,36 +36,37 @@ public class ExamServiceImpl implements ExamService {
     private ExamListToDtoListUtil examListToDtoListUtil;
     @Autowired
     private AnswerRecordService answerRecordService;
+
     @Override
-    public List<ExamReturnDto> getAllExams(String studentName,int pageIndex, int pageSize) {
+    public List<ExamReturnDto> getAllExams(String studentName, int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         Page<Exam> paperPage = examRepository.findAll(pageable);
         List<Exam> allExams = paperPage.getContent();
-        return examListToDtoListUtil.convertExamListToDtoList(studentName,allExams,null);
+        return examListToDtoListUtil.convertExamListToDtoList(studentName, allExams, null);
     }
 
     @Override
-    public List<ExamReturnDto> getNotStartedExam(String studentName,int pageIndex, int pageSize) {
+    public List<ExamReturnDto> getNotStartedExam(String studentName, int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         String currentTime = DateFormatterUtil.getCurrentTimeString();
         Page<Exam> paperPage = examRepository.findNotStartedExams(currentTime, pageable);
-        return examListToDtoListUtil.convertExamListToDtoList(studentName,paperPage.getContent(),"未开始");
+        return examListToDtoListUtil.convertExamListToDtoList(studentName, paperPage.getContent(), "未开始");
     }
 
     @Override
-    public List<ExamReturnDto> getInProgressExam(String studentName,int pageIndex, int pageSize) {
+    public List<ExamReturnDto> getInProgressExam(String studentName, int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         String currentTime = DateFormatterUtil.getCurrentTimeString();
         Page<Exam> paperPage = examRepository.findInProgressExams(currentTime, pageable);
-        return examListToDtoListUtil.convertExamListToDtoList(studentName,paperPage.getContent(),"进行中");
+        return examListToDtoListUtil.convertExamListToDtoList(studentName, paperPage.getContent(), "进行中");
     }
 
     @Override
-    public List<ExamReturnDto> getFinishedExam(String studentName,int pageIndex, int pageSize) {
+    public List<ExamReturnDto> getFinishedExam(String studentName, int pageIndex, int pageSize) {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         String currentTime = DateFormatterUtil.getCurrentTimeString();
         Page<Exam> paperPage = examRepository.findFinishedExams(currentTime, pageable);
-        return examListToDtoListUtil.convertExamListToDtoList(studentName,paperPage.getContent(),"已结束");
+        return examListToDtoListUtil.convertExamListToDtoList(studentName, paperPage.getContent(), "已结束");
     }
 
     @Override
@@ -78,8 +79,8 @@ public class ExamServiceImpl implements ExamService {
     public long getNotStartedPagesNum() {
         List<ExamReturnDto> allExams = getAllExamsDto();
         long ret = 0;
-        for(ExamReturnDto e : allExams){
-            if(e.getStatus().equals("未开始")){
+        for (ExamReturnDto e : allExams) {
+            if (e.getStatus().equals("未开始")) {
                 ret++;
             }
         }
@@ -90,8 +91,8 @@ public class ExamServiceImpl implements ExamService {
     public long getInProgressPagesNum() {
         List<ExamReturnDto> allExams = getAllExamsDto();
         long ret = 0;
-        for(ExamReturnDto e : allExams){
-            if(e.getStatus().equals("进行中")){
+        for (ExamReturnDto e : allExams) {
+            if (e.getStatus().equals("进行中")) {
                 ret++;
             }
         }
@@ -102,8 +103,8 @@ public class ExamServiceImpl implements ExamService {
     public long getFinishedPagesNum() {
         List<ExamReturnDto> allExams = getAllExamsDto();
         long ret = 0;
-        for(ExamReturnDto e : allExams){
-            if(e.getStatus().equals("已结束")){
+        for (ExamReturnDto e : allExams) {
+            if (e.getStatus().equals("已结束")) {
                 ret++;
             }
         }
@@ -116,11 +117,6 @@ public class ExamServiceImpl implements ExamService {
         return exam.orElseThrow(() -> new ExamNotFoundException(id));
     }
 
-    @Override
-    public Exam getExamByName(String name) {
-        Optional<Exam> exam = examRepository.findByName(name);
-        return exam.orElseThrow(() -> new ExamNotFoundException(name));
-    }
 
     @Override
     public Exam createExam(Exam exam) {
@@ -144,23 +140,36 @@ public class ExamServiceImpl implements ExamService {
         }
         exam.setStartTime(DateFormatterUtil.frontFormatDate(exam.getStartTime()));
         exam.setEndTime(DateFormatterUtil.frontFormatDate(exam.getEndTime()));
-        if(DateFormatterUtil.isBeforeCurrentTime(exam.getStartTime())){
-            throw new InvalidExamStartTimeException("考试开始时间不可早于当前时间!");
+        if (DateFormatterUtil.isBeforeCurrentTime(exam.getStartTime())) {
+            throw new InvalidExamStartTimeException("考试开始时间不可早于当前时间！");
         }
+        long durationInMinutes = DateFormatterUtil.calculateDurationInMinutes(exam.getStartTime(), exam.getEndTime());
+        try {
+            int duration = Integer.parseInt(exam.getDurationTime());
+            if (duration <= 0) {
+                throw new InvalidDurationTimeException("考试限时必须是一个正整数！");
+            }
+            if (duration > durationInMinutes) {
+                throw new DurationExceedsExamTimeException("限时超出了考试持续时间！");
+            }
+        } catch (NumberFormatException e) {
+            throw new InvalidDurationTimeException("考试限时必须是一个正整数！");
+        }
+
         return examRepository.save(exam);
     }
 
     @Override
     public void deleteExam(Long id) {
         Exam exam = getExamById(id);
-        if(answerRecordService.existsByExamId(id)){
+        if (answerRecordService.existsByExamId(id)) {
             throw new ExamCanNotBeDeletedException(exam.getName() + "已有考试记录，不可删除");
         }
         examRepository.delete(exam);
     }
 
-    private List<ExamReturnDto> getAllExamsDto(){
+    private List<ExamReturnDto> getAllExamsDto() {
         List<Exam> allExams = examRepository.findAll();
-        return examListToDtoListUtil.convertExamListToDtoList(null,allExams,null);
+        return examListToDtoListUtil.convertExamListToDtoList(null, allExams, null);
     }
 }

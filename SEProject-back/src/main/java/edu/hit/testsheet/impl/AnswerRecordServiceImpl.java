@@ -32,28 +32,12 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
     private CalculateQuestionsScoreUtil calculateQuestionsScoreUtil;
 
     @Override
-    public List<List<AnswerRecord>> getAnswerRecordByStudentName(String studentName) {
-        List<List<AnswerRecord>> answerRecords = answerRecordRepository.findByStudentName(studentName);
-        if (answerRecords.isEmpty()) {
-            throw new AnswerRecordNotFoundException(studentName);
-        }
-        return answerRecords;
-    }
-
-    @Override
     public List<AnswerRecord> getAnswerRecordByStudentNameAndExamId(String studentName, Long examId) {
         List<AnswerRecord> answerRecords = answerRecordRepository.findByStudentNameAndExamId(studentName, examId);
         if (answerRecords.isEmpty()) {
             throw new AnswerRecordNotFoundException(studentName, examId);
         }
         return answerRecords;
-    }
-
-    @Override
-    public AnswerRecord getAnswerRecordByStudentNameAndExamIdAndQuestionId(String studentName, Long examId,
-                                                                           Long questionId) {
-        return answerRecordRepository.findByStudentNameAndExamIdAndQuestionId(studentName, examId, questionId)
-                .orElseThrow(() -> new AnswerRecordNotFoundException(studentName, examId, questionId));
     }
 
     @Override
@@ -85,12 +69,6 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
         return calculateQuestionsScoreUtil.calculateScore(answerRecords);
     }
 
-
-    @Override
-    public AnswerRecord createAnswerRecord(AnswerRecord answerRecord) {
-        return answerRecordRepository.save(answerRecord);
-    }
-
     @Override
     public AnswerRecord updateGrade(String studentName, Long examId, Long questionId, String grade) {
         AnswerRecord answerRecord = answerRecordRepository.
@@ -98,14 +76,6 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
                 orElseThrow(() -> new AnswerRecordNotFoundException(studentName, examId, questionId));
         answerRecord.setGrade(grade);
         return answerRecordRepository.save(answerRecord);
-    }
-
-    @Override
-    public AnswerRecord deleteAnswerRecord(Long id) {
-        AnswerRecord answerRecord = answerRecordRepository.findById(id)
-                .orElseThrow(() -> new AnswerRecordNotFoundException(id));
-        answerRecordRepository.delete(answerRecord);
-        return answerRecord;
     }
 
     @Override

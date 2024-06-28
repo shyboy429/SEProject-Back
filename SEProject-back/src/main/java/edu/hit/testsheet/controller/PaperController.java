@@ -34,7 +34,6 @@ public class PaperController {
     public List<PaperReturnDto> getAllPapers(@RequestParam(required = false, defaultValue = "1") String pageNum) {
         return paperService.getAllPapers(Integer.parseInt(pageNum) - 1, 12);
     }
-
     
     /**
      * 添加试卷

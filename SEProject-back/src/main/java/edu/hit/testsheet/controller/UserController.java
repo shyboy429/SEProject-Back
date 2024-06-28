@@ -52,25 +52,6 @@ public class UserController {
     }
 
     /**
-     * 根据 id获取用户
-     * @param id
-     * @return 对应用户的详细信息
-     */
-    @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
-        return userService.selectUserById(id);
-    }
-
-    /**
-     * 根据 id删除用户
-     * @param id
-     */
-    @DeleteMapping("/{id}")
-    public void deleteUserById(@PathVariable Long id) {
-        userService.deleteUserById(id);
-    }
-
-    /**
      * 管理员根据 id更新用户信息
      * @param username
      * @param role

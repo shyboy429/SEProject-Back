@@ -22,7 +22,6 @@ import java.util.Optional;
  */
 @Repository
 public interface ExamRepository extends JpaRepository<Exam, Long> {
-    Optional<Exam> findByName(String name);
 
     @Query("SELECT e FROM Exam e WHERE e.startTime > :currentTime")
     Page<Exam> findNotStartedExams(@Param("currentTime") String currentTime, Pageable pageable);

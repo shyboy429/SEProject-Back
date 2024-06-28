@@ -19,7 +19,6 @@ import java.util.Optional;
 public interface AnswerRecordRepository extends JpaRepository<AnswerRecord, Long> {
     Optional<AnswerRecord> findByStudentNameAndExamIdAndQuestionId(String studentName, Long examId, Long questionId);
     List<AnswerRecord> findByStudentNameAndExamId(String studentName, Long examId);
-    List<List<AnswerRecord>> findByStudentName(String studentName);
     boolean existsByStudentNameAndExamId(String studentName,Long examId);
     
     boolean existsByExamId(Long examId);

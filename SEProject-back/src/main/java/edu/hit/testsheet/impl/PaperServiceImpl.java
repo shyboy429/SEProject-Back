@@ -143,6 +143,9 @@ public class PaperServiceImpl implements PaperService {
 
         // 拆分字符串并找到等于 dqId 的元素
         String[] questionIds = content.split(" ");
+        if(questionIds.length == 1){
+            throw new DeleteLastQuestionInPaperException("该题是当前试卷的最后一题。如果需要，请直接删除试卷。");
+        }
         StringBuilder updatedContent = new StringBuilder();
 
         for (String questionId : questionIds) {

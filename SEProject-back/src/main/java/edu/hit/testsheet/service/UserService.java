@@ -20,9 +20,5 @@ public interface UserService {
 
     List<User> getAllUser();
 
-    void deleteUserById(Long id);
-
-    User selectUserById(Long id);
-
     User updateUser(String adminName,String username, String role);
 }

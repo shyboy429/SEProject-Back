@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     public User registerUser(User user) {
         // 检查用户名是否已存在
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            throw new UserAlreadyExistsException("该用户名: \"" + user.getUsername()+"\" 已经存在!");
+            throw new UserAlreadyExistsException("该用户名: \"" + user.getUsername()+"\" 已经存在！");
         }
         // 保存新用户
         return userRepository.save(user);
@@ -48,21 +48,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUser() {
         return userRepository.findAll();
-    }
-
-    @Override
-    public void deleteUserById(Long id) {
-        if (userRepository.existsById(id)) {
-            userRepository.deleteById(id);
-        } else {
-            throw new UserNotFoundException(id);
-        }
-    }
-
-    @Override
-    public User selectUserById(Long id) {
-        return userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException(id));
     }
 
     @Override

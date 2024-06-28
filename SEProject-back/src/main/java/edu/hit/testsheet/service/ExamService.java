@@ -16,7 +16,6 @@ import java.util.List;
 public interface ExamService {
     List<ExamReturnDto> getAllExams(String studentName,int pageIndex, int pageSize);
     Exam getExamById(Long id);
-    Exam getExamByName(String name);
     Exam createExam(Exam exam);
     void deleteExam(Long id);
     List<ExamReturnDto> getNotStartedExam(String studentName,int pageIndex, int pageSize);

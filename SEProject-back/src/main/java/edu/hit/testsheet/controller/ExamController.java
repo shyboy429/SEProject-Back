@@ -71,16 +71,6 @@ public class ExamController {
         return examService.getFinishedExam(studentName,Integer.parseInt(pageNum) - 1, 10);
     }
 
-    @GetMapping("/id/{id}")
-    public Exam getExamById(@PathVariable Long id) {
-        return examService.getExamById(id);
-    }
-
-    @GetMapping("/name/{name}")
-    public Exam getExamByName(@PathVariable String name) {
-        return examService.getExamByName(name);
-    }
-
     /**
      * 管理员发布一场新的考试
      * @param exam
@@ -90,8 +80,11 @@ public class ExamController {
     public Exam createExam(@RequestBody Exam exam) {
         return examService.createExam(exam);
     }
-    
-    
+
+    /**
+     * 根据id删除一场考试
+     * @param id
+     */
     @DeleteMapping("/{id}")
     public void deleteExam(@PathVariable Long id) {
         examService.deleteExam(id);

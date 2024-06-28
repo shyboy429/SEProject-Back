@@ -20,34 +20,13 @@ import java.util.List;
 public class AnswerRecordController {
     @Autowired
     private AnswerRecordService answerRecordService;
-    
-    @GetMapping("/student-name/{studentName}")
-    public List<List<AnswerRecord>> getAnswerRecordByStudentName(@PathVariable String studentName){
-        return answerRecordService.getAnswerRecordByStudentName(studentName);
-    }
 
-    @GetMapping("/student-name/{studentName}/exam-id/{examId}")
-    public List<AnswerRecord> getAnswerRecordByStudentNameAndExamId(@PathVariable String studentName,
-                                                                    @PathVariable Long examId) {
-        return answerRecordService.getAnswerRecordByStudentNameAndExamId(studentName, examId);
-    }
 
-    @GetMapping("/student-name/{studentName}/exam-id/{examId}/question-id/{questionId}")
-    AnswerRecord getAnswerRecordByStudentNameAndExamIdAndQuestionId(@PathVariable String studentName,
-                                                                    @PathVariable Long examId,
-                                                                    @PathVariable Long questionId) {
-        return answerRecordService.getAnswerRecordByStudentNameAndExamIdAndQuestionId(studentName, examId, questionId);
-    }
-    
-    @PostMapping()
-    AnswerRecord createAnswerRecord(@RequestBody AnswerRecord answerRecord){
-        return answerRecordService.createAnswerRecord(answerRecord);
-    }
-    
     @PostMapping("/submit-answer")
-    List<AnswerRecord> submitAnswer(@RequestBody List<AnswerRecord> answerRecords){
+    List<AnswerRecord> submitAnswer(@RequestBody List<AnswerRecord> answerRecords) {
         answerRecordService.submitAnswer(answerRecords);
-        return answerRecordService.automaticMarking(answerRecords.get(0).getStudentName(),answerRecords.get(0).getExamId());
+        return answerRecordService.automaticMarking(answerRecords.get(0).getStudentName(),
+                answerRecords.get(0).getExamId());
     }
 
     @PutMapping("/grade")
@@ -57,10 +36,5 @@ public class AnswerRecordController {
             @RequestParam Long questionId,
             @RequestParam String grade) {
         return answerRecordService.updateGrade(studentName, examId, questionId, grade);
-    }
-
-    @DeleteMapping("/{id}")
-    public AnswerRecord deleteAnswerRecord(@PathVariable Long id){
-        return answerRecordService.deleteAnswerRecord(id);
     }
 }

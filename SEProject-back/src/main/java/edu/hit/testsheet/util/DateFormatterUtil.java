@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 /**
  * ClassName:DateFormatter
@@ -23,17 +24,17 @@ import java.util.TimeZone;
 public class DateFormatterUtil {
 
     // 定义可能的日期格式
-    private static final List<SimpleDateFormat> dateFormats = Arrays.asList(
-            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"),
-            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-    );
-
-    static {
-        // 设置所有格式的时区为 CST
-        for (SimpleDateFormat format : dateFormats) {
-            format.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
-        }
-    }
+//    private static final List<SimpleDateFormat> dateFormats = Arrays.asList(
+//            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"),
+//            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+//    );
+//
+//    static {
+//        // 设置所有格式的时区为 CST
+//        for (SimpleDateFormat format : dateFormats) {
+//            format.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+//        }
+//    }
 
     public static String formatDate(LocalDateTime dateTime) {
         // 创建DateTimeFormatter对象并设置自定义的日期时间格式
@@ -77,6 +78,22 @@ public class DateFormatterUtil {
         }
     }
 
+    public static long calculateDurationInMinutes(String startTime, String endTime) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+
+        try {
+            Date startDate = dateFormat.parse(startTime);
+            Date endDate = dateFormat.parse(endTime);
+
+            long durationInMillis = endDate.getTime() - startDate.getTime();
+            return TimeUnit.MILLISECONDS.toMinutes(durationInMillis);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            // Handle or throw an exception as needed
+            return -1; // or throw an exception indicating parsing failure
+        }
+    }
     public static String getCurrentTimeString() {
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         outputFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));

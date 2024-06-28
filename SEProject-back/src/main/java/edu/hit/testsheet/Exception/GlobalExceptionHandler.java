@@ -110,6 +110,24 @@ public class GlobalExceptionHandler {
         return createErrorResponse(ex.getMessage());
     }
 
+    @ExceptionHandler(InvalidDurationTimeException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleInvalidDurationTimeException(InvalidDurationTimeException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
+    @ExceptionHandler(DurationExceedsExamTimeException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleDurationExceedsExamTimeException(DurationExceedsExamTimeException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+    
+    @ExceptionHandler(DeleteLastQuestionInPaperException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> handleDeleteLastQuestionInPaperException(DeleteLastQuestionInPaperException ex) {
+        return createErrorResponse(ex.getMessage());
+    }
+
     private Map<String, String> createErrorResponse(String message) {
         Map<String, String> errorMap = new HashMap<>();
         errorMap.put("success", "error");
