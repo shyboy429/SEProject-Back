@@ -169,7 +169,7 @@ public class ExamServiceImplTest {
             examService.deleteExam(1L);
         });
 
-        assertEquals("examName已有考试记录，不可删除", exception.getMessage());
+        assertEquals("\"examName\" 已有考试记录，不可删除", exception.getMessage());
     }
 
     @Test

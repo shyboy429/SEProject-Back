@@ -90,7 +90,7 @@ public class PaperServiceImpl implements PaperService {
                 String examNames = exams.stream()
                         .map(Exam::getName)
                         .collect(Collectors.joining(", "));
-                throw new PaperCanNotBeDeletedException("考试：" + examNames + " 使用当前试卷，不可删除！");
+                throw new PaperCanNotBeDeletedException("考试：\"" + examNames + "\" 使用当前试卷，不可删除！");
             }
             paperRepository.deleteById(id);
         } else {

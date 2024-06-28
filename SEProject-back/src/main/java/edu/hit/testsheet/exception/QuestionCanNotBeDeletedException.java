@@ -10,6 +10,6 @@ package edu.hit.testsheet.exception;
  */
 public class QuestionCanNotBeDeletedException extends RuntimeException{
     public QuestionCanNotBeDeletedException(Long id,String title) {
-        super("Question could not be deleted with id: " + id + ", because it is in the paper: " + title);
+        super("该问题不可被删除, 它包含在在试卷: \"" + title + "\" 中！");
     }
 }

@@ -83,11 +83,13 @@ public class QuestionServiceImpl implements QuestionService {
             List<Paper> allPapers = paperRepository.findAll();
             for (Paper p : allPapers) {
                 String content = p.getContent();
-                String[] questionIds = content.split(" ");
-                if (questionIds.length != 0) {
-                    for (String qid : questionIds) {
-                        if (id == Long.parseLong(qid)) {
-                            throw new QuestionCanNotBeDeletedException(id, p.getTitle());
+                if (!content.isEmpty()) {
+                    String[] questionIds = content.split(" ");
+                    if (questionIds.length != 0) {
+                        for (String qid : questionIds) {
+                            if (id == Long.parseLong(qid)) {
+                                throw new QuestionCanNotBeDeletedException(id, p.getTitle());
+                            }
                         }
                     }
                 }

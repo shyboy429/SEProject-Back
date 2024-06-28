@@ -165,7 +165,7 @@ public class ExamServiceImpl implements ExamService {
     public void deleteExam(Long id) {
         Exam exam = getExamById(id);
         if (answerRecordService.existsByExamId(id)) {
-            throw new ExamCanNotBeDeletedException(exam.getName() + "已有考试记录，不可删除");
+            throw new ExamCanNotBeDeletedException("\"" + exam.getName() + "\" 已有考试记录，不可删除!");
         }
         examRepository.delete(exam);
     }

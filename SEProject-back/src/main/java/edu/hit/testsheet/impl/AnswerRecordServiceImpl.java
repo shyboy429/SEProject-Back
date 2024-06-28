@@ -80,6 +80,11 @@ public class AnswerRecordServiceImpl implements AnswerRecordService {
 
     @Override
     public List<AnswerRecord> submitAnswer(List<AnswerRecord> answerRecords) {
+        for (AnswerRecord a : answerRecords) {
+            if (questionService.selectQuestionById(a.getQuestionId()).getType().equals("选择题")) {
+                a.setStudentAnswer(String.valueOf(a.getStudentAnswer().charAt(0)));
+            }
+        }
         answerRecordRepository.saveAll(answerRecords);
         return answerRecords;
     }

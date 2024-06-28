@@ -43,8 +43,9 @@ public class QuestionController {
      * @param id
      */
     @DeleteMapping("/{id}")
-    public void deleteQuestionById(@PathVariable Long id) {
+    public Long deleteQuestionById(@PathVariable Long id) {
         questionService.deleteQuestionById(id);
+        return id;
     }
 
     /**

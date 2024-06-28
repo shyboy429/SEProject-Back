@@ -151,7 +151,7 @@ public class PaperServiceImplTest {
             paperService.deletePaperById(1L);
         });
 
-        assertTrue(exception.getMessage().contains("考试：Exam1, Exam2 使用当前试卷，不可删除！"));
+        assertTrue(exception.getMessage().contains("考试：\"Exam1, Exam2\" 使用当前试卷，不可删除！"));
     }
 
     @Test
