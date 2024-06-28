@@ -14,5 +14,6 @@ import java.util.List;
  */
 
 public interface QuestionRepositoryCustom {
-    List<Question> searchQuestions(String keywords, String type, String difficultLevel,String username, int pageIndex,int pageSize);
+    List<Question> searchQuestions(String keywords, String type, String difficultLevel, String username
+            , int pageIndex, int pageSize, String orderAttribute, String order);
 }

@@ -19,7 +19,8 @@ public interface QuestionService {
 
     Question updateQuestion(Long id, QuestionUpdateDto questionUpdateDto);
 
-    List<Question> selectQuestion(String keywords, String type, String difficultLevel,String username, int pageIndex,int pageSize);
+    List<Question> selectQuestion(String keywords, String type, String difficultLevel, String username
+            , int pageIndex, int pageSize, String orderAttribute, String order);
 
     long getQuestionsCount();
 }

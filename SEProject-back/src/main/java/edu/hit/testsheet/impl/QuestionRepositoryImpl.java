@@ -19,7 +19,8 @@ public class QuestionRepositoryImpl implements QuestionRepositoryCustom {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Question> searchQuestions(String keywords, String type, String difficultLevel,String username, int pageIndex,int pageSize) {
+    public List<Question> searchQuestions(String keywords, String type, String difficultLevel,String username
+            , int pageIndex,int pageSize,String orderAttribute,String order) {
         // 获取CriteriaBuilder实例，用于构建Criteria查询
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 
@@ -66,6 +67,15 @@ public class QuestionRepositoryImpl implements QuestionRepositoryCustom {
             System.out.println("No predicates applied"); // 添加日志信息
         }
 
+        // 设置排序条件
+        if (orderAttribute != null && !orderAttribute.isEmpty()) {
+            if (order.equalsIgnoreCase("ASC")) {
+                cq.orderBy(cb.asc(question.get(orderAttribute)));
+            } else if (order.equalsIgnoreCase("DESC")) {
+                cq.orderBy(cb.desc(question.get(orderAttribute)));
+            }
+        }
+        
         // 创建查询对象
         TypedQuery<Question> query = entityManager.createQuery(cq);
         if(pageIndex == -1){

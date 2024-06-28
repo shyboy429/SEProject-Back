@@ -134,8 +134,9 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Question> selectQuestion(String keywords, String type, String difficultLevel, String username,
-                                         int pageIndex, int pageSize) {
-        return questionRepository.searchQuestions(keywords, type, difficultLevel, username, pageIndex, pageSize);
+                                         int pageIndex, int pageSize, String orderAttribute, String order) {
+        return questionRepository.searchQuestions(keywords, type, difficultLevel, username, pageIndex, pageSize,
+                orderAttribute, order);
     }
 
     @Override
