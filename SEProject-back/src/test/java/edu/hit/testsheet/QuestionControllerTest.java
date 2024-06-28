@@ -137,7 +137,7 @@ public class QuestionControllerTest {
         questions.get(1).setId(2L);
         questions.get(1).setDescription("Question 2");
 
-        when(questionService.selectQuestion("keyword", "type", "difficultLevel", "username", 0, 10))
+        when(questionService.selectQuestion("keyword", "type", "difficultLevel", "username", 0, 10,null,null))
                 .thenReturn(questions);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/questions/search?pageNum=1")

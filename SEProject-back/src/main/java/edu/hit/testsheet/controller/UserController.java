@@ -74,13 +74,13 @@ public class UserController {
      * 根据 id更新用户信息
      * @param id
      * @param username
-     * @param password
+     * @param role
      * @return 更新后的用户信息
      */
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id,
                            @RequestParam(required = false) String username,
-                           @RequestParam(required = false) String password) {
-        return userService.updateUser(id, username, password);
+                           @RequestParam(required = false) String role) {
+        return userService.updateUser(id, username, role);
     }
 }

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * ClassName:UserServiceImpl
@@ -66,11 +65,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(Long id, String username, String password) {
+    public User updateUser(Long id, String username, String role) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
         user.setUsername(username);
-        user.setPassword(password);
+        try {
+            User.Role roleEnum = User.Role.valueOf(role.toUpperCase());
+            user.setRole(roleEnum);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid role: " + role);
+        }
         return userRepository.save(user);
     }
 }

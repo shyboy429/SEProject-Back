@@ -24,5 +24,5 @@ public interface UserService {
 
     User selectUserById(Long id);
 
-    User updateUser(Long id, String username, String password);
+    User updateUser(Long id, String username, String role);
 }
