@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524801de-00aa-4810-aeac-31245d1939f8" name="Changes" comment="6.8-v1.8 第一轮迭代完成">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/QuestionCanNotBeDeletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/exception/QuestionCanNotBeDeletedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/AnswerRecordServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/ExamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/PaperServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/PaperServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/testsheet/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/AnswerRecordServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/AnswerRecordServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/ExamServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/ExamServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/PaperServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/hit/testsheet/impl/PaperServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +87,7 @@
       <recent name="edu.hit.testsheet.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.TestsheetApplication (2)">
+  <component name="RunManager" selected="JUnit.edu.hit.testsheet in SEProject-back">
     <configuration name="GlobalExceptionHandlerTest.handleUserAlreadyExistsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SEProject-back" />
       <extension name="coverage">
@@ -192,9 +187,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.edu.hit.testsheet in SEProject-back" />
         <item itemvalue="Spring Boot.TestsheetApplication (2)" />
         <item itemvalue="JUnit.TestsheetApplicationTest" />
-        <item itemvalue="JUnit.edu.hit.testsheet in SEProject-back" />
         <item itemvalue="JUnit.GlobalExceptionHandlerTest.handleUserAlreadyExistsException" />
         <item itemvalue="JUnit.edu.hit.testsheet.util in SEProject-back" />
       </list>
@@ -241,7 +236,8 @@
       <workItem from="1719570114939" duration="154000" />
       <workItem from="1719570283500" duration="979000" />
       <workItem from="1719571283503" duration="2059000" />
-      <workItem from="1719574796329" duration="6632000" />
+      <workItem from="1719574796329" duration="7132000" />
+      <workItem from="1719623348958" duration="1142000" />
     </task>
     <task id="LOCAL-00001" summary="6.3-v1.0">
       <created>1717416792580</created>
@@ -566,7 +562,7 @@
     <SUITE FILE_PATH="coverage/SEProject_back$PaperToDtoUtilTest_testConvertPaperToDto.ic" NAME="PaperToDtoUtilTest.testConvertPaperToDto Coverage Results" MODIFIED="1719566529953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.util.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_in_SEProject_back.ic" NAME="edu.hit.testsheet in SEProject-back Coverage Results" MODIFIED="1719571678084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SEProject_back$edu_hit_testsheet_in_SEProject_back.ic" NAME="edu.hit.testsheet in SEProject-back Coverage Results" MODIFIED="1719625011811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.hit.testsheet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SEProject_back$QuestionControllerTest_testSearchQuestions.ic" NAME="QuestionControllerTest.testSearchQuestions Coverage Results" MODIFIED="1717844847575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

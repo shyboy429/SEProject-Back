@@ -207,6 +207,22 @@ public class AnswerRecordServiceImplTest {
     public void testSubmitAnswer() {
         List<AnswerRecord> answerRecords = Arrays.asList(answerRecord1, answerRecord2);
 
+        // 设置 Question 的模拟返回值
+        Question question1 = new Question();
+        question1.setId(101L);
+        question1.setType("选择题");
+        question1.setAnswer("A");
+        question1.setDescription("desc");
+
+        Question question2 = new Question();
+        question2.setId(102L);
+        question2.setType("选择题");
+        question2.setAnswer("B");
+        question2.setDescription("desc");
+
+        when(questionService.selectQuestionById(101L)).thenReturn(question1);
+        when(questionService.selectQuestionById(102L)).thenReturn(question2);
+
         List<AnswerRecord> result = answerRecordService.submitAnswer(answerRecords);
 
         verify(answerRecordRepository, times(1)).saveAll(answerRecords);
